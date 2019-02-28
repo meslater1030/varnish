@@ -20,7 +20,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "sourceMap": true,
     "typeRoots": [
       "./types",
