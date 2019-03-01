@@ -19,13 +19,13 @@ A library of AI2 themed React components.
 
 ## Installation
 
-Via NPM:
+* NPM:
 
     ```bash
     npm install @allenai/varnish
     ```
 
-or via Yarn:
+* or Yarn:
 
     ```bash
     yarn add @allenai/varnish
@@ -43,9 +43,9 @@ or via Yarn:
 
     // Wrap your App with the Varnish ThemeProvider
     const VarnishApp =  () => (
-    <ThemeProvider>
+      <ThemeProvider>
         <App />
-    </ThemeProvider>
+      </ThemeProvider>
     )
 
     // Render
@@ -63,19 +63,19 @@ or via Yarn:
     // Customize the theme
     const updatedTheme = GetVarnishTheme(
     {
-    palette: {
+      palette: {
         primary: {
-        main: '#00ff00' // setting primary buttons to be green
+          main: '#00ff00' // setting primary buttons to be green
         }
-    },
-    testColorLocal: 'darkGreen' // add whatever other styles we want
+      },
+      testColorLocal: 'darkGreen' // add whatever other styles we want
     }
 
     // Wrap your App with the Varnish ThemeProvider
     const VarnishApp =  () => (
-    <ThemeProvider theme={updatedTheme}>
+      <ThemeProvider theme={updatedTheme}>
         <App />
-    </ThemeProvider>
+      </ThemeProvider>
     )
 
     // Render
