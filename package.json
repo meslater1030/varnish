@@ -5,10 +5,10 @@
   "types": "types/index.d.ts",
   "module": "index.js",
   "author": "REVIZ@allenai.org",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/allenai/Varnish"
+    "url": "https://github.com/allenai/varnish"
   },
   "scripts": {
     "start": "yarn copy-tsconfig && trap 'yarn revert-tsconfig' 0 3 6 15 && react-scripts start",
@@ -16,8 +16,7 @@
     "eject-yesImSure": "react-scripts eject",
     "build": "rm -rf dist && tsc && cp README.md ./dist && cp package.json ./dist && cp .npmignore ./dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.ts,test.ts,__snapshots__",
     "copy-tsconfig": "cp tsconfig.json tsconfig.json.copy",
-    "revert-tsconfig": "cp tsconfig.json.copy tsconfig.json && rm tsconfig.json.copy",
-    "npm-publish": "npm publish --access public ./dist"
+    "revert-tsconfig": "cp tsconfig.json.copy tsconfig.json && rm tsconfig.json.copy"
   },
   "eslintConfig": {
     "extends": "react-app"
