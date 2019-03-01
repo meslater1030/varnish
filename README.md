@@ -108,11 +108,6 @@ A library of AI2 themed React components.
 1. For contributors internal to AI2, please request access rights by contacting REVIZ, then make a pr for your updated branch
 
 1. Build and publish NPM (will be done via google soon, but for now)
-    1. Build the lib
-
-        ```bash
-        yarn build
-        ```
 
     1. Update the package.json version field appropriately and create a git commit and tag for the version
 
@@ -124,6 +119,12 @@ A library of AI2 themed React components.
 
         ```bash
         git push --tags
+        ```
+
+    1. Build the lib
+
+        ```bash
+        yarn build
         ```
 
     1. Publish to npm from the dist folder
