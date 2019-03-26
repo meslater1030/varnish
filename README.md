@@ -57,11 +57,11 @@ A library of AI2 themed React components.
     ```html
     import React from 'react';
     import ReactDOM from 'react-dom';
-    // Import ThemeProvider and GetVarnishTheme
-    import { ThemeProvider, GetVarnishTheme } from '@allenai/varnish';
+    // Import ThemeProvider and getVarnishTheme
+    import { ThemeProvider, getVarnishTheme } from '@allenai/varnish';
 
     // Customize the theme
-    const updatedTheme = GetVarnishTheme(
+    const updatedTheme = getVarnishTheme(
     {
       palette: {
         primary: {

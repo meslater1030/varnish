@@ -1,5 +1,6 @@
 import React from 'react';
 import { createMuiTheme, MuiThemeProvider, Theme } from '@material-ui/core/styles';
+import { PaletteColor } from '@material-ui/core/styles/createPalette';
 import { NoSsr } from '@material-ui/core';
 import { ThemeProvider as SCThemeProvider } from 'styled-components';
 import { merge } from 'lodash';
@@ -9,12 +10,9 @@ import { merge } from 'lodash';
  * See: https://material-ui.com/guides/typescript/
  * and https://material-ui.com/guides/interoperability/
  */
- declare module '@material-ui/core/styles/createMuiTheme' {
-  interface Theme {
-    testColor: string;
-  }
-  interface ThemeOptions {
-    testColor: string;
+declare module '@material-ui/core/styles/createPalette' {
+  interface Palette {
+    highlight?: PaletteColor;
   }
 }
 
@@ -23,30 +21,40 @@ import { merge } from 'lodash';
  */
 const varnishTheme = {
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
   },
   palette: {
     primary: {
-      main: '#2196f3',
-      light: 'rgb(77, 171, 245)',
-      dark: 'rgb(23, 105, 170)',
-      contrastText: '#fff'
+      main: 'rgb(20, 70, 100)',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#ffa000',
-      light: 'rgb(255, 179, 51)',
-      dark: 'rgb(178, 112, 0)',
-      contrastText: 'rgba(0, 0, 0, 0.87)'
+      main: '#e39a4c',
+      contrastText: '#ffffff'
+    },
+    highlight: {
+      main: '#fcb431'
     }
-  },
-  testColor: 'red' // add whatever styles we want
+  }
 };
 
 /**
  * Return the default Varnish Theme with optional overrides merged in
  */
-export const GetVarnishTheme = (overrides?: any ) => {
-  return createMuiTheme(merge(JSON.stringify(varnishTheme), overrides));
+export const getVarnishTheme = (overrides?: any ) => {
+  return createMuiTheme(merge({}, varnishTheme, overrides));
 };
 
 /**
@@ -55,8 +63,8 @@ export const GetVarnishTheme = (overrides?: any ) => {
  * MuiThemeProvider provides Material-UI with theme
  * SCThemeProvider provides StyledComponents with theme
  */
-export const ThemeProvider = (props: {theme?: Theme, children: JSX.Element[] | React.ReactNode}) => {
-  const muiTheme = createMuiTheme(props.theme || GetVarnishTheme());
+export const ThemeProvider = (props: { theme?: Theme, children: React.ReactNode | React.ReactNodeArray }) => {
+  const muiTheme = createMuiTheme(props.theme || getVarnishTheme());
   return (
     <NoSsr>
       <MuiThemeProvider theme={muiTheme}>
