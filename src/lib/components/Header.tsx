@@ -2,8 +2,10 @@ import * as React from 'react';
 import { AppBar, Grid } from '@material-ui/core'
 import styled from 'styled-components';
 
+type AppParPosition = 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative';
+
 interface Props {
-    position?: 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative',
+    position?: AppParPosition,
     children?: React.ReactNode | React.ReactNodeArray;
 }
 
