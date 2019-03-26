@@ -36,6 +36,3 @@ const StyledAppBar = styled(AppBar)`
         background: #fff;
     }
 `
-
-
-
