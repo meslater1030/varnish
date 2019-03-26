@@ -1,12 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components'
+import { Typography } from '@material-ui/core';
 
-import { ThemeProvider, GetVarnishTheme } from '../lib';
+import { ThemeProvider, getVarnishTheme } from '../lib';
+import { Header, AI2Logo, AppTitle } from '../lib/components';
 
 import Tabs from './Tabs';
 
 // Can get and override part of base Varnish Theme
-const updatedTheme = GetVarnishTheme(
+const updatedTheme = getVarnishTheme(
   {
     palette: {
       primary: {
@@ -31,15 +33,23 @@ class App extends React.Component<Props> {
       <Root>
         <Section>
           <ThemeProvider>
-            <Div>Basic usage using default Varnish theme</Div>
+            <Description>Basic usage using default Varnish theme:</Description>
             <Tabs />
           </ThemeProvider>
         </Section>
-
         <Section>
           <ThemeProvider theme={updatedTheme}>
-            <Div>Usage using overridden theme</Div>
+            <Description>Basic usage using overriden theme:</Description>
             <Tabs />
+          </ThemeProvider>
+        </Section>
+        <Section>
+          <ThemeProvider>
+            <Description>Standard AI2 header:</Description>
+            <Header position="static">
+              <AI2Logo />
+              <AppTitle>Skiff</AppTitle>
+            </Header>
           </ThemeProvider>
         </Section>
       </Root>
@@ -48,17 +58,23 @@ class App extends React.Component<Props> {
 }
 
 const Root = styled.div`
-  width: 960px;
+  max-width: 960px;
   margin: 4rem auto;
 `
 
 const Section = styled.div`
-  margin: 4rem auto;
+  margin: 0 auto;
+  padding: 4rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 `
 
 // This div used the testColorLocal from our override
-const Div = styled.div`
+const Description = styled(Typography).attrs({ variant: 'h5' })`
   color: ${props => props.theme.testColorLocal};
+  && {
+    margin: 0 0 1rem;
+  }
 `;
 
 export default App;

@@ -1,3 +1,3 @@
-import { GetVarnishTheme, ThemeProvider } from './ThemeProvider';
+import { getVarnishTheme, ThemeProvider } from './ThemeProvider';
 
-export { GetVarnishTheme, ThemeProvider };
+export { getVarnishTheme, ThemeProvider };

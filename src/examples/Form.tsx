@@ -30,7 +30,7 @@ interface State {
 class Form extends React.Component<Props, State> {
   state: State = {
     open: false,
-    sliderValue: 50.
+    sliderValue: 50
   };
 
   handleClose = () => {
