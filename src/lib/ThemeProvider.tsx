@@ -34,6 +34,7 @@ const varnishTheme = {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+    fontSize: 16
   },
   palette: {
     primary: {

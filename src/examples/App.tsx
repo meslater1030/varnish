@@ -59,7 +59,8 @@ class App extends React.Component<Props> {
 
 const Root = styled.div`
   max-width: 960px;
-  margin: 4rem auto;
+  margin: 0 auto;
+  padding: 2 rem 0;
 `
 
 const Section = styled.div`
