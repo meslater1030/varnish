@@ -9,7 +9,6 @@
     ],
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "./dist/types",
     "declarationMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -21,11 +20,7 @@
     "resolveJsonModule": true,
     "noEmit": false,
     "jsx": "react",
-    "sourceMap": true,
-    "typeRoots": [
-      "./types",
-      "./node_modules/@types"
-    ],
+    "sourceMap": true
   },
   "include": [
     "./src/react-app-env.d.ts",
