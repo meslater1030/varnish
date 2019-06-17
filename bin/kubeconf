@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from os import path
+from argparse import ArgumentParser
+from subprocess import check_call
+
+def main():
+    parser = ArgumentParser(prog="kubeconf",
+        description="Utility for generating the kubernetes manifest for a given environment")
+    parser.add_argument("--env", "-e", default="staging",
+        help="The value fo the $_ENV cloudbuild variable")
+    args = parser.parse_args()
+
+    image = "gcr.io/ai2-reviz/jsonnet"
+    check_call(["docker", "pull", image ])
+    root = path.abspath(path.join(path.abspath(path.dirname(__file__)), ".."))
+    # TODO: If we want to get fancier we could try to parse this out of the
+    # cloudbuild-deploy.yaml file, but for now this will do.
+    check_call([
+        "docker",
+        "run",
+        "--rm",
+        "-it",
+        "-v", "%s:/workspace" % root,
+        image,
+        "eval",
+        "-y",
+        "--output-file", "/workspace/.skiff/webapp.json",
+        "--ext-str", "env=%s" % args.env,
+        "--ext-str", "image=gcr.io/ai2-reviz/SKIFF_TEMPLATE_TEST:-1",
+        "--ext-str", "sha=-1",
+        "/workspace/.skiff/webapp.jsonnet"
+    ])
+    print("✨ wrote %s/.skiff/webapp.json" % root)
+
+if __name__ == "__main__":
+    main()
