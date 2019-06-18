@@ -20391,3 +20391,13 @@ h6 {
   line-height: 1.125rem;
   font-weight: 500;
 }
+@media (max-width: 992px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 81.25%;
+  }
+}

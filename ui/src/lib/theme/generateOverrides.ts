@@ -78,6 +78,18 @@ const template =`
     @purple-6: ${Colors.P6.value};
     @pink-6: ${Colors.P6.value};
     @magenta-6: ${Colors.M6.value};
+
+    // default media breakpoint sizes
+    @media (max-width: ${Breakpoints.lg}px) {
+        html {
+            font-size: 87.5%;
+        }
+    }
+    @media (max-width: ${Breakpoints.sm}px) {
+        html {
+            font-size: 81.25%;
+        }
+    }
 `;
 
 // All paths are relative to package.json.

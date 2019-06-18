@@ -173,7 +173,7 @@ const Label = styled(BodyJumbo)`
 `;
 
 const Col = styled(BodyBig)`
-    padding: 21px 0;
+    padding: ${props => `${convertPixelsToRem(21)}rem 0`};
     display: inline-block;
     border-top: 1px solid ${({theme}) => theme.colors.N1.value};
 `;
