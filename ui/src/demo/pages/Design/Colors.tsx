@@ -21,7 +21,7 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
                     {[this.varnishTheme.palette.primary,
                     this.varnishTheme.palette.primary2,
                     this.varnishTheme.palette.primary3,
-                    this.varnishTheme.palette.secondary].map((colorInfo: ColorInfo) =>
+                    this.varnishTheme.palette.primary4].map((colorInfo: ColorInfo) =>
                         <PrimaryColor key={colorInfo.displayName} colorInfo={colorInfo} />
                     )}
                 </PrimaryTable>

@@ -15,7 +15,7 @@ export const DefaultVarnishTheme = {
       primary: Colors.B6,
       primary2: Colors.B5,
       primary3: Colors.B4,
-      secondary: Colors.O4,
+      primary4: Colors.O6,
       error: Colors.R6
     },
     typography: Typography,
