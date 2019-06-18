@@ -58,8 +58,8 @@ const template =`
     // general
     @font-family: ${Typography.bodyBig.fontFamily};
     @code-family: ${Typography.code.fontFamily};
-    @text-color: ${Colors.N6.value};
-    @text-color-secondary: ${Colors.N5.value};
+    @text-color: ${Colors.N9.value};
+    @text-color-secondary: ${Colors.N7.value};
 
     // breakpoint overrides
     @screen-xs: ${Breakpoints.xs}px;
@@ -82,12 +82,12 @@ const template =`
     // default media breakpoint sizes
     @media (max-width: ${Breakpoints.lg}px) {
         html {
-            font-size: 87.5%;
+            font-size: ${14/16}%;
         }
     }
     @media (max-width: ${Breakpoints.sm}px) {
         html {
-            font-size: 81.25%;
+            font-size: ${12/16}%;
         }
     }
 `;
