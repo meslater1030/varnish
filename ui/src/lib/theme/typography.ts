@@ -116,8 +116,8 @@ const codeDark = {
   fontFamily: code.fontFamily,
   fontSize: code.fontSize,
   lineHeight: code.lineHeight,
-  backgroundColorKey: 'N6',
-  colorKey: 'N1',
+  backgroundColorKey: 'N10',
+  colorKey: 'N5',
   padding: `${convertPixelsToRem(20)}rem`,
 };
 

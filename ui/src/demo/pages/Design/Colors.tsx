@@ -126,7 +126,7 @@ const PrimaryColorBox = styled.div`
 `;
 
 const MicroCol = styled(BodyMicro)`
-    background: ${({theme}) => theme.colors.N1.value};
+    background: ${({theme}) => theme.colors.N2.value};
     padding: ${props => `${convertPixelsToRem(17)}rem`};
 `;
 
@@ -173,9 +173,9 @@ const Label = styled(BodyJumbo)`
 `;
 
 const Col = styled(BodyBig)`
-    padding: 21px 0;
+    padding: ${props => `${convertPixelsToRem(21)}rem 0`};
     display: inline-block;
-    border-top: 1px solid ${({theme}) => theme.colors.N1.value};
+    border-top: 1px solid ${({theme}) => theme.colors.N4.value};
 `;
 
 const ColorBox = styled.div`

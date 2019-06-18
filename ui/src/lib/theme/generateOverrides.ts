@@ -58,8 +58,8 @@ const template =`
     // general
     @font-family: ${Typography.bodyBig.fontFamily};
     @code-family: ${Typography.code.fontFamily};
-    @text-color: ${Colors.N6.value};
-    @text-color-secondary: ${Colors.N5.value};
+    @text-color: ${Colors.N9.value};
+    @text-color-secondary: ${Colors.N7.value};
 
     // breakpoint overrides
     @screen-xs: ${Breakpoints.xs}px;
@@ -78,6 +78,18 @@ const template =`
     @purple-6: ${Colors.P6.value};
     @pink-6: ${Colors.P6.value};
     @magenta-6: ${Colors.M6.value};
+
+    // default media breakpoint sizes
+    @media (max-width: ${Breakpoints.lg}px) {
+        html {
+            font-size: ${14/16}%;
+        }
+    }
+    @media (max-width: ${Breakpoints.sm}px) {
+        html {
+            font-size: ${12/16}%;
+        }
+    }
 `;
 
 // All paths are relative to package.json.

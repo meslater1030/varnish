@@ -169,7 +169,7 @@ const Table = styled.div`
 const HeadRow = styled.div`
     grid-column: 1 / span 3;
     padding-bottom: ${props => `${convertPixelsToRem(24)}rem`};
-    border-bottom: 1px solid ${({theme}) => theme.colors.N1.value};
+    border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
 `;
 
 const Name = styled.div`
