@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "target": "es6",
     "lib": [
       "dom",
@@ -9,16 +10,18 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve",
+    "noEmit": false,
+    "jsx": "react",
     "sourceMap": true,
     "types": ["react", "jest"],
     "typeRoots": [
@@ -26,10 +29,17 @@
     ]
   },
   "include": [
-    "./src/**/*"
+    "./src/react-app-env.d.ts",
+    "./src/lib/**/*"
   ],
   "exclude": [
       "node_modules",
       "**/*.test.ts*"
   ]
 }
+
+
+// fix commands to more cleanly deal with tsconfig changes
+// make css build in both paths
+// clean up what is actually shipped
+

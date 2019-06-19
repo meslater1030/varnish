@@ -8,11 +8,15 @@
     "url": "https://github.com/allenai/varnish"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn copy-tsconfig && trap 'yarn revert-tsconfig' 0 3 6 15 && react-scripts start",
     "build": "react-scripts build",
+    "build-npm": "rm -rf dist/ && mkdir dist && tsc && cp README.md ./dist/ && cp package.json ./dist/ && cp .npmignore ./dist/ && NODE_ENV=production babel src/lib --out-dir ./dist/ --copy-files --ignore *.sh,generateOverrides.ts,varnish-theme.less,__tests__,spec.ts,test.ts,__snapshots__",
     "build-css": "less-watch-compiler src/lib src/lib theme.less --enable-js --run-once",
     "test": "react-scripts test",
-    "eject-yesImSure": "react-scripts eject"
+    "clean": "rm -rf dist/",
+    "eject-yesImSure": "react-scripts eject",
+    "copy-tsconfig": "cp tsconfig.json tsconfig.json.copy",
+    "revert-tsconfig": "cp tsconfig.json.copy tsconfig.json && rm tsconfig.json.copy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,8 +35,7 @@
     "material-ui",
     "styled-components"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerdependencies": {
     "antd": "^3.19.3",
     "react": "^16.8.3",
@@ -48,6 +51,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/styled-components": "^4.1.10",
     "antd": "^3.19.3",
+    "babel-cli": "^6.26.0",
     "fs": "^0.0.1-security",
     "less": "^3.9.0",
     "less-watch-compiler": "^1.13.0",
