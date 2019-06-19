@@ -3,7 +3,7 @@ from random import randint
 from json import dumps
 from time import sleep
 
-# This api is not currently used byt the demo, but we are keeping it in place for future use
+# This api is not currently used by the demo, but we are keeping it in place for future use
 
 def create_api() -> Blueprint:
     """
