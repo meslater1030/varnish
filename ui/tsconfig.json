@@ -22,10 +22,7 @@
     "noEmit": false,
     "jsx": "react",
     "sourceMap": true,
-    "types": ["react"],
-    "typeRoots": [
-      "./node_modules/@types",
-    ]
+    "types": ["react"]
   },
   "include": [
     "./src/react-app-env.d.ts",

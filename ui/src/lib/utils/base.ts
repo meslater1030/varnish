@@ -39,16 +39,16 @@ export function hexToRgb(hex: string) {
     } : null;
   }
 
-function getRootFontSize(dynamic = false) {
+function getRootFontSize(dynamic = false): number {
     return parseFloat((dynamic && typeof getComputedStyle !== 'undefined' && getComputedStyle(document.documentElement).fontSize) || '16');
 }
 
 // convert rems to px using document font size
-export function convertRemToPixels(rem: number, dynamic = false) {
+export function convertRemToPixels(rem: number, dynamic = false): number {
     return rem * getRootFontSize();
 }
 
 // convert px to rems using document font size
-export function convertPixelsToRem(px: number) {
+export function convertPixelsToRem(px: number): number {
     return px / getRootFontSize();
 }

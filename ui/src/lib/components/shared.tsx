@@ -9,14 +9,14 @@ export const MaxWidth = styled.div`
     max-width: ${({theme}) => theme.breakpoints.xl}px;
 `
 
-// TODO: this is a placeholder until we get spacing in styleguide
+// TODO: this is a placeholder until we get spacing in style guide
 export const Paragraph = styled.div`
     && {
         margin: 0 0 2rem;
     }
 `;
 
-// TODO: this is a placeholder till i implement links from styleguide
+// TODO: this is a placeholder till i implement links from style guide
 export const ExternalLink = styled.a`
     color: ${({theme}) => theme.colors.B7.value};
     &:hover {

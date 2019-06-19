@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "bash ./src/lib/theme/buildOverrides.sh && node scripts/build.js",
+    "build": "bash scripts/buildOverrides.sh && node scripts/build.js",
     "prepare-npm": "rm -rf dist/ && mkdir dist && tsc && cp README.md ./dist/ && cp package.json ./dist/ && cp .npmignore ./dist/ && cp ./public/varnish-theme.css ./dist/ && NODE_ENV=production babel src/lib --out-dir ./dist/ --copy-files --ignore *.sh,generateOverrides.*,varnish-theme.less",
     "clean-npm": "rm -rf dist/"
   },
@@ -63,6 +63,7 @@
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
     "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "less-watch-compiler": "^1.13.0",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",

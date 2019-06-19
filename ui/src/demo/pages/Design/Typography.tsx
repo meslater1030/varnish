@@ -24,11 +24,7 @@ import {
     CodeDark
 } from '../../../lib/components';
 
-
-// todo: get code block to display with syntax highlighting
-
 export class Typography extends React.PureComponent<RouteComponentProps> {
-    varnishTheme = DefaultVarnishTheme;
     aiForGood = 'AI for the Common Good';
     theBestWay = 'The best way to predict the future is to invent it';
     allYourBase = 'All your base are belong to us';
@@ -42,48 +38,48 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                 <Grid>
                     <HeadRow>
                         <H3>Headlines</H3>
-                        <BodySmall>All headlines use font {this.varnishTheme.typography.hFontFamily}</BodySmall>
+                        <BodySmall>All headlines use font {DefaultVarnishTheme.typography.hFontFamily}</BodySmall>
                     </HeadRow>
 
                     <Name>H1</Name>
                     <Example>
                         <H1>{this.aiForGood}</H1>
-                        <Size>{this.varnishTheme.typography.h1.fontSize}/{this.varnishTheme.typography.h1.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.h1.fontSize}/{DefaultVarnishTheme.typography.h1.lineHeight}</Size>
                    </Example>
 
                     <Name>H2</Name>
                     <Example>
                         <H2>{this.aiForGood}</H2>
-                        <Size>{this.varnishTheme.typography.h2.fontSize}/{this.varnishTheme.typography.h2.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.h2.fontSize}/{DefaultVarnishTheme.typography.h2.lineHeight}</Size>
                     </Example>
 
                     <Name>H3</Name>
                     <Example>
                         <H3>{this.aiForGood}</H3>
-                        <Size>{this.varnishTheme.typography.h3.fontSize}/{this.varnishTheme.typography.h3.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.h3.fontSize}/{DefaultVarnishTheme.typography.h3.lineHeight}</Size>
                     </Example>
 
                     <Name>H4</Name>
                     <Example>
                         <H4>{this.aiForGood}</H4>
-                        <Size>{this.varnishTheme.typography.h4.fontSize}/{this.varnishTheme.typography.h4.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.h4.fontSize}/{DefaultVarnishTheme.typography.h4.lineHeight}</Size>
                     </Example>
 
                     <Name>H5</Name>
                     <Example>
                         <H5>{this.aiForGood}</H5>
-                        <Size>{this.varnishTheme.typography.h5.fontSize}/{this.varnishTheme.typography.h5.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.h5.fontSize}/{DefaultVarnishTheme.typography.h5.lineHeight}</Size>
                     </Example>
 
                     <HeadRow>
                         <H3>Body</H3>
-                        <BodySmall>Body and notification copy uses {this.varnishTheme.typography.bodyFontFamily} Regular and Bold</BodySmall>
+                        <BodySmall>Body and notification copy uses {DefaultVarnishTheme.typography.bodyFontFamily} Regular and Bold</BodySmall>
                     </HeadRow>
 
                     <Name>Body Jumbo</Name>
                     <Example>
                         <BodyJumbo>{this.theBestWay}</BodyJumbo>
-                        <Size>{this.varnishTheme.typography.bodyJumbo.fontSize}/{this.varnishTheme.typography.bodyJumbo.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.bodyJumbo.fontSize}/{DefaultVarnishTheme.typography.bodyJumbo.lineHeight}</Size>
                     </Example>
 
                     <Name>Body</Name>
@@ -92,7 +88,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                             <Body>{this.theBestWay}</Body>
                             <br/><BodyBold>{this.theBestWay}</BodyBold>
                         </div>
-                        <Size>{this.varnishTheme.typography.body.fontSize}/{this.varnishTheme.typography.body.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.body.fontSize}/{DefaultVarnishTheme.typography.body.lineHeight}</Size>
                     </Example>
 
                     <Name>Body Small</Name>
@@ -101,13 +97,13 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                             <BodySmall>{this.theBestWay}</BodySmall>
                             <br/><BodySmallBold>{this.theBestWay}</BodySmallBold>
                         </div>
-                        <Size>{this.varnishTheme.typography.bodySmall.fontSize}/{this.varnishTheme.typography.bodySmall.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.bodySmall.fontSize}/{DefaultVarnishTheme.typography.bodySmall.lineHeight}</Size>
                     </Example>
 
                     <Name>Body Micro</Name>
                     <Example>
                         <BodyMicro>{this.theBestWay}</BodyMicro>
-                        <Size>{this.varnishTheme.typography.bodyMicro.fontSize}/{this.varnishTheme.typography.bodyMicro.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.bodyMicro.fontSize}/{DefaultVarnishTheme.typography.bodyMicro.lineHeight}</Size>
                     </Example>
 
                     <Name>Notification</Name>
@@ -116,41 +112,41 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                             <Notification>{this.allYourBase}</Notification>
                             <br/><NotificationBold>{this.allYourBase}</NotificationBold>
                         </div>
-                        <Size>{this.varnishTheme.typography.notification.fontSize}/{this.varnishTheme.typography.notification.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.notification.fontSize}/{DefaultVarnishTheme.typography.notification.lineHeight}</Size>
                     </Example>
 
                     <HeadRow>
                         <H3>Quotes</H3>
-                        <BodySmall>Quotes and their authors use {this.varnishTheme.typography.attributionFontFamily} Regular</BodySmall>
+                        <BodySmall>Quotes and their authors use {DefaultVarnishTheme.typography.attributionFontFamily} Regular</BodySmall>
                     </HeadRow>
 
                     <Name>Quote</Name>
                     <Example>
                         <Quote>“Wit is the unexpected copulation of ideas.”</Quote>
-                        <Size>{this.varnishTheme.typography.quote.fontSize}/{this.varnishTheme.typography.quote.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.quote.fontSize}/{DefaultVarnishTheme.typography.quote.lineHeight}</Size>
                     </Example>
 
                     <Name>Author</Name>
                     <Example>
                         <Author>Patrick O'Brian</Author>
-                        <Size>{this.varnishTheme.typography.author.fontSize}/{this.varnishTheme.typography.author.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.author.fontSize}/{DefaultVarnishTheme.typography.author.lineHeight}</Size>
                     </Example>
 
                     <HeadRow>
                         <H3>Code</H3>
-                        <BodySmall>Code examples use {this.varnishTheme.typography.codeFontFamily} </BodySmall>
+                        <BodySmall>Code examples use {DefaultVarnishTheme.typography.codeFontFamily} </BodySmall>
                     </HeadRow>
 
                     <Name>Default</Name>
                     <Example>
                         <Code>{this.codeExample}</Code>
-                        <Size>{this.varnishTheme.typography.code.fontSize}/{this.varnishTheme.typography.code.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.code.fontSize}/{DefaultVarnishTheme.typography.code.lineHeight}</Size>
                     </Example>
 
                     <Name>Dark</Name>
                     <Example>
                         <CodeDark>{this.codeExample}</CodeDark>
-                        <Size>{this.varnishTheme.typography.codeDark.fontSize}/{this.varnishTheme.typography.codeDark.lineHeight}</Size>
+                        <Size>{DefaultVarnishTheme.typography.codeDark.fontSize}/{DefaultVarnishTheme.typography.codeDark.lineHeight}</Size>
                     </Example>
                 </Grid>
             </React.Fragment>

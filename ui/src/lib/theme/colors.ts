@@ -1,4 +1,4 @@
-export const Colors = {
+export const colors = {
     R1: {displayName: 'R1', value: '#FFF2F2'},
     R2: {displayName: 'R2', value: '#FFE1E0'},
     R3: {displayName: 'R3', value: '#FDC1C0'},
@@ -81,128 +81,128 @@ export const Colors = {
     N10: {displayName: 'N10', value: '#333A3E'}
 };
 
-export const Reds = [
-    Colors.R1,
-    Colors.R2,
-    Colors.R3,
-    Colors.R4,
-    Colors.R5,
-    Colors.R6,
-    Colors.R7,
-    Colors.R8,
-    Colors.R9,
-    Colors.R10
+export const red = [
+    colors.R1,
+    colors.R2,
+    colors.R3,
+    colors.R4,
+    colors.R5,
+    colors.R6,
+    colors.R7,
+    colors.R8,
+    colors.R9,
+    colors.R10
 ];
 
-export const Oranges = [
-    Colors.O1,
-    Colors.O2,
-    Colors.O3,
-    Colors.O4,
-    Colors.O5,
-    Colors.O6,
-    Colors.O7,
-    Colors.O8,
-    Colors.O9,
-    Colors.O10
+export const orange = [
+    colors.O1,
+    colors.O2,
+    colors.O3,
+    colors.O4,
+    colors.O5,
+    colors.O6,
+    colors.O7,
+    colors.O8,
+    colors.O9,
+    colors.O10
 ];
 
-export const Greens = [
-    Colors.G1,
-    Colors.G2,
-    Colors.G3,
-    Colors.G4,
-    Colors.G5,
-    Colors.G6,
-    Colors.G7,
-    Colors.G8,
-    Colors.G9,
-    Colors.G10
+export const green = [
+    colors.G1,
+    colors.G2,
+    colors.G3,
+    colors.G4,
+    colors.G5,
+    colors.G6,
+    colors.G7,
+    colors.G8,
+    colors.G9,
+    colors.G10
 ];
 
-export const Teals = [
-    Colors.T1,
-    Colors.T2,
-    Colors.T3,
-    Colors.T4,
-    Colors.T5,
-    Colors.T6,
-    Colors.T7,
-    Colors.T8,
-    Colors.T9,
-    Colors.T10
+export const teal = [
+    colors.T1,
+    colors.T2,
+    colors.T3,
+    colors.T4,
+    colors.T5,
+    colors.T6,
+    colors.T7,
+    colors.T8,
+    colors.T9,
+    colors.T10
 ];
 
-export const Blues = [
-    Colors.B1,
-    Colors.B2,
-    Colors.B3,
-    Colors.B4,
-    Colors.B5,
-    Colors.B6,
-    Colors.B7,
-    Colors.B8,
-    Colors.B9,
-    Colors.B10
+export const blue = [
+    colors.B1,
+    colors.B2,
+    colors.B3,
+    colors.B4,
+    colors.B5,
+    colors.B6,
+    colors.B7,
+    colors.B8,
+    colors.B9,
+    colors.B10
 ];
 
-export const Purples = [
-    Colors.P1,
-    Colors.P2,
-    Colors.P3,
-    Colors.P4,
-    Colors.P5,
-    Colors.P6,
-    Colors.P7,
-    Colors.P8,
-    Colors.P9,
-    Colors.P10
+export const purple = [
+    colors.P1,
+    colors.P2,
+    colors.P3,
+    colors.P4,
+    colors.P5,
+    colors.P6,
+    colors.P7,
+    colors.P8,
+    colors.P9,
+    colors.P10
 ];
 
-export const Magentas = [
-    Colors.M1,
-    Colors.M2,
-    Colors.M3,
-    Colors.M4,
-    Colors.M5,
-    Colors.M6,
-    Colors.M7,
-    Colors.M8,
-    Colors.M9,
-    Colors.M10
+export const magenta = [
+    colors.M1,
+    colors.M2,
+    colors.M3,
+    colors.M4,
+    colors.M5,
+    colors.M6,
+    colors.M7,
+    colors.M8,
+    colors.M9,
+    colors.M10
 ];
 
-export const Neutrals = [
-    Colors.N1,
-    Colors.N2,
-    Colors.N3,
-    Colors.N4,
-    Colors.N5,
-    Colors.N6,
-    Colors.N7,
-    Colors.N8,
-    Colors.N9,
-    Colors.N10
+export const neutral = [
+    colors.N1,
+    colors.N2,
+    colors.N3,
+    colors.N4,
+    colors.N5,
+    colors.N6,
+    colors.N7,
+    colors.N8,
+    colors.N9,
+    colors.N10
 ];
 
 export interface IndexableColors {
-    [key:string]: typeof Reds;
-    red: typeof Reds;
-    orange: typeof Reds;
-    green: typeof Reds;
-    teal: typeof Reds;
-    blue: typeof Reds;
-    purple: typeof Reds;
-    magenta: typeof Reds;
-    neutral: typeof Reds;
+    [key:string]: typeof red;
+    red: typeof red;
+    orange: typeof red;
+    green: typeof red;
+    teal: typeof red;
+    blue: typeof red;
+    purple: typeof red;
+    magenta: typeof red;
+    neutral: typeof red;
 }
 export const colorGroups: IndexableColors = {
-    red: Reds,
-    orange: Oranges,
-    green: Greens,
-    teal: Teals,
-    blue: Blues,
-    purple: Purples,
-    magenta: Magentas,
-    neutral: Neutrals
+    red,
+    orange,
+    green,
+    teal,
+    blue,
+    purple,
+    magenta,
+    neutral
 };

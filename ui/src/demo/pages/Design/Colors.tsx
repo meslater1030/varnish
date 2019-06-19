@@ -3,14 +3,10 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { H2, H3, BodyJumbo, Body, BodyMicro } from '../../../lib/components';
-import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
+import { DefaultVarnishTheme, ColorInfo, colorGroups } from '../../../lib/theme';
 import { hexToRgb, convertPixelsToRem } from '../../../lib/utils';
 
-
-// todo: add click to copy to clipboard on all color rows / swatches
-
 export class Colors extends React.PureComponent<RouteComponentProps> {
-    varnishTheme = DefaultVarnishTheme;
     render() {
         return (
             <React.Fragment>
@@ -18,18 +14,18 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
 
                 <H3>Primary</H3>
                 <PrimaryGrid>
-                    {[this.varnishTheme.palette.primary,
-                    this.varnishTheme.palette.primary2,
-                    this.varnishTheme.palette.primary3,
-                    this.varnishTheme.palette.primary4].map((colorInfo: ColorInfo) =>
+                    {[DefaultVarnishTheme.palette.primary,
+                    DefaultVarnishTheme.palette.primary2,
+                    DefaultVarnishTheme.palette.primary3,
+                    DefaultVarnishTheme.palette.primary4].map((colorInfo: ColorInfo) =>
                         <PrimaryColor key={colorInfo.displayName} colorInfo={colorInfo} />
                     )}
                 </PrimaryGrid>
 
                 <H3>Extended</H3>
                 <ExtendedGrid>
-                    {Object.keys(this.varnishTheme.colorGroups).map((group: string) =>
-                        <ColorGroup key={group} colorInfos={this.varnishTheme.colorGroups[group]} group={group} />
+                    {Object.keys(colorGroups).map((group: string) =>
+                        <ColorGroup key={group} colorInfos={colorGroups[group]} group={group} />
                     )}
                 </ExtendedGrid>
             </React.Fragment>
