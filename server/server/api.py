@@ -3,6 +3,8 @@ from random import randint
 from json import dumps
 from time import sleep
 
+# This api is not currently used byt the demo, but we are keeping it in place for future use
+
 def create_api() -> Blueprint:
     """
     Creates an instance of your API. If you'd like to toggle behavior based on

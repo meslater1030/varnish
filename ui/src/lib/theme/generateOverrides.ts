@@ -21,38 +21,38 @@ const template =`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: antialiased;
         font-smoothing: antialiased;
-        font-family: ${Typography.bodyBig.fontFamily};
+        font-family: ${Typography.body.fontFamily};
     }
     html {
         font-size: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
-        font-family: ${Typography.headline1.fontFamily};
+        font-family: ${Typography.h1.fontFamily};
     }
     h1 {
-        font-size: ${Typography.headline1.fontSize};
-        line-height: ${Typography.headline1.lineHeight};
-        font-weight: ${Typography.headline1.fontWeight};
+        font-size: ${Typography.h1.fontSize};
+        line-height: ${Typography.h1.lineHeight};
+        font-weight: ${Typography.h1.fontWeight};
     }
     h2 {
-        font-size: ${Typography.headline2.fontSize};
-        line-height: ${Typography.headline2.lineHeight};
-        font-weight: ${Typography.headline2.fontWeight};
+        font-size: ${Typography.h2.fontSize};
+        line-height: ${Typography.h2.lineHeight};
+        font-weight: ${Typography.h2.fontWeight};
     }
     h3 {
-        font-size: ${Typography.headline3.fontSize};
-        line-height: ${Typography.headline3.lineHeight};
-        font-weight: ${Typography.headline3.fontWeight};
+        font-size: ${Typography.h3.fontSize};
+        line-height: ${Typography.h3.lineHeight};
+        font-weight: ${Typography.h3.fontWeight};
     }
     h4 {
-        font-size: ${Typography.headline4.fontSize};
-        line-height: ${Typography.headline4.lineHeight};
-        font-weight: ${Typography.headline4.fontWeight};
+        font-size: ${Typography.h4.fontSize};
+        line-height: ${Typography.h4.lineHeight};
+        font-weight: ${Typography.h4.fontWeight};
     }
     h5, h6 {
-        font-size: ${Typography.headline5.fontSize};
-        line-height: ${Typography.headline5.lineHeight};
-        font-weight: ${Typography.headline5.fontWeight};
+        font-size: ${Typography.h5.fontSize};
+        line-height: ${Typography.h5.lineHeight};
+        font-weight: ${Typography.h5.fontWeight};
     }
 
     // default media breakpoint sizes
@@ -68,7 +68,7 @@ const template =`
     }
 
     // general overrides to ant design variables
-    @font-family: ${Typography.bodyBig.fontFamily};
+    @font-family: ${Typography.body.fontFamily};
     @code-family: ${Typography.code.fontFamily};
     @text-color: ${Colors.N9.value};
     @text-color-secondary: ${Colors.N7.value};

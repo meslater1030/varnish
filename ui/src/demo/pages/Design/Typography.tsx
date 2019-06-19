@@ -5,14 +5,14 @@ import { RouteComponentProps } from 'react-router';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import { convertPixelsToRem } from '../../../lib/utils';
 import {
-    Headline1,
-    Headline2,
-    Headline3,
-    Headline4,
-    Headline5,
+    H1,
+    H2,
+    H3,
+    H4,
+    H5,
     BodyJumbo,
-    BodyBig,
-    BodyBigBold,
+    Body,
+    BodyBold,
     BodySmall,
     BodySmallBold,
     BodyMicro,
@@ -38,45 +38,45 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <React.Fragment>
-                <Headline2>Typography</Headline2>
-                <Table>
+                <H2>Typography</H2>
+                <Grid>
                     <HeadRow>
-                        <Headline3>Headlines</Headline3>
-                        <BodySmall>All headlines use font {this.varnishTheme.typography.headlineFontFamily}</BodySmall>
+                        <H3>Headlines</H3>
+                        <BodySmall>All headlines use font {this.varnishTheme.typography.hFontFamily}</BodySmall>
                     </HeadRow>
 
-                    <Name>Headline 1</Name>
+                    <Name>H1</Name>
                     <Example>
-                        <Headline1>{this.aiForGood}</Headline1>
-                        <Size>{this.varnishTheme.typography.headline1.fontSize}/{this.varnishTheme.typography.headline1.lineHeight}</Size>
+                        <H1>{this.aiForGood}</H1>
+                        <Size>{this.varnishTheme.typography.h1.fontSize}/{this.varnishTheme.typography.h1.lineHeight}</Size>
                    </Example>
 
-                    <Name>Headline 2</Name>
+                    <Name>H2</Name>
                     <Example>
-                        <Headline2>{this.aiForGood}</Headline2>
-                        <Size>{this.varnishTheme.typography.headline2.fontSize}/{this.varnishTheme.typography.headline2.lineHeight}</Size>
+                        <H2>{this.aiForGood}</H2>
+                        <Size>{this.varnishTheme.typography.h2.fontSize}/{this.varnishTheme.typography.h2.lineHeight}</Size>
                     </Example>
 
-                    <Name>Headline 3</Name>
+                    <Name>H3</Name>
                     <Example>
-                        <Headline3>{this.aiForGood}</Headline3>
-                        <Size>{this.varnishTheme.typography.headline3.fontSize}/{this.varnishTheme.typography.headline3.lineHeight}</Size>
+                        <H3>{this.aiForGood}</H3>
+                        <Size>{this.varnishTheme.typography.h3.fontSize}/{this.varnishTheme.typography.h3.lineHeight}</Size>
                     </Example>
 
-                    <Name>Headline 4</Name>
+                    <Name>H4</Name>
                     <Example>
-                        <Headline4>{this.aiForGood}</Headline4>
-                        <Size>{this.varnishTheme.typography.headline4.fontSize}/{this.varnishTheme.typography.headline4.lineHeight}</Size>
+                        <H4>{this.aiForGood}</H4>
+                        <Size>{this.varnishTheme.typography.h4.fontSize}/{this.varnishTheme.typography.h4.lineHeight}</Size>
                     </Example>
 
-                    <Name>Headline 5</Name>
+                    <Name>H5</Name>
                     <Example>
-                        <Headline5>{this.aiForGood}</Headline5>
-                        <Size>{this.varnishTheme.typography.headline5.fontSize}/{this.varnishTheme.typography.headline5.lineHeight}</Size>
+                        <H5>{this.aiForGood}</H5>
+                        <Size>{this.varnishTheme.typography.h5.fontSize}/{this.varnishTheme.typography.h5.lineHeight}</Size>
                     </Example>
 
                     <HeadRow>
-                        <Headline3>Body</Headline3>
+                        <H3>Body</H3>
                         <BodySmall>Body and notification copy uses {this.varnishTheme.typography.bodyFontFamily} Regular and Bold</BodySmall>
                     </HeadRow>
 
@@ -86,13 +86,13 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                         <Size>{this.varnishTheme.typography.bodyJumbo.fontSize}/{this.varnishTheme.typography.bodyJumbo.lineHeight}</Size>
                     </Example>
 
-                    <Name>Body Big</Name>
+                    <Name>Body</Name>
                     <Example>
                         <div>
-                            <BodyBig>{this.theBestWay}</BodyBig>
-                            <br/><BodyBigBold>{this.theBestWay}</BodyBigBold>
+                            <Body>{this.theBestWay}</Body>
+                            <br/><BodyBold>{this.theBestWay}</BodyBold>
                         </div>
-                        <Size>{this.varnishTheme.typography.bodyBig.fontSize}/{this.varnishTheme.typography.bodyBig.lineHeight}</Size>
+                        <Size>{this.varnishTheme.typography.body.fontSize}/{this.varnishTheme.typography.body.lineHeight}</Size>
                     </Example>
 
                     <Name>Body Small</Name>
@@ -120,7 +120,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     </Example>
 
                     <HeadRow>
-                        <Headline3>Quotes</Headline3>
+                        <H3>Quotes</H3>
                         <BodySmall>Quotes and their authors use {this.varnishTheme.typography.attributionFontFamily} Regular</BodySmall>
                     </HeadRow>
 
@@ -137,7 +137,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     </Example>
 
                     <HeadRow>
-                        <Headline3>Code</Headline3>
+                        <H3>Code</H3>
                         <BodySmall>Code examples use {this.varnishTheme.typography.codeFontFamily} </BodySmall>
                     </HeadRow>
 
@@ -152,13 +152,13 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                         <CodeDark>{this.codeExample}</CodeDark>
                         <Size>{this.varnishTheme.typography.codeDark.fontSize}/{this.varnishTheme.typography.codeDark.lineHeight}</Size>
                     </Example>
-                </Table>
+                </Grid>
             </React.Fragment>
         )
     }
 }
 
-const Table = styled.div`
+const Grid = styled.div`
     display: grid;
     grid-gap: ${props => `${convertPixelsToRem(48)}rem ${convertPixelsToRem(14)}rem`};
     grid-template-columns: repeat(2, max-content) auto;

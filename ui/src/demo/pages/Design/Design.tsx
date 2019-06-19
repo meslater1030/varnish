@@ -17,44 +17,45 @@ import { AppRoute } from '../../AppRoute';
 
 
 export class Design extends React.PureComponent<RouteComponentProps> {
+    parentPath = '/design';
     routes: AppRoute[] = [
         {
-            path: '/design/colors',
+            path: `${this.parentPath}/colors`,
             label: 'Colors',
             component: Colors
         },
         {
-            path: '/design/typography',
+            path: `${this.parentPath}/typography`,
             label: 'Typography',
             component: Typography
         },
         {
-            path: '/design/buttons',
+            path: `${this.parentPath}/buttons`,
             label: 'Buttons',
             component: Buttons
         },
         {
-            path: '/design/cards',
+            path: `${this.parentPath}/cards`,
             label: 'Cards',
             component: Cards
         },
         {
-            path: '/design/forms',
+            path: `${this.parentPath}/forms`,
             label: 'Forms',
             component: Forms
         },
         {
-            path: '/design/notifications',
+            path: `${this.parentPath}/notifications`,
             label: 'Notifications',
             component: Notifications
         },
         {
-            path: '/design/tables',
+            path: `${this.parentPath}/tables`,
             label: 'Tables',
             component: Tables
         },
         {
-            path: '/design/headers',
+            path: `${this.parentPath}/headers`,
             label: 'Headers',
             component: Headers
         }
@@ -62,7 +63,7 @@ export class Design extends React.PureComponent<RouteComponentProps> {
 
     render() {
         return (
-            <LeftMenuPage {...this.props} routes={this.routes} parentPath="/design"/>
+            <LeftMenuPage {...this.props} routes={this.routes} parentPath={this.parentPath}/>
         )
     }
 }

@@ -9,16 +9,14 @@ export const MaxWidth = styled.div`
     max-width: ${({theme}) => theme.breakpoints.xl}px;
 `
 
-export const ParagraphWithSpace = styled.div`
+export const Paragraph = styled.div`
     && {
         margin: 0 0 2rem;
     }
 `;
 
-export const ExternalLink = styled.a.attrs({
-    'target': '_blank'
-})`
-    color: ${({theme}) => theme.colors.B5.value};
+export const ExternalLink = styled.a`
+    color: ${({theme}) => theme.colors.B7.value};
     &:hover {
         background: ${({theme}) => theme.colors.B3.value};
     }
