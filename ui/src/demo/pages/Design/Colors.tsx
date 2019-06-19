@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { Headline2, Headline3, BodyJumbo, BodyBig, BodyMicro } from '../../../lib/components';
+import { H2, H3, BodyJumbo, Body, BodyMicro } from '../../../lib/components';
 import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
 import { hexToRgb, convertPixelsToRem } from '../../../lib/utils';
 
@@ -14,24 +14,24 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <React.Fragment>
-                <Headline2WithSpace>Colors</Headline2WithSpace>
+                <PageHeader>Colors</PageHeader>
 
-                <Headline3>Primary</Headline3>
-                <PrimaryTable>
+                <H3>Primary</H3>
+                <PrimaryGrid>
                     {[this.varnishTheme.palette.primary,
                     this.varnishTheme.palette.primary2,
                     this.varnishTheme.palette.primary3,
                     this.varnishTheme.palette.primary4].map((colorInfo: ColorInfo) =>
                         <PrimaryColor key={colorInfo.displayName} colorInfo={colorInfo} />
                     )}
-                </PrimaryTable>
+                </PrimaryGrid>
 
-                <Headline3>Extended</Headline3>
-                <ExtendedTable>
+                <H3>Extended</H3>
+                <ExtendedGrid>
                     {Object.keys(this.varnishTheme.colorGroups).map((group: string) =>
                         <ColorGroup key={group} colorInfos={this.varnishTheme.colorGroups[group]} group={group} />
                     )}
-                </ExtendedTable>
+                </ExtendedGrid>
             </React.Fragment>
         )
     }
@@ -45,14 +45,14 @@ class PrimaryColor extends React.PureComponent<PrimaryColorProps> {
     render() {
         const rgb = hexToRgb(this.props.colorInfo.value);
         return (
-            <PrimaryColorTable>
+            <PrimaryColorGrid>
                 <PrimaryColorBox color={this.props.colorInfo.value} />
                 <PrimaryColorName>{this.props.colorInfo.displayName}</PrimaryColorName>
                 <PrimaryColorHex>{this.props.colorInfo.value}</PrimaryColorHex>
                 {rgb
                     ? <PrimaryColorRgb>{rgb.r}, {rgb.g}, {rgb.b}</PrimaryColorRgb>
                     : null}
-            </PrimaryColorTable>
+            </PrimaryColorGrid>
         )
     }
 }
@@ -97,11 +97,11 @@ class ColorRow extends React.PureComponent<ColorRowProps> {
     }
 }
 
-const Headline2WithSpace = styled(Headline2)`
+const PageHeader = styled(H2)`
     margin-bottom: ${props => `${convertPixelsToRem(65)}rem`};
 `;
 
-const PrimaryTable = styled.div`
+const PrimaryGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: ${props => `0 ${convertPixelsToRem(24)}rem`};
@@ -109,7 +109,7 @@ const PrimaryTable = styled.div`
     margin-top: ${props => `${convertPixelsToRem(23)}rem`};
 `;
 
-const PrimaryColorTable = styled.div`
+const PrimaryColorGrid = styled.div`
     display: grid;
     grid-template-columns: max-content auto max-content;
     align-items: center;
@@ -121,7 +121,7 @@ const PrimaryColorBox = styled.div`
     background: ${(props) => props.color};
     width: 100%;
     height: ${props => `${convertPixelsToRem(76)}rem`};
-    border-radius: 4px 4px 0 0;
+    border-radius: ${({theme}) => `${theme.shape.borderRadius}px ${theme.shape.borderRadius}px 0 0`};
     grid-column: 1 / span 3;
 `;
 
@@ -146,7 +146,7 @@ const PrimaryColorRgb = styled(MicroCol)`
     padding-left: 0;
 `;
 
-const ExtendedTable = styled.div`
+const ExtendedGrid = styled.div`
     display: grid;
     grid-template-columns: max-content repeat(3, auto);
     align-items: center;
@@ -172,7 +172,7 @@ const Label = styled(BodyJumbo)`
     text-transform: capitalize;
 `;
 
-const Col = styled(BodyBig)`
+const Col = styled(Body)`
     padding: ${props => `${convertPixelsToRem(21)}rem 0`};
     display: inline-block;
     border-top: 1px solid ${({theme}) => theme.colors.N4.value};
@@ -182,7 +182,7 @@ const ColorBox = styled.div`
     background: ${(props) => props.color};
     width: ${props => `${convertPixelsToRem(40)}rem`};
     height: ${props => `${convertPixelsToRem(40)}rem`};
-    border-radius: 3px;
+    border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
 `;
 
 const ColorBoxWrapper = styled(Col)`

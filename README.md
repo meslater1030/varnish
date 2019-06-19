@@ -9,11 +9,7 @@ A library of AI2 themed React components.
 
 ## Peer Dependencies
 
-* antd
-* react
-* react-dom
-* react-router-dom
-* styled-components
+Varnish has several peer dependencies which you should install for things to work correctly. You can find them [here](https://github.com/allenai/varnish/blob/master/ui/package.json#L34).
 
 ## Installation
 

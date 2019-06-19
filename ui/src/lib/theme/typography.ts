@@ -14,31 +14,31 @@ const fallbackDefaultCodeFonts = ", 'SFMono-Regular', Consolas, 'Liberation Mono
 
 // headlines
 const headlineFontFamily = 'Raleway';
-const headline1 = {
+const h1 = {
     fontFamily: headlineFontFamily + fallbackDefaultFonts,
     fontSize: `${convertPixelsToRem(46)}rem`,
     lineHeight: `${convertPixelsToRem(50)}rem`,
     fontWeight: fontWeightBold
 };
-const headline2 = {
+const h2 = {
     fontFamily: headlineFontFamily + fallbackDefaultFonts,
     fontSize: `${convertPixelsToRem(36)}rem`,
     lineHeight: `${convertPixelsToRem(40)}rem`,
     fontWeight: fontWeightBold
 };
-const headline3 = {
+const h3 = {
     fontFamily: headlineFontFamily + fallbackDefaultFonts,
     fontSize: `${convertPixelsToRem(24)}rem`,
     lineHeight: `${convertPixelsToRem(28)}rem`,
     fontWeight: fontWeightBold
 };
-const headline4 = {
+const h4 = {
     fontFamily: headlineFontFamily + fallbackDefaultFonts,
     fontSize: `${convertPixelsToRem(18)}rem`,
     lineHeight: `${convertPixelsToRem(22)}rem`,
     fontWeight: fontWeightBold
 };
-const headline5 = {
+const h5 = {
     fontFamily: headlineFontFamily + fallbackDefaultFonts,
     fontSize: `${convertPixelsToRem(13)}rem`,
     lineHeight: `${convertPixelsToRem(18)}rem`,
@@ -52,15 +52,15 @@ const bodyJumbo = {
     fontSize: `${convertPixelsToRem(24)}rem`,
     lineHeight: `${convertPixelsToRem(30)}rem`,
 };
-const bodyBig = {
+const body = {
     fontFamily: bodyFontFamily + fallbackDefaultFonts,
     fontSize: `${convertPixelsToRem(16)}rem`,
     lineHeight: `${convertPixelsToRem(22)}rem`,
 };
-const bodyBigBold = {
-    fontFamily: bodyBig.fontFamily,
-    fontSize: bodyBig.fontSize,
-    lineHeight: bodyBig.lineHeight,
+const bodyBold = {
+    fontFamily: body.fontFamily,
+    fontSize: body.fontSize,
+    lineHeight: body.lineHeight,
     fontWeight: fontWeightBold
 };
 const bodySmall = {
@@ -132,17 +132,17 @@ export const Typography = {
 
     // headlines
     headlineFontFamily,
-    headline1,
-    headline2,
-    headline3,
-    headline4,
-    headline5,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
 
     // body
     bodyFontFamily,
     bodyJumbo,
-    bodyBig,
-    bodyBigBold,
+    body,
+    bodyBold,
     bodySmall,
     bodySmallBold,
     bodyMicro,

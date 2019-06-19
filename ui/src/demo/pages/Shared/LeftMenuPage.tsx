@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
-import * as Antd from 'antd';
 import { Menu } from 'antd';
 
 import { AppRoute } from '../../AppRoute';
@@ -45,10 +44,8 @@ export class LeftMenuPage extends React.PureComponent<RouteComponentProps & Prop
                         </Page>
                     </PaddedContent>
                     <CenteredFooter>
-                        <div>
-                            Proudly built at the
-                            {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
-                        </div>
+                        Proudly built at the
+                        {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
                     </CenteredFooter>
                 </ContentAndFooterArea>
             </TransparentLayout>

@@ -15,6 +15,12 @@ import { AI2Logo,
 export default class Home extends React.PureComponent<RouteComponentProps> {
     routes: AppRoute[] = [
         {
+            path: '/',
+            exact: true,
+            label: 'Welcome',
+            component: About
+        },
+        {
             path: '/design',
             label: 'Design',
             component: Design
@@ -28,11 +34,6 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
             path: '/patterns-and-guides',
             label: 'Patterns and Guides',
             component: PatternsAndGuides
-        },
-        {
-            path: '/about',
-            label: 'About',
-            component: About
         }
     ];
 
@@ -51,9 +52,8 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
                     </TopMenu>
                 </Header>
                 <Switch>
-                    <Redirect from="/" exact to={this.routes[0].path} />
-                    {this.routes.map(({ path, component }) => (
-                        <Route key={path} path={path} component={component} />
+                    {this.routes.map(({ path, exact, component }) => (
+                        <Route key={path} path={path} exact={exact} component={component} />
                     ))}
                 </Switch>
             </TransparentLayout>

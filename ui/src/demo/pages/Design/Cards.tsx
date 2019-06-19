@@ -2,13 +2,13 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { ParagraphWithSpace } from '../../../lib/components';
+import { Paragraph } from '../../../lib/components';
 
 
 export class Cards extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
-            <ParagraphWithSpace>Cards coming soon...</ParagraphWithSpace>
+            <Paragraph>Cards coming soon...</Paragraph>
         )
     }
 }

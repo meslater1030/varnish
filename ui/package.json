@@ -1,6 +1,6 @@
 {
   "name": "@allenai/varnish",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "author": "reviz@allenai.org",
   "license": "Apache-2.0",
   "repository": {
@@ -21,14 +21,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "keywords": [
-    "ai2",
-    "allenai",
-    "allen institute",
-    "artificial intelligence",
-    "ant design",
-    "styled-components"
   ],
   "dependencies": {},
   "peerdependencies": {
@@ -67,16 +59,13 @@
     "eslint-plugin-react": "7.12.4",
     "file-loader": "2.0.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
-    "fs": "^0.0.1-security",
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
     "less": "^3.9.0",
     "less-watch-compiler": "^1.13.0",
     "mini-css-extract-plugin": "0.5.0",
-    "npm": "^6.8.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
-    "path": "^0.12.7",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",

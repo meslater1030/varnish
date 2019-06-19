@@ -2,39 +2,39 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 // headlines
-export const Headline1 = styled.div`
-    font-family: ${({theme}) => theme.typography.headline1.fontFamily};
-    font-size: ${({theme}) => theme.typography.headline1.fontSize};
-    line-height: ${({theme}) => theme.typography.headline1.lineHeight};
-    font-weight: ${({theme}) => theme.typography.headline1.fontWeight};
+export const H1 = styled.div`
+    font-family: ${({theme}) => theme.typography.h1.fontFamily};
+    font-size: ${({theme}) => theme.typography.h1.fontSize};
+    line-height: ${({theme}) => theme.typography.h1.lineHeight};
+    font-weight: ${({theme}) => theme.typography.h1.fontWeight};
 `;
 
-export const Headline2 = styled.div`
-    font-family: ${({theme}) => theme.typography.headline2.fontFamily};
-    font-size: ${({theme}) => theme.typography.headline2.fontSize};
-    line-height: ${({theme}) => theme.typography.headline2.lineHeight};
-    font-weight: ${({theme}) => theme.typography.headline2.fontWeight};
+export const H2 = styled.div`
+    font-family: ${({theme}) => theme.typography.h2.fontFamily};
+    font-size: ${({theme}) => theme.typography.h2.fontSize};
+    line-height: ${({theme}) => theme.typography.h2.lineHeight};
+    font-weight: ${({theme}) => theme.typography.h2.fontWeight};
 `;
 
-export const Headline3 = styled.div`
-    font-family: ${({theme}) => theme.typography.headline3.fontFamily};
-    font-size: ${({theme}) => theme.typography.headline3.fontSize};
-    line-height: ${({theme}) => theme.typography.headline3.lineHeight};
-    font-weight: ${({theme}) => theme.typography.headline3.fontWeight};
+export const H3 = styled.div`
+    font-family: ${({theme}) => theme.typography.h3.fontFamily};
+    font-size: ${({theme}) => theme.typography.h3.fontSize};
+    line-height: ${({theme}) => theme.typography.h3.lineHeight};
+    font-weight: ${({theme}) => theme.typography.h3.fontWeight};
 `;
 
-export const Headline4 = styled.div`
-    font-family: ${({theme}) => theme.typography.headline4.fontFamily};
-    font-size: ${({theme}) => theme.typography.headline4.fontSize};
-    line-height: ${({theme}) => theme.typography.headline4.lineHeight};
-    font-weight: ${({theme}) => theme.typography.headline4.fontWeight};
+export const H4 = styled.div`
+    font-family: ${({theme}) => theme.typography.h4.fontFamily};
+    font-size: ${({theme}) => theme.typography.h4.fontSize};
+    line-height: ${({theme}) => theme.typography.h4.lineHeight};
+    font-weight: ${({theme}) => theme.typography.h4.fontWeight};
 `;
 
-export const Headline5 = styled.div`
-    font-family: ${({theme}) => theme.typography.headline5.fontFamily};
-    font-size: ${({theme}) => theme.typography.headline5.fontSize};
-    line-height: ${({theme}) => theme.typography.headline5.lineHeight};
-    font-weight: ${({theme}) => theme.typography.headline5.fontWeight};
+export const H5 = styled.div`
+    font-family: ${({theme}) => theme.typography.h5.fontFamily};
+    font-size: ${({theme}) => theme.typography.h5.fontSize};
+    line-height: ${({theme}) => theme.typography.h5.lineHeight};
+    font-weight: ${({theme}) => theme.typography.h5.fontWeight};
     text-transform: uppercase;
 `;
 
@@ -46,17 +46,17 @@ export const BodyJumbo = styled.span`
     font-weight: ${({theme}) => theme.typography.bodyJumbo.fontWeight};
 `;
 
-export const BodyBig = styled.span`
-    font-family: ${({theme}) => theme.typography.bodyBig.fontFamily};
-    font-size: ${({theme}) => theme.typography.bodyBig.fontSize};
-    line-height: ${({theme}) => theme.typography.bodyBig.lineHeight};
-    font-weight: ${({theme}) => theme.typography.bodyBig.fontWeight};
+export const Body = styled.span`
+    font-family: ${({theme}) => theme.typography.body.fontFamily};
+    font-size: ${({theme}) => theme.typography.body.fontSize};
+    line-height: ${({theme}) => theme.typography.body.lineHeight};
+    font-weight: ${({theme}) => theme.typography.body.fontWeight};
 `;
-export const BodyBigBold = styled.span`
-    font-family: ${({theme}) => theme.typography.bodyBigBold.fontFamily};
-    font-size: ${({theme}) => theme.typography.bodyBigBold.fontSize};
-    line-height: ${({theme}) => theme.typography.bodyBigBold.lineHeight};
-    font-weight: ${({theme}) => theme.typography.bodyBigBold.fontWeight};
+export const BodyBold = styled.span`
+    font-family: ${({theme}) => theme.typography.bodyBold.fontFamily};
+    font-size: ${({theme}) => theme.typography.bodyBold.fontSize};
+    line-height: ${({theme}) => theme.typography.bodyBold.lineHeight};
+    font-weight: ${({theme}) => theme.typography.bodyBold.fontWeight};
 `;
 
 export const BodySmall = styled.span`

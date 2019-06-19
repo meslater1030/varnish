@@ -58,12 +58,7 @@ local hosts = [
         config.appName + '.' + env + topLevelDomain
 ];
 
-local replicas = (
-    if env == 'prod' then
-        2
-    else
-        1
-);
+local replicas = 1;
 
 // Each app gets it's own namespace
 local namespaceName = config.appName;
@@ -152,7 +147,6 @@ local readinessProbe = {
 local livenessProbe = {
     failureThreshold: 3,
     periodSeconds: 10,
-    initialDelaySeconds: 30,  // Use a longer delay if your app loads a large model.
     httpGet: {
         path: '/health?check=liveness',
         port: config.httpPort,
@@ -167,6 +161,9 @@ local deployment = {
         labels: labels,
         name: fullyQualifiedName,
         namespace: namespaceName,
+        annotations: {
+            "kubernetes.io/change-cause": sha
+        },
     },
     spec: {
         revisionHistoryLimit: 3,
@@ -189,11 +186,11 @@ local deployment = {
                             requests: {
                                 // Our machines currently have 2 vCPUs, so this
                                 // will allow 4 apps to run per machine
-                                cpu: '0.5',
+                                cpu: '0.1',
                                 // Each machine has 13 GB of RAM. We target 4
                                 // apps per machine, so we reserve 3 GB of RAM
                                 // for each (whether they use it our not).
-                                memory: '3Gi'
+                                memory: '100Mi'
                             }
                         },
                         env: [

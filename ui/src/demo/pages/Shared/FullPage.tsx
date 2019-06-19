@@ -24,10 +24,8 @@ export class FullPage extends React.PureComponent<RouteComponentProps & Props> {
                     </Page>
                 </PaddedContent>
                 <CenteredFooter>
-                    <div>
-                        Proudly built at the
-                        {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
-                    </div>
+                    Proudly built at the
+                    {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
                 </CenteredFooter>
             </TransparentLayout>
         )
