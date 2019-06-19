@@ -82,18 +82,18 @@ const template =`
     // default media breakpoint sizes
     @media (max-width: ${Breakpoints.lg}px) {
         html {
-            font-size: ${14/16}%;
+            font-size: ${100 * 14/16}%;
         }
     }
     @media (max-width: ${Breakpoints.sm}px) {
         html {
-            font-size: ${12/16}%;
+            font-size: ${100 * 12/16}%;
         }
     }
 `;
 
 // All paths are relative to package.json.
-const outputFile = './src/lib/theme/theme-overrides.less';
+const outputFile = './public/theme-overrides.less';
 
 // Then generate
 console.log('Generating pages...');
