@@ -36,7 +36,7 @@ A library of AI2 themed React components.
     import React from 'react';
     import ReactDOM from 'react-dom';
     // Import the parts of Varnish you want. At minimum, you need to import the ThemeProvider
-    import { ThemeProvider } from '../lib';
+    import { ThemeProvider } from '@allenai/varnish/theme';
 
     // Wrap your App with the Varnish ThemeProvider
     const VarnishApp =  () => (
@@ -88,6 +88,12 @@ A library of AI2 themed React components.
 
         ```bash
         yarn build
+        ```
+
+    1. Move lib files to dist folder
+
+        ```bash
+        yarn prepare-npm
         ```
 
     1. Publish to npm from the dist folder

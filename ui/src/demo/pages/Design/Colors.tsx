@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { Headline2, Headline3, BodyJumbo, BodyBig, BodyMicro } from '../../../lib/components';
-import { DefaultVarnishTheme, ColorInfo } from '../../../lib';
+import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
 import { hexToRgb, convertPixelsToRem } from '../../../lib/utils';
 
 

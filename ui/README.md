@@ -36,7 +36,7 @@ A library of AI2 themed React components.
     import React from 'react';
     import ReactDOM from 'react-dom';
     // Import the parts of Varnish you want. At minimum, you need to import the ThemeProvider
-    import { ThemeProvider } from '../lib';
+    import { ThemeProvider } from '@allenai/varnish/theme';
 
     // Wrap your App with the Varnish ThemeProvider
     const VarnishApp =  () => (

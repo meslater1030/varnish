@@ -185,7 +185,7 @@ export const Neutrals = [
     Colors.N10
 ];
 
-interface IndexableColors {
+export interface IndexableColors {
     [key:string]: typeof Reds;
     red: typeof Reds;
     orange: typeof Reds;

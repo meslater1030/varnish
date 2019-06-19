@@ -13,7 +13,7 @@ import {
     Tables,
     Headers
 } from '..';
-import { AppRoute } from '../../../lib';
+import { AppRoute } from '../../AppRoute';
 
 
 export class Design extends React.PureComponent<RouteComponentProps> {

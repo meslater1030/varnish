@@ -5,7 +5,7 @@ import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import * as Antd from 'antd';
 import { Menu } from 'antd';
 
-import { AppRoute } from '../../../lib';
+import { AppRoute } from '../../AppRoute';
 import { ExternalLink,
     TransparentLayout,
     LeftMenu,

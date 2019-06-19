@@ -5,7 +5,7 @@ import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import { Menu } from 'antd';
 
 import { About, Components, Design, PatternsAndGuides } from './pages';
-import { AppRoute } from '../lib';
+import { AppRoute } from './AppRoute';
 import { AI2Logo,
     TransparentLayout,
     Header,

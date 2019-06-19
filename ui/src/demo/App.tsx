@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Home from './Home';
-import { GlobalStyles, ThemeProvider } from '../lib';
+import { GlobalStyles, ThemeProvider } from '../lib/theme';
 
 
 export default class App extends React.PureComponent {

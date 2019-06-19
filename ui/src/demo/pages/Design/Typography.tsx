@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { DefaultVarnishTheme } from '../../../lib';
+import { DefaultVarnishTheme } from '../../../lib/theme';
 import { convertPixelsToRem } from '../../../lib/utils';
 import {
     Headline1,

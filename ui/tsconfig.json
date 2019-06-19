@@ -8,7 +8,6 @@
       "esnext",
       "es2015"
     ],
-    "allowJs": true,
     "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
@@ -23,7 +22,7 @@
     "noEmit": false,
     "jsx": "react",
     "sourceMap": true,
-    "types": ["react", "jest"],
+    "types": ["react"],
     "typeRoots": [
       "./node_modules/@types",
     ]
@@ -37,9 +36,4 @@
       "**/*.test.ts*"
   ]
 }
-
-
-// fix commands to more cleanly deal with tsconfig changes
-// make css build in both paths
-// clean up what is actually shipped
 
