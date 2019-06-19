@@ -12,9 +12,9 @@ export const DefaultVarnishTheme = {
     palette: {
       black: '#000',
       white: '#FFF',
-      primary: Colors.B6,
-      primary2: Colors.B5,
-      primary3: Colors.B4,
+      primary: Colors.B9,
+      primary2: Colors.B8,
+      primary3: Colors.B6,
       primary4: Colors.O6,
       error: Colors.R6
     },
