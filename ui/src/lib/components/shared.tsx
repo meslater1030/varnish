@@ -16,14 +16,6 @@ export const Paragraph = styled.div`
     }
 `;
 
-// TODO: this is a placeholder till i implement links from style guide
-export const ExternalLink = styled.a`
-    color: ${({theme}) => theme.colors.B7.value};
-    &:hover {
-        background: ${({theme}) => theme.colors.B3.value};
-    }
-`;
-
 export const TransparentLayout = styled(Layout)`
     && {
         background: none;

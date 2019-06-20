@@ -3,6 +3,7 @@ import React from 'react';
 import { breakpoints } from './breakpoints';
 import { colors } from './colors';
 import { typography } from './typography';
+import { textLink } from './textLink';
 export type ColorInfo = typeof colors.R1;
 
 export const DefaultVarnishTheme = {
@@ -18,6 +19,7 @@ export const DefaultVarnishTheme = {
       error: colors.R6
     },
     typography,
+    textLink,
     shape: {
       borderRadius: 4
     }

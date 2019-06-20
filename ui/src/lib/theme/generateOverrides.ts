@@ -6,6 +6,7 @@ var process = require('process');
 import { breakpoints } from './breakpoints';
 import { colors } from './colors';
 import { typography } from './typography';
+import { textLink } from './textLink';
 
 console.log('Generating less overrides...');
 
@@ -53,6 +54,7 @@ const template =`
         font-size: ${typography.h5.fontSize};
         line-height: ${typography.h5.lineHeight};
         font-weight: ${typography.h5.fontWeight};
+        text-transform: uppercase;
     }
 
     // default media breakpoint sizes
@@ -123,11 +125,11 @@ const template =`
     @alert-error-icon-color: @error-color;
 
     // link overrides to ant design variables
-    @link-color: ${colors.B7.value};
-    @link-hover-color: @link-color;
-    @link-active-color: @link-color;
-    @link-decoration: none;
-    @link-hover-decoration: underline;
+    @link-color: ${textLink.color.value};
+    @link-hover-color: ${textLink.hoverColor.value};
+    @link-active-color: ${textLink.activeColor.value};
+    @link-decoration: ${textLink.decoration};
+    @link-hover-decoration: ${textLink.hoverDecoration};
 `;
 
 // All paths are relative to package.json.
