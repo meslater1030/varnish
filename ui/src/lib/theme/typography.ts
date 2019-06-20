@@ -1,8 +1,8 @@
-import { convertPixelsToRemStr } from '../utils/base';
+import { convertPixelsToRem } from '../utils/base';
 import { spacing } from './spacing';
 
 // general
-const defaultFontSize = convertPixelsToRemStr(16);
+const defaultFontSize = convertPixelsToRem(16);
 const defaultFontFamily = 'Lato';
 const fontWeightLight = 300;
 const fontWeightRegular = 400;
@@ -18,32 +18,32 @@ const fallbackDefaultCodeFonts = ['SFMono-Regular', 'Consolas', 'Liberation Mono
 const headlineFontFamily = 'Raleway';
 const h1 = {
     fontFamily: [ headlineFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(46),
-    lineHeight: convertPixelsToRemStr(50),
+    fontSize: convertPixelsToRem(46),
+    lineHeight: convertPixelsToRem(50),
     fontWeight: fontWeightBold
 };
 const h2 = {
     fontFamily: [ headlineFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(36),
-    lineHeight: convertPixelsToRemStr(40),
+    fontSize: convertPixelsToRem(36),
+    lineHeight: convertPixelsToRem(40),
     fontWeight: fontWeightBold
 };
 const h3 = {
     fontFamily: [ headlineFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(24),
-    lineHeight: convertPixelsToRemStr(28),
+    fontSize: convertPixelsToRem(24),
+    lineHeight: convertPixelsToRem(28),
     fontWeight: fontWeightBold
 };
 const h4 = {
     fontFamily: [ headlineFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(18),
-    lineHeight: convertPixelsToRemStr(22),
+    fontSize: convertPixelsToRem(18),
+    lineHeight: convertPixelsToRem(22),
     fontWeight: fontWeightBold
 };
 const h5 = {
     fontFamily: [ headlineFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(13),
-    lineHeight: convertPixelsToRemStr(18),
+    fontSize: convertPixelsToRem(13),
+    lineHeight: convertPixelsToRem(18),
     fontWeight: fontWeightMedium
 };
 
@@ -51,13 +51,13 @@ const h5 = {
 const bodyFontFamily = defaultFontFamily;
 const bodyJumbo = {
     fontFamily: [ bodyFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(24),
-    lineHeight: convertPixelsToRemStr(30),
+    fontSize: convertPixelsToRem(24),
+    lineHeight: convertPixelsToRem(30),
 };
 const body = {
     fontFamily: [ bodyFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(16),
-    lineHeight: convertPixelsToRemStr(22),
+    fontSize: convertPixelsToRem(16),
+    lineHeight: convertPixelsToRem(22),
 };
 const bodyBold = {
     fontFamily: body.fontFamily,
@@ -67,8 +67,8 @@ const bodyBold = {
 };
 const bodySmall = {
     fontFamily: [ bodyFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(14),
-    lineHeight: convertPixelsToRemStr(20),
+    fontSize: convertPixelsToRem(14),
+    lineHeight: convertPixelsToRem(20),
 };
 const bodySmallBold = {
     fontFamily: bodySmall.fontFamily,
@@ -78,13 +78,13 @@ const bodySmallBold = {
 };
 const bodyMicro = {
     fontFamily: [ bodyFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(13),
-    lineHeight: convertPixelsToRemStr(18),
+    fontSize: convertPixelsToRem(13),
+    lineHeight: convertPixelsToRem(18),
 };
 const notification = {
     fontFamily: [ bodyFontFamily, ...fallbackDefaultFonts ].join(", "),
-    fontSize: convertPixelsToRemStr(14),
-    lineHeight: convertPixelsToRemStr(18),
+    fontSize: convertPixelsToRem(14),
+    lineHeight: convertPixelsToRem(18),
 };
 const notificationBold = {
     fontFamily: notification.fontFamily,
@@ -97,22 +97,22 @@ const notificationBold = {
 const attributionFontFamily = 'Volkhov';
 const quote = {
   fontFamily: [ attributionFontFamily, ...fallbackDefaultFonts ].join(", "),
-  fontSize: convertPixelsToRemStr(30),
-  lineHeight: convertPixelsToRemStr(42),
+  fontSize: convertPixelsToRem(30),
+  lineHeight: convertPixelsToRem(42),
   fontWeight: fontWeightBold
 };
 const author = {
   fontFamily: [ attributionFontFamily, ...fallbackDefaultFonts ].join(", "),
-  fontSize: convertPixelsToRemStr(18),
-  lineHeight: convertPixelsToRemStr(36),
+  fontSize: convertPixelsToRem(18),
+  lineHeight: convertPixelsToRem(36),
 };
 
 //code
 const codeFontFamily = 'Roboto Mono';
 const code = {
   fontFamily: [ codeFontFamily, ...fallbackDefaultCodeFonts ].join(", "),
-  fontSize: convertPixelsToRemStr(13),
-  lineHeight: convertPixelsToRemStr(18),
+  fontSize: convertPixelsToRem(13),
+  lineHeight: convertPixelsToRem(18),
 };
 const codeDark = {
   fontFamily: code.fontFamily,

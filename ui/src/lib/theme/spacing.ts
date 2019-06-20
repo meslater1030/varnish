@@ -1,10 +1,10 @@
-import { convertPixelsToRemStr } from '../utils/base';
+import { convertPixelsToRem } from '../utils/base';
 
 export const spacing = {
-    xs: convertPixelsToRemStr(8),
-    sm: convertPixelsToRemStr(12),
-    md: convertPixelsToRemStr(16),
-    lg: convertPixelsToRemStr(24),
-    xl: convertPixelsToRemStr(36),
-    xxl: convertPixelsToRemStr(64)
+    xs: convertPixelsToRem(8),
+    sm: convertPixelsToRem(12),
+    md: convertPixelsToRem(16),
+    lg: convertPixelsToRem(24),
+    xl: convertPixelsToRem(36),
+    xxl: convertPixelsToRem(64)
 }

@@ -19,19 +19,17 @@ function getRootFontSize(dynamic = false): number {
 }
 
 // convert rems to px using document font size
-export function convertRemToPxStr(rem: number, dynamic = false): string {
+export function convertRemToPx(rem: number, dynamic = false): string {
     return `${rem * getRootFontSize(dynamic)}px`;
 }
-export function convertRemStrToPxStr(remStr: string, dynamic = false): string {
-    const rem = parseFloat(remStr.slice(0, -3));
-    return convertRemToPxStr(rem, dynamic);
+export function convertRemStrToPx(remStr: string, dynamic = false): string {
+    return convertRemToPx(parseFloat(remStr), dynamic);
 }
 
 // convert px to rems using document font size
-export function convertPixelsToRemStr(px: number, dynamic = false): string {
+export function convertPixelsToRem(px: number, dynamic = false): string {
     return `${px / getRootFontSize(dynamic)}rem`;
 }
-export function convertPixelsStrToRemStr(pxStr: string, dynamic = false): string {
-    const px = parseFloat(pxStr.slice(0, -2));
-    return convertPixelsToRemStr(px, dynamic);
+export function convertPixelsStrToRem(pxStr: string, dynamic = false): string {
+    return convertPixelsToRem(parseFloat(pxStr), dynamic);
 }

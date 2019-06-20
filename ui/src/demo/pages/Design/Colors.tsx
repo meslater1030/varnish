@@ -5,7 +5,7 @@ import { RouteComponentProps } from 'react-router';
 import { PageTitle } from '../Shared';
 import { BodyJumbo, Body, BodyMicro } from '../../../lib/components';
 import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
-import { hexToRgb, convertPixelsToRemStr } from '../../../lib/utils/base';
+import { hexToRgb, convertPixelsToRem } from '../../../lib/utils/base';
 
 const { colorInfo } = DefaultVarnishTheme;
 const colorGroups = {
@@ -213,7 +213,7 @@ const PrimaryColorGrid = styled.div`
 const PrimaryColorBox = styled.div`
     background: ${(props) => props.color};
     width: 100%;
-    height: ${props => convertPixelsToRemStr(76)};
+    height: ${props => convertPixelsToRem(76)};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px ${theme.shape.borderRadius}px 0 0`};
     grid-column: 1 / span 3;
 `;
@@ -273,13 +273,13 @@ const Col = styled(Body)`
 
 const ColorBox = styled.div`
     background: ${(props) => props.color};
-    width: ${props => convertPixelsToRemStr(40)};
-    height: ${props => convertPixelsToRemStr(40)};
+    width: ${props => convertPixelsToRem(40)};
+    height: ${props => convertPixelsToRem(40)};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
 `;
 
 const ColorBoxWrapper = styled(Col)`
-    padding: ${({theme}) => convertPixelsToRemStr(15)};
+    padding: ${({theme}) => convertPixelsToRem(15)};
     grid-column: 1;
 `;
 

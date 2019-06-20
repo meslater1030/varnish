@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 
-import { convertPixelsToRemStr } from '../utils/base';
+import { convertPixelsToRem } from '../utils/base';
 import { spacing } from '../theme/spacing';
 
 
@@ -30,9 +30,9 @@ export const Header = styled(Layout.Header)`
         z-index: 1;
         width: 100%;
         box-shadow: 0px 4px 16px rgba(10, 41, 57, 0.08);
-        padding-top: ${props => convertPixelsToRemStr(10)};
-        padding-bottom: ${props => convertPixelsToRemStr(11)};
-        height: ${props => convertPixelsToRemStr(98)};
+        padding-top: ${props => convertPixelsToRem(10)};
+        padding-bottom: ${props => convertPixelsToRem(11)};
+        height: ${props => convertPixelsToRem(98)};
     }
 `;
 
@@ -40,7 +40,7 @@ export const TopMenu = styled(Menu).attrs({
     mode: "horizontal"
 })`
     && {
-        line-height: ${props => convertPixelsToRemStr(86)};
+        line-height: ${props => convertPixelsToRem(86)};
         float: right;
     }
 `;
@@ -55,7 +55,7 @@ export const LeftSider = styled(Layout.Sider).attrs({
     collapsedWidth: 0
 })`
     && {
-        margin-top: ${props => convertPixelsToRemStr(98)};
+        margin-top: ${props => convertPixelsToRem(98)};
         background: none;
         overflow: auto;
         height: 100vh;
@@ -67,7 +67,7 @@ export const LeftSider = styled(Layout.Sider).attrs({
 export const PaddedContent = styled(Layout.Content)`
     && {
         padding: ${props => `0 ${spacing.xxl}`};
-        margin-top: ${props => convertPixelsToRemStr(98)};
+        margin-top: ${props => convertPixelsToRem(98)};
     }
 `;
 

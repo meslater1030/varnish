@@ -26,7 +26,7 @@
   },
   "include": [
     "./src/react-app-env.d.ts",
-    "./src/lib/**/*", "src/demo/AppRoute.ts"
+    "./src/lib/**/*"
   ],
   "exclude": [
       "node_modules",

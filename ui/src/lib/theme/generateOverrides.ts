@@ -8,7 +8,7 @@ import { color } from './colors';
 import { typography } from './typography';
 import { textLink } from './textLink';
 import { spacing } from './spacing';
-import { convertRemStrToPxStr } from '../utils/base';
+import { convertRemStrToPx } from '../utils/base';
 
 
 console.log('Generating less overrides...');
@@ -136,10 +136,10 @@ const template =`
     @link-hover-decoration: ${textLink.hoverDecoration};
 
     // vertical paddings
-    @padding-lg: ${convertRemStrToPxStr(spacing.lg)}; // containers
-    @padding-md: ${convertRemStrToPxStr(spacing.md)}; // small containers and buttons
-    @padding-sm: ${convertRemStrToPxStr(spacing.sm)}; // Form controls and items
-    @padding-xs: ${convertRemStrToPxStr(spacing.xs)}; // small items
+    @padding-lg: ${spacing.lg}; // containers
+    @padding-md: ${spacing.md}; // small containers and buttons
+    @padding-sm: ${spacing.sm}; // Form controls and items
+    @padding-xs: ${spacing.xs}; // small items
 `;
 
 // All paths are relative to package.json.

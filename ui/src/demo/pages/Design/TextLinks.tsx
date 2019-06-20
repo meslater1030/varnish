@@ -17,26 +17,26 @@ export class TextLinks extends React.PureComponent<RouteComponentProps> {
                     Basic text links come in two styles: light background and dark background.
                 </BodySmall>
                 <SectionDivider />
-                <TextLinkExample isDark={false} />
+                <TextLinkExample inverse={false} />
                 <SectionDivider />
-                <TextLinkExample isDark={true} />
+                <TextLinkExample inverse={true} />
             </React.Fragment>
         )
     }
 }
 
 interface TextLinkExampleProps{
-    isDark: boolean;
+    inverse: boolean;
 }
 class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
     render() {
-        const color = this.props.isDark
+        const color = this.props.inverse
             ? DefaultVarnishTheme.textLink.contrastColor
             : DefaultVarnishTheme.textLink.color;
-        const Text = this.props.isDark ? DarkBody : LightBody;
+        const Text = this.props.inverse ? DarkBody : LightBody;
         return (
             <React.Fragment>
-                <h4>{this.props.isDark ? 'Dark' : 'Light'} background</h4>
+                <h4>{this.props.inverse ? 'Dark' : 'Light'} background</h4>
                 <BodySmall>
                     <ul>
                         <li>Basic text links are defined with the color {color.displayName}.</li>
@@ -46,9 +46,9 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
                 </BodySmall>
                 <Body>Example</Body>
                 <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a molestic
-                    metus. <TextLink dark={this.props.isDark}>Suspendisse pharetra</TextLink>
+                    metus. <TextLink inverse={this.props.inverse}>Suspendisse pharetra</TextLink>
                     lobortis varius. Cras vulputate felis et mauris tincidunt, elementum volutpat
-                    {' '}<TextLink dark={this.props.isDark}>urna euismod</TextLink>. Phasellus
+                    {' '}<TextLink inverse={this.props.inverse}>urna euismod</TextLink>. Phasellus
                     lacinia fringilla sapien. Quisque ac convallis elit, eget fringilla metus.
                 </Text>
             </React.Fragment>
