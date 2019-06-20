@@ -1,23 +1,24 @@
 import React from 'react';
 
 import { breakpoints } from './breakpoints';
-import { colors } from './colors';
+import { color, colorInfo } from './colors';
 import { typography } from './typography';
 import { textLink } from './textLink';
 import { spacing } from './spacing';
-export type ColorInfo = typeof colors.R1;
+export type ColorInfo = typeof color.R1;
 
 export const DefaultVarnishTheme = {
     breakpoints,
-    colors,
+    color,
+    colorInfo,
     palette: {
       black: '#000',
       white: '#FFF',
-      primary: colors.B9,
-      primary2: colors.B8,
-      primary3: colors.B6,
-      primary4: colors.O6,
-      error: colors.R6
+      primary: colorInfo.B9,
+      primary2: colorInfo.B8,
+      primary3: colorInfo.B6,
+      primary4: colorInfo.O6,
+      error: colorInfo.R6
     },
     typography,
     textLink,

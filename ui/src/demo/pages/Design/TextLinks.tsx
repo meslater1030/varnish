@@ -59,7 +59,7 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
 const SectionDivider = styled.div`
     padding-bottom: ${({theme}) => theme.spacing.xl};
     margin-bottom: ${({theme}) => theme.spacing.xl};
-    border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
+    border-bottom: 1px solid ${({theme}) => theme.color.N4};
 `;
 
 const LightBody = styled(BodySmall)`
@@ -69,7 +69,7 @@ const LightBody = styled(BodySmall)`
 `;
 
 const DarkBody = styled(LightBody)`
-    background: ${({theme}) => theme.colors.B9.value};
+    background: ${({theme}) => theme.color.B9};
     padding: ${({theme}) => theme.spacing.md};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
     color: ${({theme}) => theme.palette.white};

@@ -163,7 +163,7 @@ const Grid = styled.div`
 const HeadRow = styled.div`
     grid-column: 1 / span 3;
     padding-bottom: ${({theme}) => theme.spacing.lg};
-    border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
+    border-bottom: 1px solid ${({theme}) => theme.color.N4};
 `;
 
 const Name = styled.div`

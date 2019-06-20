@@ -1,7 +1,7 @@
-import { colors } from './colors';
+import { colorInfo } from './colors';
 
-const color = colors.B7;
-const contrastColor = colors.B4;
+const color = colorInfo.B7;
+const contrastColor = colorInfo.B4;
 
 export const textLink = {
     color: color,

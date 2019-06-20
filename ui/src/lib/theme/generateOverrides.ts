@@ -4,7 +4,7 @@ var fs = require('fs');
 var process = require('process');
 
 import { breakpoints } from './breakpoints';
-import { colors } from './colors';
+import { color } from './colors';
 import { typography } from './typography';
 import { textLink } from './textLink';
 import { spacing } from './spacing';
@@ -32,7 +32,7 @@ const template =`
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: ${typography.h1.fontFamily};
-        color: ${colors.N9.value};
+        color: ${color.N9};
     }
     h1 {
         font-size: ${typography.h1.fontSize};
@@ -76,8 +76,8 @@ const template =`
     // general overrides to ant design variables
     @font-family: ${typography.body.fontFamily};
     @code-family: ${typography.code.fontFamily};
-    @text-color: ${colors.N9.value};
-    @text-color-secondary: ${colors.N7.value};
+    @text-color: ${color.N9};
+    @text-color-secondary: ${color.N7};
 
     // breakpoint overrides to ant design variables
     @screen-xs: ${breakpoints.xs}px;
@@ -88,14 +88,14 @@ const template =`
     @screen-xxl: ${breakpoints.xxl}px;
 
     // color overrides to ant design variables
-    @gold-6: ${colors.O6.value};
-    @blue-6: ${colors.B6.value};
-    @green-6: ${colors.G6.value};
-    @red-6: ${colors.R6.value};
-    @cyan-6: ${colors.T6.value};
-    @purple-6: ${colors.P6.value};
-    @pink-6: ${colors.P6.value};
-    @magenta-6: ${colors.M6.value};
+    @gold-6: ${color.O6};
+    @blue-6: ${color.B6};
+    @green-6: ${color.G6};
+    @red-6: ${color.R6};
+    @cyan-6: ${color.T6};
+    @purple-6: ${color.P6};
+    @pink-6: ${color.P6};
+    @magenta-6: ${color.M6};
     @primary-color: @blue-6; // unchanged values are left in this file for clarity
     @info-color: @blue-6;
     @success-color: @green-6;
@@ -103,29 +103,29 @@ const template =`
     @error-color: @red-6;
     @highlight-color: @red-6;
     @warning-color: @gold-6;
-    @primary-1: ${colors.B1.value};
-    @primary-2: ${colors.B2.value};
-    @primary-3: ${colors.B3.value};
-    @primary-4: ${colors.B4.value};
-    @primary-5: ${colors.B5.value}; // color used to control the text color in many active and hover states
-    @primary-6: ${colors.B6.value}; // color used to control the text color of active buttons
-    @primary-7: ${colors.B7.value};
-    @primary-8: ${colors.B8.value};
-    @primary-9: ${colors.B9.value};
-    @primary-10: ${colors.B10.value};
+    @primary-1: ${color.B1};
+    @primary-2: ${color.B2};
+    @primary-3: ${color.B3};
+    @primary-4: ${color.B4};
+    @primary-5: ${color.B5}; // color used to control the text color in many active and hover states
+    @primary-6: ${color.B6}; // color used to control the text color of active buttons
+    @primary-7: ${color.B7};
+    @primary-8: ${color.B8};
+    @primary-9: ${color.B9};
+    @primary-10: ${color.B10};
 
     // alert overrides to ant design variables
-    @alert-success-border-color: ${colors.G3.value};
-    @alert-success-bg-color: ${colors.G1.value};
+    @alert-success-border-color: ${color.G3};
+    @alert-success-bg-color: ${color.G1};
     @alert-success-icon-color: @success-color;
-    @alert-info-border-color: ${colors.B3.value};
-    @alert-info-bg-color: ${colors.B1.value};
+    @alert-info-border-color: ${color.B3};
+    @alert-info-bg-color: ${color.B1};
     @alert-info-icon-color: @info-color;
-    @alert-warning-border-color: ${colors.O3.value};
-    @alert-warning-bg-color: ${colors.O1.value};
+    @alert-warning-border-color: ${color.O3};
+    @alert-warning-bg-color: ${color.O1};
     @alert-warning-icon-color: @warning-color;
-    @alert-error-border-color: ${colors.R3.value};
-    @alert-error-bg-color: ${colors.R1.value};
+    @alert-error-border-color: ${color.R3};
+    @alert-error-bg-color: ${color.R1};
     @alert-error-icon-color: @error-color;
 
     // link overrides to ant design variables

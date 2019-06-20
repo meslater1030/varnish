@@ -7,103 +7,103 @@ import { BodyJumbo, Body, BodyMicro } from '../../../lib/components';
 import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
 import { hexToRgb, convertPixelsToRemStr } from '../../../lib/utils/base';
 
-const { colors } = DefaultVarnishTheme;
+const { colorInfo } = DefaultVarnishTheme;
 const colorGroups = {
     reds: [
-        colors.R1,
-        colors.R2,
-        colors.R3,
-        colors.R4,
-        colors.R5,
-        colors.R6,
-        colors.R7,
-        colors.R8,
-        colors.R9,
-        colors.R10
+        colorInfo.R1,
+        colorInfo.R2,
+        colorInfo.R3,
+        colorInfo.R4,
+        colorInfo.R5,
+        colorInfo.R6,
+        colorInfo.R7,
+        colorInfo.R8,
+        colorInfo.R9,
+        colorInfo.R10
     ],
     oranges: [
-        colors.O1,
-        colors.O2,
-        colors.O3,
-        colors.O4,
-        colors.O5,
-        colors.O6,
-        colors.O7,
-        colors.O8,
-        colors.O9,
-        colors.O10
+        colorInfo.O1,
+        colorInfo.O2,
+        colorInfo.O3,
+        colorInfo.O4,
+        colorInfo.O5,
+        colorInfo.O6,
+        colorInfo.O7,
+        colorInfo.O8,
+        colorInfo.O9,
+        colorInfo.O10
     ],
     greens: [
-        colors.G1,
-        colors.G2,
-        colors.G3,
-        colors.G4,
-        colors.G5,
-        colors.G6,
-        colors.G7,
-        colors.G8,
-        colors.G9,
-        colors.G10
+        colorInfo.G1,
+        colorInfo.G2,
+        colorInfo.G3,
+        colorInfo.G4,
+        colorInfo.G5,
+        colorInfo.G6,
+        colorInfo.G7,
+        colorInfo.G8,
+        colorInfo.G9,
+        colorInfo.G10
     ],
     teals: [
-        colors.T1,
-        colors.T2,
-        colors.T3,
-        colors.T4,
-        colors.T5,
-        colors.T6,
-        colors.T7,
-        colors.T8,
-        colors.T9,
-        colors.T10
+        colorInfo.T1,
+        colorInfo.T2,
+        colorInfo.T3,
+        colorInfo.T4,
+        colorInfo.T5,
+        colorInfo.T6,
+        colorInfo.T7,
+        colorInfo.T8,
+        colorInfo.T9,
+        colorInfo.T10
     ],
     blues: [
-        colors.B1,
-        colors.B2,
-        colors.B3,
-        colors.B4,
-        colors.B5,
-        colors.B6,
-        colors.B7,
-        colors.B8,
-        colors.B9,
-        colors.B10
+        colorInfo.B1,
+        colorInfo.B2,
+        colorInfo.B3,
+        colorInfo.B4,
+        colorInfo.B5,
+        colorInfo.B6,
+        colorInfo.B7,
+        colorInfo.B8,
+        colorInfo.B9,
+        colorInfo.B10
     ],
     purples: [
-        colors.P1,
-        colors.P2,
-        colors.P3,
-        colors.P4,
-        colors.P5,
-        colors.P6,
-        colors.P7,
-        colors.P8,
-        colors.P9,
-        colors.P10
+        colorInfo.P1,
+        colorInfo.P2,
+        colorInfo.P3,
+        colorInfo.P4,
+        colorInfo.P5,
+        colorInfo.P6,
+        colorInfo.P7,
+        colorInfo.P8,
+        colorInfo.P9,
+        colorInfo.P10
     ],
     magentas: [
-        colors.M1,
-        colors.M2,
-        colors.M3,
-        colors.M4,
-        colors.M5,
-        colors.M6,
-        colors.M7,
-        colors.M8,
-        colors.M9,
-        colors.M10
+        colorInfo.M1,
+        colorInfo.M2,
+        colorInfo.M3,
+        colorInfo.M4,
+        colorInfo.M5,
+        colorInfo.M6,
+        colorInfo.M7,
+        colorInfo.M8,
+        colorInfo.M9,
+        colorInfo.M10
     ],
     neutrals: [
-        colors.N1,
-        colors.N2,
-        colors.N3,
-        colors.N4,
-        colors.N5,
-        colors.N6,
-        colors.N7,
-        colors.N8,
-        colors.N9,
-        colors.N10
+        colorInfo.N1,
+        colorInfo.N2,
+        colorInfo.N3,
+        colorInfo.N4,
+        colorInfo.N5,
+        colorInfo.N6,
+        colorInfo.N7,
+        colorInfo.N8,
+        colorInfo.N9,
+        colorInfo.N10
     ]
 };
 
@@ -219,7 +219,7 @@ const PrimaryColorBox = styled.div`
 `;
 
 const MicroCol = styled(BodyMicro)`
-    background: ${({theme}) => theme.colors.N2.value};
+    background: ${({theme}) => theme.color.N2};
     padding: ${({theme}) => theme.spacing.md};
 `;
 
@@ -268,7 +268,7 @@ const Label = styled(BodyJumbo)`
 const Col = styled(Body)`
     padding: ${({theme}) => `${theme.spacing.lg} 0`};
     display: inline-block;
-    border-top: 1px solid ${({theme}) => theme.colors.N4.value};
+    border-top: 1px solid ${({theme}) => theme.color.N4};
 `;
 
 const ColorBox = styled.div`
