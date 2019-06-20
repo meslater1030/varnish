@@ -1,4 +1,4 @@
-import { convertPixelsToRem } from '../utils';
+import { convertPixelsToRem } from '../utils/base';
 
 // general
 const defaultFontSize = `${convertPixelsToRem(16)}rem`;
