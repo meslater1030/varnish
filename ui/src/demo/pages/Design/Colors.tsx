@@ -2,15 +2,116 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
+import { PageTitle } from '../Shared';
 import { H2, H3, BodyJumbo, Body, BodyMicro } from '../../../lib/components';
-import { DefaultVarnishTheme, ColorInfo, colorGroups } from '../../../lib/theme';
+import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
 import { hexToRgb, convertPixelsToRem } from '../../../lib/utils';
+
+const { colors } = DefaultVarnishTheme;
+const colorGroups = {
+    reds: [
+        colors.R1,
+        colors.R2,
+        colors.R3,
+        colors.R4,
+        colors.R5,
+        colors.R6,
+        colors.R7,
+        colors.R8,
+        colors.R9,
+        colors.R10
+    ],
+    oranges: [
+        colors.O1,
+        colors.O2,
+        colors.O3,
+        colors.O4,
+        colors.O5,
+        colors.O6,
+        colors.O7,
+        colors.O8,
+        colors.O9,
+        colors.O10
+    ],
+    greens: [
+        colors.G1,
+        colors.G2,
+        colors.G3,
+        colors.G4,
+        colors.G5,
+        colors.G6,
+        colors.G7,
+        colors.G8,
+        colors.G9,
+        colors.G10
+    ],
+    teals: [
+        colors.T1,
+        colors.T2,
+        colors.T3,
+        colors.T4,
+        colors.T5,
+        colors.T6,
+        colors.T7,
+        colors.T8,
+        colors.T9,
+        colors.T10
+    ],
+    blues: [
+        colors.B1,
+        colors.B2,
+        colors.B3,
+        colors.B4,
+        colors.B5,
+        colors.B6,
+        colors.B7,
+        colors.B8,
+        colors.B9,
+        colors.B10
+    ],
+    purples: [
+        colors.P1,
+        colors.P2,
+        colors.P3,
+        colors.P4,
+        colors.P5,
+        colors.P6,
+        colors.P7,
+        colors.P8,
+        colors.P9,
+        colors.P10
+    ],
+    magentas: [
+        colors.M1,
+        colors.M2,
+        colors.M3,
+        colors.M4,
+        colors.M5,
+        colors.M6,
+        colors.M7,
+        colors.M8,
+        colors.M9,
+        colors.M10
+    ],
+    neutrals: [
+        colors.N1,
+        colors.N2,
+        colors.N3,
+        colors.N4,
+        colors.N5,
+        colors.N6,
+        colors.N7,
+        colors.N8,
+        colors.N9,
+        colors.N10
+    ]
+};
 
 export class Colors extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <React.Fragment>
-                <PageHeader>Colors</PageHeader>
+                <PageTitle>Colors</PageTitle>
 
                 <H3>Primary</H3>
                 <PrimaryGrid>
@@ -63,7 +164,7 @@ class ColorGroup extends React.PureComponent<ColorGroupProps> {
         return (
         <React.Fragment>
             <ExtendedHeadRow>
-                <Label>{this.props.group}s</Label>
+                <Label>{this.props.group}</Label>
             </ExtendedHeadRow>
             {this.props.colorInfos.reverse().map((col: ColorInfo) => {
                 return col ? <ColorRow key={col.displayName} colorInfo={col}/>
@@ -92,10 +193,6 @@ class ColorRow extends React.PureComponent<ColorRowProps> {
         )
     }
 }
-
-const PageHeader = styled(H2)`
-    margin-bottom: ${props => `${convertPixelsToRem(65)}rem`};
-`;
 
 const PrimaryGrid = styled.div`
     display: grid;

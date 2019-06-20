@@ -23,6 +23,7 @@ import {
     Code,
     CodeDark
 } from '../../../lib/components';
+import { PageTitle } from '../Shared';
 
 export class Typography extends React.PureComponent<RouteComponentProps> {
     aiForGood = 'AI for the Common Good';
@@ -34,7 +35,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <React.Fragment>
-                <H2>Typography</H2>
+                <PageTitle>Typography</PageTitle>
                 <Grid>
                     <HeadRow>
                         <H3>Headlines</H3>
@@ -159,7 +160,6 @@ const Grid = styled.div`
     grid-gap: ${props => `${convertPixelsToRem(48)}rem ${convertPixelsToRem(14)}rem`};
     grid-template-columns: repeat(2, max-content) auto;
     align-items: center;
-    margin-top: ${props => `${convertPixelsToRem(64)}rem`};
 `;
 
 const HeadRow = styled.div`

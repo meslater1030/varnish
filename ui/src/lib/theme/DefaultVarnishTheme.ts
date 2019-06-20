@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { breakpoints } from './breakpoints';
-import { colors, colorGroups } from './colors';
+import { colors } from './colors';
 import { typography } from './typography';
 export type ColorInfo = typeof colors.R1;
 
