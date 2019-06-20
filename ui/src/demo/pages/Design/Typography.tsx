@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { DefaultVarnishTheme } from '../../../lib/theme';
-import { convertPixelsToRem } from '../../../lib/utils';
 import {
     H1,
     H2,
@@ -39,7 +38,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                 <Grid>
                     <HeadRow>
                         <H3>Headlines</H3>
-                        <BodySmall>All headlines use font {DefaultVarnishTheme.typography.hFontFamily}</BodySmall>
+                        <BodySmall>All headlines use font {DefaultVarnishTheme.typography.headlineFontFamily}</BodySmall>
                     </HeadRow>
 
                     <Name>H1</Name>
@@ -157,14 +156,14 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
 
 const Grid = styled.div`
     display: grid;
-    grid-gap: ${props => `${convertPixelsToRem(48)}rem ${convertPixelsToRem(14)}rem`};
+    grid-gap: ${({theme}) => `${theme.spacing.xl} ${theme.spacing.md}`};
     grid-template-columns: repeat(2, max-content) auto;
     align-items: center;
 `;
 
 const HeadRow = styled.div`
     grid-column: 1 / span 3;
-    padding-bottom: ${props => `${convertPixelsToRem(24)}rem`};
+    padding-bottom: ${({theme}) => theme.spacing.lg};
     border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
 `;
 
@@ -180,5 +179,5 @@ const Example = styled.div`
 `;
 
 const Size = styled(BodySmall)`
-    margin-left: ${props => `${convertPixelsToRem(9)}rem`};
+    margin-left: ${({theme}) => theme.spacing.xs};
 `;

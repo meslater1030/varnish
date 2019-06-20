@@ -2,7 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 
-import { convertPixelsToRem } from '../utils';
+import { convertPixelsToRemStr } from '../utils';
+import { spacing } from '../theme/spacing';
 
 
 export const MaxWidth = styled.div`
@@ -29,9 +30,9 @@ export const Header = styled(Layout.Header)`
         z-index: 1;
         width: 100%;
         box-shadow: 0px 4px 16px rgba(10, 41, 57, 0.08);
-        padding-top: ${props => `${convertPixelsToRem(10)}rem`};
-        padding-bottom: ${props => `${convertPixelsToRem(11)}rem`};
-        height: ${props => `${convertPixelsToRem(98)}rem`};
+        padding-top: ${props => convertPixelsToRemStr(10)};
+        padding-bottom: ${props => convertPixelsToRemStr(11)};
+        height: ${props => convertPixelsToRemStr(98)};
     }
 `;
 
@@ -39,7 +40,7 @@ export const TopMenu = styled(Menu).attrs({
     mode: "horizontal"
 })`
     && {
-        line-height: ${props => `${convertPixelsToRem(86)}rem`};
+        line-height: ${props => convertPixelsToRemStr(86)};
         float: right;
     }
 `;
@@ -54,7 +55,7 @@ export const LeftSider = styled(Layout.Sider).attrs({
     collapsedWidth: 0
 })`
     && {
-        margin-top: ${props => `${convertPixelsToRem(98)}rem`};
+        margin-top: ${props => convertPixelsToRemStr(98)};
         background: none;
         overflow: auto;
         height: 100vh;
@@ -65,14 +66,14 @@ export const LeftSider = styled(Layout.Sider).attrs({
 
 export const PaddedContent = styled(Layout.Content)`
     && {
-        padding: ${props => `0 ${convertPixelsToRem(50)}rem`};
-        margin-top: ${props => `${convertPixelsToRem(98)}rem`};
+        padding: ${props => `0 ${spacing.xxl}`};
+        margin-top: ${props => convertPixelsToRemStr(98)};
     }
 `;
 
 export const Page = styled.div`
     background: ${({theme}) => theme.palette.white};
-    padding: ${props => `${convertPixelsToRem(24)}rem`};
+    padding: ${props => spacing.lg};
     border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
 `;
 

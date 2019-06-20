@@ -2,9 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { Paragraph, H3, H4, BodySmall, Body, TextLink, TextLinkContrast } from '../../../lib/components';
+import { H3, H4, BodySmall, Body, TextLink } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
-import { convertPixelsToRem } from '../../../lib/utils';
 import { PageTitle } from '../Shared';
 
 export class TextLinks extends React.PureComponent<RouteComponentProps> {
@@ -58,20 +57,20 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
 }
 
 const SectionDivider = styled.div`
-    padding-bottom: ${props => `${convertPixelsToRem(38)}rem`};
-    margin-bottom: ${props => `${convertPixelsToRem(38)}rem`};
+    padding-bottom: ${({theme}) => theme.spacing.xl};
+    margin-bottom: ${({theme}) => theme.spacing.xl};
     border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
 `;
 
 const LightBody = styled(BodySmall)`
     display: inline-block;
-    padding-right: ${props => `${convertPixelsToRem(32)}rem`};
-    margin-top: ${props => `${convertPixelsToRem(16)}rem`};
+    padding-right: ${({theme}) => theme.spacing.xl};
+    margin-top: ${({theme}) => theme.spacing.md};
 `;
 
 const DarkBody = styled(LightBody)`
     background: ${({theme}) => theme.colors.B9.value};
-    padding: ${props => `${convertPixelsToRem(16)}rem`};
+    padding: ${({theme}) => theme.spacing.md};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
     color: ${({theme}) => theme.palette.white};
 `;

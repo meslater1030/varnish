@@ -44,11 +44,19 @@ function getRootFontSize(dynamic = false): number {
 }
 
 // convert rems to px using document font size
-export function convertRemToPixels(rem: number, dynamic = false): number {
-    return rem * getRootFontSize();
+export function convertRemToPxStr(rem: number, dynamic = false): string {
+    return `${rem * getRootFontSize(dynamic)}px`;
+}
+export function convertRemStrToPxStr(remStr: string, dynamic = false): string {
+    const rem = parseInt(remStr.substring(1, remStr.length-3));
+    return convertRemToPxStr(rem, dynamic);
 }
 
 // convert px to rems using document font size
-export function convertPixelsToRem(px: number): number {
-    return px / getRootFontSize();
+export function convertPixelsToRemStr(px: number, dynamic = false): string {
+    return `${px / getRootFontSize(dynamic)}rem`;
+}
+export function convertPixelsStrToRemStr(pxStr: string, dynamic = false): string {
+    const px = parseInt(pxStr.substring(1, pxStr.length-2));
+    return convertPixelsToRemStr(px, dynamic);
 }

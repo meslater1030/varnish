@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { PageTitle } from '../Shared';
-import { H2, H3, BodyJumbo, Body, BodyMicro } from '../../../lib/components';
+import { H3, BodyJumbo, Body, BodyMicro } from '../../../lib/components';
 import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
-import { hexToRgb, convertPixelsToRem } from '../../../lib/utils';
+import { hexToRgb, convertPixelsToRemStr } from '../../../lib/utils';
 
 const { colors } = DefaultVarnishTheme;
 const colorGroups = {
@@ -197,9 +197,9 @@ class ColorRow extends React.PureComponent<ColorRowProps> {
 const PrimaryGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-gap: ${props => `0 ${convertPixelsToRem(24)}rem`};
+    grid-gap: ${({theme}) => `0 ${theme.spacing.lg}`};
     align-items: center;
-    margin-top: ${props => `${convertPixelsToRem(23)}rem`};
+    margin-top: ${({theme}) => theme.spacing.lg};
 `;
 
 const PrimaryColorGrid = styled.div`
@@ -213,14 +213,14 @@ const PrimaryColorGrid = styled.div`
 const PrimaryColorBox = styled.div`
     background: ${(props) => props.color};
     width: 100%;
-    height: ${props => `${convertPixelsToRem(76)}rem`};
+    height: ${props => convertPixelsToRemStr(76)};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px ${theme.shape.borderRadius}px 0 0`};
     grid-column: 1 / span 3;
 `;
 
 const MicroCol = styled(BodyMicro)`
     background: ${({theme}) => theme.colors.N2.value};
-    padding: ${props => `${convertPixelsToRem(17)}rem`};
+    padding: ${({theme}) => theme.spacing.md};
 `;
 
 const PrimaryColorName = styled(MicroCol)`
@@ -231,7 +231,7 @@ const PrimaryColorName = styled(MicroCol)`
 const PrimaryColorHex = styled(MicroCol)`
     grid-column: 2;
     text-align: center;
-    padding: ${props => `${convertPixelsToRem(17)}rem ${convertPixelsToRem(6)}rem`};
+    padding: ${({theme}) => `${theme.spacing.md} ${theme.spacing.xs}`};
 `;
 
 const PrimaryColorRgb = styled(MicroCol)`
@@ -252,13 +252,13 @@ const ExtendedGrid = styled.div`
         75px repeat(10, auto)
         75px repeat(10, auto)
         75px repeat(10, auto);
-    margin-top: ${props => `${convertPixelsToRem(7)}rem`};
+    margin-top: ${({theme}) => theme.spacing.xs};
 `;
 
 const ExtendedHeadRow = styled.div`
     grid-column: 1 / span 4;
     align-self: end;
-    padding-bottom: ${props => `${convertPixelsToRem(24)}rem`};
+    padding-bottom: ${({theme}) => theme.spacing.lg};
 `;
 
 const Label = styled(BodyJumbo)`
@@ -266,25 +266,25 @@ const Label = styled(BodyJumbo)`
 `;
 
 const Col = styled(Body)`
-    padding: ${props => `${convertPixelsToRem(21)}rem 0`};
+    padding: ${({theme}) => `${theme.spacing.lg} 0`};
     display: inline-block;
     border-top: 1px solid ${({theme}) => theme.colors.N4.value};
 `;
 
 const ColorBox = styled.div`
     background: ${(props) => props.color};
-    width: ${props => `${convertPixelsToRem(40)}rem`};
-    height: ${props => `${convertPixelsToRem(40)}rem`};
+    width: ${props => convertPixelsToRemStr(40)};
+    height: ${props => convertPixelsToRemStr(40)};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
 `;
 
 const ColorBoxWrapper = styled(Col)`
-    padding: ${props => `${convertPixelsToRem(12)}rem`};
+    padding: ${({theme}) => convertPixelsToRemStr(15)};
     grid-column: 1;
 `;
 
 const ColorName = styled(Col)`
-    padding-left: ${props => `${convertPixelsToRem(9)}rem`};
+    padding-left: ${({theme}) => theme.spacing.xs};
     grid-column: 2;
 `;
 

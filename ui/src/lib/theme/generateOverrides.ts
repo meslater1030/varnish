@@ -7,6 +7,9 @@ import { breakpoints } from './breakpoints';
 import { colors } from './colors';
 import { typography } from './typography';
 import { textLink } from './textLink';
+import { spacing } from './spacing';
+import { convertRemStrToPxStr } from '../utils';
+
 
 console.log('Generating less overrides...');
 
@@ -130,6 +133,12 @@ const template =`
     @link-active-color: ${textLink.activeColor.value};
     @link-decoration: ${textLink.decoration};
     @link-hover-decoration: ${textLink.hoverDecoration};
+
+    // vertical paddings
+    @padding-lg: ${convertRemStrToPxStr(spacing.lg)}; // containers
+    @padding-md: ${convertRemStrToPxStr(spacing.md)}; // small containers and buttons
+    @padding-sm: ${convertRemStrToPxStr(spacing.sm)}; // Form controls and items
+    @padding-xs: ${convertRemStrToPxStr(spacing.xs)}; // small items
 `;
 
 // All paths are relative to package.json.
