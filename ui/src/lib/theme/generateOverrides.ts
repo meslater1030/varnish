@@ -8,7 +8,7 @@ import { colors } from './colors';
 import { typography } from './typography';
 import { textLink } from './textLink';
 import { spacing } from './spacing';
-import { convertRemStrToPxStr } from '../utils';
+import { convertRemStrToPxStr } from '../utils/base';
 
 
 console.log('Generating less overrides...');
@@ -32,6 +32,7 @@ const template =`
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: ${typography.h1.fontFamily};
+        color: ${colors.N9.value};
     }
     h1 {
         font-size: ${typography.h1.fontSize};

@@ -2,16 +2,14 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { Paragraph, TextLink, Body, H2 } from '../../../lib/components';
+import { Paragraph, TextLink, Body } from '../../../lib/components';
 import { FullPage } from '../Shared/FullPage'
 
 export class About extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <FullPage {...this.props}>
-                <H2>
-                    Welcome
-                </H2>
+                <h2> Welcome </h2>
                 <br />
                 <Body>
                     <Paragraph>

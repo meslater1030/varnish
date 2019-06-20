@@ -1,43 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-// headlines
-export const H1 = styled.div`
-    font-family: ${({theme}) => theme.typography.h1.fontFamily};
-    font-size: ${({theme}) => theme.typography.h1.fontSize};
-    line-height: ${({theme}) => theme.typography.h1.lineHeight};
-    font-weight: ${({theme}) => theme.typography.h1.fontWeight};
-`;
-
-export const H2 = styled.div`
-    font-family: ${({theme}) => theme.typography.h2.fontFamily};
-    font-size: ${({theme}) => theme.typography.h2.fontSize};
-    line-height: ${({theme}) => theme.typography.h2.lineHeight};
-    font-weight: ${({theme}) => theme.typography.h2.fontWeight};
-`;
-
-export const H3 = styled.div`
-    font-family: ${({theme}) => theme.typography.h3.fontFamily};
-    font-size: ${({theme}) => theme.typography.h3.fontSize};
-    line-height: ${({theme}) => theme.typography.h3.lineHeight};
-    font-weight: ${({theme}) => theme.typography.h3.fontWeight};
-`;
-
-export const H4 = styled.div`
-    font-family: ${({theme}) => theme.typography.h4.fontFamily};
-    font-size: ${({theme}) => theme.typography.h4.fontSize};
-    line-height: ${({theme}) => theme.typography.h4.lineHeight};
-    font-weight: ${({theme}) => theme.typography.h4.fontWeight};
-`;
-
-export const H5 = styled.div`
-    font-family: ${({theme}) => theme.typography.h5.fontFamily};
-    font-size: ${({theme}) => theme.typography.h5.fontSize};
-    line-height: ${({theme}) => theme.typography.h5.lineHeight};
-    font-weight: ${({theme}) => theme.typography.h5.fontWeight};
-    text-transform: uppercase;
-`;
-
 // body
 export const BodyJumbo = styled.span`
     font-family: ${({theme}) => theme.typography.bodyJumbo.fontFamily};

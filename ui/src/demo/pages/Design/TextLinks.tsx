@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { H3, H4, BodySmall, Body, TextLink } from '../../../lib/components';
+import { BodySmall, Body, TextLink } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import { PageTitle } from '../Shared';
 
@@ -12,7 +12,7 @@ export class TextLinks extends React.PureComponent<RouteComponentProps> {
             <React.Fragment>
                 <PageTitle>Text Links</PageTitle>
 
-                <H3>Appearance and Behavor</H3>
+                <h3>Appearance and Behavor</h3>
                 <BodySmall>
                     Basic text links come in two styles: light background and dark background.
                 </BodySmall>
@@ -36,7 +36,7 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
         const Text = this.props.isDark ? DarkBody : LightBody;
         return (
             <React.Fragment>
-                <H4>{this.props.isDark ? 'Dark' : 'Light'} background</H4>
+                <h4>{this.props.isDark ? 'Dark' : 'Light'} background</h4>
                 <BodySmall>
                     <ul>
                         <li>Basic text links are defined with the color {color.displayName}.</li>

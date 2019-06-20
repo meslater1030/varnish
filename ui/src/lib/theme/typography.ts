@@ -120,7 +120,7 @@ const codeDark = {
   lineHeight: code.lineHeight,
   backgroundColorKey: 'N10',
   colorKey: 'N5',
-  padding: spacing.mdlg,
+  padding: spacing.lg,
 };
 
 export const typography = {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 
-import { convertPixelsToRemStr } from '../utils';
+import { convertPixelsToRemStr } from '../utils/base';
 import { spacing } from '../theme/spacing';
 
 

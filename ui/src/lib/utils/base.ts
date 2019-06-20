@@ -1,28 +1,3 @@
-/**
- * Query string values can be strings or an array of strings. This utility
- * retrieves the value if it's a string, or takes the first string if it's an
- * array of strings.
- *
- * If no value is provided, the provided default value is returned.
- *
- * @param {string} value
- * @param {string} defaultValue
- *
- * @returns {string}
- */
-export function unwrap(
-    value: string | string[] | undefined,
-    defaultValue: string = ''
-): string {
-    if (value === undefined) {
-        return defaultValue;
-    } else if (Array.isArray(value)) {
-        return value[0];
-    } else {
-        return value;
-    }
-}
-
 // convert a hex color string to a {r: number, g: number, b:number}
 export function hexToRgb(hex: string) {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -48,7 +23,7 @@ export function convertRemToPxStr(rem: number, dynamic = false): string {
     return `${rem * getRootFontSize(dynamic)}px`;
 }
 export function convertRemStrToPxStr(remStr: string, dynamic = false): string {
-    const rem = parseInt(remStr.substring(1, remStr.length-3));
+    const rem = parseFloat(remStr.slice(0, -3));
     return convertRemToPxStr(rem, dynamic);
 }
 
@@ -57,6 +32,6 @@ export function convertPixelsToRemStr(px: number, dynamic = false): string {
     return `${px / getRootFontSize(dynamic)}rem`;
 }
 export function convertPixelsStrToRemStr(pxStr: string, dynamic = false): string {
-    const px = parseInt(pxStr.substring(1, pxStr.length-2));
+    const px = parseFloat(pxStr.slice(0, -2));
     return convertPixelsToRemStr(px, dynamic);
 }

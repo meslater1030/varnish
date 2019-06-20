@@ -1,4 +1,4 @@
-import { convertPixelsToRemStr } from '../utils';
+import { convertPixelsToRemStr } from '../utils/base';
 
 export const spacing = {
     xs: convertPixelsToRemStr(8),

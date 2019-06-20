@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { PageTitle } from '../Shared';
-import { H3, BodyJumbo, Body, BodyMicro } from '../../../lib/components';
+import { BodyJumbo, Body, BodyMicro } from '../../../lib/components';
 import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
-import { hexToRgb, convertPixelsToRemStr } from '../../../lib/utils';
+import { hexToRgb, convertPixelsToRemStr } from '../../../lib/utils/base';
 
 const { colors } = DefaultVarnishTheme;
 const colorGroups = {
@@ -113,7 +113,7 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
             <React.Fragment>
                 <PageTitle>Colors</PageTitle>
 
-                <H3>Primary</H3>
+                <h3>Primary</h3>
                 <PrimaryGrid>
                     {[DefaultVarnishTheme.palette.primary,
                     DefaultVarnishTheme.palette.primary2,
@@ -123,7 +123,7 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
                     )}
                 </PrimaryGrid>
 
-                <H3>Extended</H3>
+                <h3>Extended</h3>
                 <ExtendedGrid>
                     {Object.keys(colorGroups).map((group: string) =>
                         <ColorGroup key={group} colorInfos={colorGroups[group]} group={group} />

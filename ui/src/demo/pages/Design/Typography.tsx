@@ -4,11 +4,6 @@ import { RouteComponentProps } from 'react-router';
 
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import {
-    H1,
-    H2,
-    H3,
-    H4,
-    H5,
     BodyJumbo,
     Body,
     BodyBold,
@@ -37,42 +32,42 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                 <PageTitle>Typography</PageTitle>
                 <Grid>
                     <HeadRow>
-                        <H3>Headlines</H3>
+                        <h3>Headlines</h3>
                         <BodySmall>All headlines use font {DefaultVarnishTheme.typography.headlineFontFamily}</BodySmall>
                     </HeadRow>
 
-                    <Name>H1</Name>
+                    <Name>h1</Name>
                     <Example>
-                        <H1>{this.aiForGood}</H1>
+                        <h1>{this.aiForGood}</h1>
                         <Size>{DefaultVarnishTheme.typography.h1.fontSize}/{DefaultVarnishTheme.typography.h1.lineHeight}</Size>
                    </Example>
 
-                    <Name>H2</Name>
+                    <Name>h2</Name>
                     <Example>
-                        <H2>{this.aiForGood}</H2>
+                        <h2>{this.aiForGood}</h2>
                         <Size>{DefaultVarnishTheme.typography.h2.fontSize}/{DefaultVarnishTheme.typography.h2.lineHeight}</Size>
                     </Example>
 
-                    <Name>H3</Name>
+                    <Name>h3</Name>
                     <Example>
-                        <H3>{this.aiForGood}</H3>
+                        <h3>{this.aiForGood}</h3>
                         <Size>{DefaultVarnishTheme.typography.h3.fontSize}/{DefaultVarnishTheme.typography.h3.lineHeight}</Size>
                     </Example>
 
-                    <Name>H4</Name>
+                    <Name>h4</Name>
                     <Example>
-                        <H4>{this.aiForGood}</H4>
+                        <h4>{this.aiForGood}</h4>
                         <Size>{DefaultVarnishTheme.typography.h4.fontSize}/{DefaultVarnishTheme.typography.h4.lineHeight}</Size>
                     </Example>
 
-                    <Name>H5</Name>
+                    <Name>h5</Name>
                     <Example>
-                        <H5>{this.aiForGood}</H5>
+                        <h5>{this.aiForGood}</h5>
                         <Size>{DefaultVarnishTheme.typography.h5.fontSize}/{DefaultVarnishTheme.typography.h5.lineHeight}</Size>
                     </Example>
 
                     <HeadRow>
-                        <H3>Body</H3>
+                        <h3>Body</h3>
                         <BodySmall>Body and notification copy uses {DefaultVarnishTheme.typography.bodyFontFamily} Regular and Bold</BodySmall>
                     </HeadRow>
 
@@ -116,7 +111,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     </Example>
 
                     <HeadRow>
-                        <H3>Quotes</H3>
+                        <h3>Quotes</h3>
                         <BodySmall>Quotes and their authors use {DefaultVarnishTheme.typography.attributionFontFamily} Regular</BodySmall>
                     </HeadRow>
 
@@ -133,7 +128,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     </Example>
 
                     <HeadRow>
-                        <H3>Code</H3>
+                        <h3>Code</h3>
                         <BodySmall>Code examples use {DefaultVarnishTheme.typography.codeFontFamily} </BodySmall>
                     </HeadRow>
 
@@ -159,6 +154,10 @@ const Grid = styled.div`
     grid-gap: ${({theme}) => `${theme.spacing.xl} ${theme.spacing.md}`};
     grid-template-columns: repeat(2, max-content) auto;
     align-items: center;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
 `;
 
 const HeadRow = styled.div`
