@@ -49,8 +49,8 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
                 <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a molestic
                     metus. <TextLink dark={this.props.isDark}>Suspendisse pharetra</TextLink>
                     lobortis varius. Cras vulputate felis et mauris tincidunt, elementum volutpat
-                    urna euismod. Phasellus lacinia fringilla sapien. Quisque ac convallis elit,
-                    eget fringilla metus.
+                    {' '}<TextLink dark={this.props.isDark}>urna euismod</TextLink>. Phasellus
+                    lacinia fringilla sapien. Quisque ac convallis elit, eget fringilla metus.
                 </Text>
             </React.Fragment>
         )
