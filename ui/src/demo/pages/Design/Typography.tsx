@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { DefaultVarnishTheme } from '../../../lib/theme';
-import { convertPixelsToRem } from '../../../lib/utils';
 import {
-    H1,
-    H2,
-    H3,
-    H4,
-    H5,
     BodyJumbo,
     Body,
     BodyBold,
@@ -23,6 +17,7 @@ import {
     Code,
     CodeDark
 } from '../../../lib/components';
+import { PageTitle } from '../Shared';
 
 export class Typography extends React.PureComponent<RouteComponentProps> {
     aiForGood = 'AI for the Common Good';
@@ -34,45 +29,45 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <React.Fragment>
-                <H2>Typography</H2>
+                <PageTitle>Typography</PageTitle>
                 <Grid>
                     <HeadRow>
-                        <H3>Headlines</H3>
-                        <BodySmall>All headlines use font {DefaultVarnishTheme.typography.hFontFamily}</BodySmall>
+                        <h3>Headlines</h3>
+                        <BodySmall>All headlines use font {DefaultVarnishTheme.typography.headlineFontFamily}</BodySmall>
                     </HeadRow>
 
-                    <Name>H1</Name>
+                    <Name>h1</Name>
                     <Example>
-                        <H1>{this.aiForGood}</H1>
+                        <h1>{this.aiForGood}</h1>
                         <Size>{DefaultVarnishTheme.typography.h1.fontSize}/{DefaultVarnishTheme.typography.h1.lineHeight}</Size>
                    </Example>
 
-                    <Name>H2</Name>
+                    <Name>h2</Name>
                     <Example>
-                        <H2>{this.aiForGood}</H2>
+                        <h2>{this.aiForGood}</h2>
                         <Size>{DefaultVarnishTheme.typography.h2.fontSize}/{DefaultVarnishTheme.typography.h2.lineHeight}</Size>
                     </Example>
 
-                    <Name>H3</Name>
+                    <Name>h3</Name>
                     <Example>
-                        <H3>{this.aiForGood}</H3>
+                        <h3>{this.aiForGood}</h3>
                         <Size>{DefaultVarnishTheme.typography.h3.fontSize}/{DefaultVarnishTheme.typography.h3.lineHeight}</Size>
                     </Example>
 
-                    <Name>H4</Name>
+                    <Name>h4</Name>
                     <Example>
-                        <H4>{this.aiForGood}</H4>
+                        <h4>{this.aiForGood}</h4>
                         <Size>{DefaultVarnishTheme.typography.h4.fontSize}/{DefaultVarnishTheme.typography.h4.lineHeight}</Size>
                     </Example>
 
-                    <Name>H5</Name>
+                    <Name>h5</Name>
                     <Example>
-                        <H5>{this.aiForGood}</H5>
+                        <h5>{this.aiForGood}</h5>
                         <Size>{DefaultVarnishTheme.typography.h5.fontSize}/{DefaultVarnishTheme.typography.h5.lineHeight}</Size>
                     </Example>
 
                     <HeadRow>
-                        <H3>Body</H3>
+                        <h3>Body</h3>
                         <BodySmall>Body and notification copy uses {DefaultVarnishTheme.typography.bodyFontFamily} Regular and Bold</BodySmall>
                     </HeadRow>
 
@@ -116,7 +111,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     </Example>
 
                     <HeadRow>
-                        <H3>Quotes</H3>
+                        <h3>Quotes</h3>
                         <BodySmall>Quotes and their authors use {DefaultVarnishTheme.typography.attributionFontFamily} Regular</BodySmall>
                     </HeadRow>
 
@@ -133,7 +128,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     </Example>
 
                     <HeadRow>
-                        <H3>Code</H3>
+                        <h3>Code</h3>
                         <BodySmall>Code examples use {DefaultVarnishTheme.typography.codeFontFamily} </BodySmall>
                     </HeadRow>
 
@@ -156,16 +151,19 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
 
 const Grid = styled.div`
     display: grid;
-    grid-gap: ${props => `${convertPixelsToRem(48)}rem ${convertPixelsToRem(14)}rem`};
+    grid-gap: ${({theme}) => `${theme.spacing.xl} ${theme.spacing.md}`};
     grid-template-columns: repeat(2, max-content) auto;
     align-items: center;
-    margin-top: ${props => `${convertPixelsToRem(64)}rem`};
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
 `;
 
 const HeadRow = styled.div`
     grid-column: 1 / span 3;
-    padding-bottom: ${props => `${convertPixelsToRem(24)}rem`};
-    border-bottom: 1px solid ${({theme}) => theme.colors.N4.value};
+    padding-bottom: ${({theme}) => theme.spacing.lg};
+    border-bottom: 1px solid ${({theme}) => theme.palette.border.default};
 `;
 
 const Name = styled.div`
@@ -180,5 +178,5 @@ const Example = styled.div`
 `;
 
 const Size = styled(BodySmall)`
-    margin-left: ${props => `${convertPixelsToRem(9)}rem`};
+    margin-left: ${({theme}) => theme.spacing.sm};
 `;

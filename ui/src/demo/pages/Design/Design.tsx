@@ -5,14 +5,15 @@ import { RouteComponentProps } from 'react-router';
 import {
     Colors,
     Typography,
-    LeftMenuPage,
     Buttons,
     Cards,
+    TextLinks,
     Forms,
     Notifications,
     Tables,
     Headers
 } from '..';
+import {  LeftMenuPage } from '../Shared';
 import { AppRoute } from '../../AppRoute';
 
 
@@ -33,6 +34,11 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/buttons`,
             label: 'Buttons',
             component: Buttons
+        },
+        {
+            path: `${this.parentPath}/text-links`,
+            label: 'Text Links',
+            component: TextLinks
         },
         {
             path: `${this.parentPath}/cards`,

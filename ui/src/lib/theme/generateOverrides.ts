@@ -4,8 +4,12 @@ var fs = require('fs');
 var process = require('process');
 
 import { breakpoints } from './breakpoints';
-import { colors } from './colors';
+import { color } from './colors';
 import { typography } from './typography';
+import { textLink } from './textLink';
+import { spacing } from './spacing';
+import { DefaultVarnishTheme } from './DefaultVarnishTheme';
+
 
 console.log('Generating less overrides...');
 
@@ -28,6 +32,7 @@ const template =`
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: ${typography.h1.fontFamily};
+        color: ${DefaultVarnishTheme.palette.text.primary};
     }
     h1 {
         font-size: ${typography.h1.fontSize};
@@ -53,6 +58,7 @@ const template =`
         font-size: ${typography.h5.fontSize};
         line-height: ${typography.h5.lineHeight};
         font-weight: ${typography.h5.fontWeight};
+        text-transform: uppercase;
     }
 
     // default media breakpoint sizes
@@ -70,8 +76,8 @@ const template =`
     // general overrides to ant design variables
     @font-family: ${typography.body.fontFamily};
     @code-family: ${typography.code.fontFamily};
-    @text-color: ${colors.N9.value};
-    @text-color-secondary: ${colors.N7.value};
+    @text-color: ${DefaultVarnishTheme.palette.text.primary};
+    @text-color-secondary: ${DefaultVarnishTheme.palette.text.secondary};
 
     // breakpoint overrides to ant design variables
     @screen-xs: ${breakpoints.xs}px;
@@ -82,52 +88,58 @@ const template =`
     @screen-xxl: ${breakpoints.xxl}px;
 
     // color overrides to ant design variables
-    @gold-6: ${colors.O6.value};
-    @blue-6: ${colors.B6.value};
-    @green-6: ${colors.G6.value};
-    @red-6: ${colors.R6.value};
-    @cyan-6: ${colors.T6.value};
-    @purple-6: ${colors.P6.value};
-    @pink-6: ${colors.P6.value};
-    @magenta-6: ${colors.M6.value};
+    @gold-6: ${color.O6};
+    @blue-6: ${color.B6};
+    @green-6: ${color.G6};
+    @red-6: ${color.R6};
+    @cyan-6: ${color.T6};
+    @purple-6: ${color.P6};
+    @pink-6: ${color.P6};
+    @magenta-6: ${color.M6};
     @primary-color: @blue-6; // unchanged values are left in this file for clarity
-    @info-color: @blue-6;
-    @success-color: @green-6;
+    @info-color: ${DefaultVarnishTheme.palette.text.info};
+    @success-color: ${DefaultVarnishTheme.palette.text.success};
     @processing-color: @blue-6;
-    @error-color: @red-6;
+    @error-color: ${DefaultVarnishTheme.palette.text.error};
     @highlight-color: @red-6;
-    @warning-color: @gold-6;
-    @primary-1: ${colors.B1.value};
-    @primary-2: ${colors.B2.value};
-    @primary-3: ${colors.B3.value};
-    @primary-4: ${colors.B4.value};
-    @primary-5: ${colors.B5.value}; // color used to control the text color in many active and hover states
-    @primary-6: ${colors.B6.value}; // color used to control the text color of active buttons
-    @primary-7: ${colors.B7.value};
-    @primary-8: ${colors.B8.value};
-    @primary-9: ${colors.B9.value};
-    @primary-10: ${colors.B10.value};
+    @warning-color: ${DefaultVarnishTheme.palette.text.warning};
+    @primary-1: ${color.B1};
+    @primary-2: ${color.B2};
+    @primary-3: ${color.B3};
+    @primary-4: ${color.B4};
+    @primary-5: ${DefaultVarnishTheme.palette.primary.light}; // color used to control the text color in many active and hover states
+    @primary-6: ${DefaultVarnishTheme.palette.primary.main}; // color used to control the text color of active buttons
+    @primary-7: ${color.B7};
+    @primary-8: ${color.B8};
+    @primary-9: ${color.B9};
+    @primary-10: ${color.B10};
 
     // alert overrides to ant design variables
-    @alert-success-border-color: ${colors.G3.value};
-    @alert-success-bg-color: ${colors.G1.value};
+    @alert-success-border-color: ${DefaultVarnishTheme.palette.border.success};
+    @alert-success-bg-color: ${DefaultVarnishTheme.palette.background.success};
     @alert-success-icon-color: @success-color;
-    @alert-info-border-color: ${colors.B3.value};
-    @alert-info-bg-color: ${colors.B1.value};
+    @alert-info-border-color: ${DefaultVarnishTheme.palette.border.info};
+    @alert-info-bg-color: ${DefaultVarnishTheme.palette.background.info};
     @alert-info-icon-color: @info-color;
-    @alert-warning-border-color: ${colors.O3.value};
-    @alert-warning-bg-color: ${colors.O1.value};
+    @alert-warning-border-color: ${DefaultVarnishTheme.palette.border.warning};
+    @alert-warning-bg-color: ${DefaultVarnishTheme.palette.background.warning};
     @alert-warning-icon-color: @warning-color;
-    @alert-error-border-color: ${colors.R3.value};
-    @alert-error-bg-color: ${colors.R1.value};
+    @alert-error-border-color: ${DefaultVarnishTheme.palette.border.error};
+    @alert-error-bg-color: ${DefaultVarnishTheme.palette.background.error};
     @alert-error-icon-color: @error-color;
 
     // link overrides to ant design variables
-    @link-color: ${colors.B7.value};
-    @link-hover-color: @link-color;
-    @link-active-color: @link-color;
-    @link-decoration: none;
-    @link-hover-decoration: underline;
+    @link-color: ${textLink.color};
+    @link-hover-color: ${textLink.hoverColor};
+    @link-active-color: ${textLink.activeColor};
+    @link-decoration: ${textLink.decoration};
+    @link-hover-decoration: ${textLink.hoverDecoration};
+
+    // vertical paddings
+    @padding-lg: ${spacing.lg}; // containers
+    @padding-md: ${spacing.md}; // small containers and buttons
+    @padding-sm: ${spacing.sm}; // Form controls and items
+    @padding-xs: ${spacing.xs}; // small items
 `;
 
 // All paths are relative to package.json.

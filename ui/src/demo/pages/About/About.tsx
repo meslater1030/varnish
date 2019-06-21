@@ -2,51 +2,49 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { Paragraph, ExternalLink, Body, H2 } from '../../../lib/components';
+import { Paragraph, TextLink, Body } from '../../../lib/components';
 import { FullPage } from '../Shared/FullPage'
 
 export class About extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
             <FullPage {...this.props}>
-                <H2>
-                    Welcome
-                </H2>
+                <h2> Welcome </h2>
                 <br />
                 <Body>
                     <Paragraph>
                         This is a demonstration of
-                        {' '}<ExternalLink href="https://github.com/allenai/varnish">Varnish</ExternalLink>,
+                        {' '}<TextLink href="https://github.com/allenai/varnish">Varnish</TextLink>,
                         a custom theme provider for both
-                        {' '}<ExternalLink href="https://ant.design">Ant Design</ExternalLink>
+                        {' '}<TextLink href="https://ant.design">Ant Design</TextLink>
                         and
-                        {' '}<ExternalLink href="https://www.styled-components.com/">Styled-Components</ExternalLink>.
+                        {' '}<TextLink href="https://www.styled-components.com/">Styled-Components</TextLink>.
                     </Paragraph>
                     <Paragraph>
                         Varnish provides common AI2 Styled-Components, components, and utilities.
                     </Paragraph>
                     <Paragraph>
                         Varnish is derived from the
-                        {' '}<ExternalLink href="https://github.com/allenai/skiff-template">Skiff Template</ExternalLink>.
-                        Skiff provides a <ExternalLink href="https://www.python.org/">Python</ExternalLink>
+                        {' '}<TextLink href="https://github.com/allenai/skiff-template">Skiff Template</TextLink>.
+                        Skiff provides a <TextLink href="https://www.python.org/">Python</TextLink>
                         {' '}based API and a UI constructed with
-                        {' '}<ExternalLink href="https://www.typescriptlang.org/">TypeScript</ExternalLink>,
-                        {' '}<ExternalLink href="https://reactjs.org/">ReactJS</ExternalLink>,
-                        and <ExternalLink href="https://ant.design/">Ant Design</ExternalLink>.
+                        {' '}<TextLink href="https://www.typescriptlang.org/">TypeScript</TextLink>,
+                        {' '}<TextLink href="https://reactjs.org/">ReactJS</TextLink>,
+                        and <TextLink href="https://ant.design/">Ant Design</TextLink>.
                     </Paragraph>
                     <Paragraph>
                         It is deployed to a Google managed Kubernetes cluster and provides
                         DNS, log aggregation, TLS and other capabilties out of the box,
                         thanks to the
-                        {' '}<ExternalLink href="https://github.com/allenai/skiff">Skiff</ExternalLink>
+                        {' '}<TextLink href="https://github.com/allenai/skiff">Skiff</TextLink>
                         {' '}project.
                     </Paragraph>
                     <Paragraph>
                         If you have any questions, concerns or feedback please don't
                         hesitate to reach out. You can open a
-                        {' '}<ExternalLink href="https://github.com/allenai/skiff-template/issues/new">Github Issue</ExternalLink>
+                        {' '}<TextLink href="https://github.com/allenai/skiff-template/issues/new">Github Issue</TextLink>
                         {' '}or contact us at
-                        {' '}<ExternalLink href="mailto:reviz@allenai.org">reviz@allenai.org</ExternalLink>.
+                        {' '}<TextLink href="mailto:reviz@allenai.org">reviz@allenai.org</TextLink>.
                     </Paragraph>
                 </Body>
             </FullPage>

@@ -8,8 +8,9 @@ paths=(
     "./src/lib/theme/breakpoints.js"
     "./src/lib/theme/colors.js"
     "./src/lib/theme/typography.js"
+    "./src/lib/theme/spacing.js"
+    "./src/lib/theme/textLink.js"
     "./src/lib/theme/generateOverrides.js"
-    "./src/lib/utils/index.js"
     "./src/lib/utils/base.js"
 )
 for path in "${paths[@]}"

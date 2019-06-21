@@ -1,208 +1,113 @@
-export const colors = {
-    R1: {displayName: 'R1', value: '#FFF2F2'},
-    R2: {displayName: 'R2', value: '#FFE1E0'},
-    R3: {displayName: 'R3', value: '#FDC1C0'},
-    R4: {displayName: 'R4', value: '#FF9F9E'},
-    R5: {displayName: 'R5', value: '#F9807F'},
-    R6: {displayName: 'R6 (Base)', value: '#F7605F'},
-    R7: {displayName: 'R7', value: '#E7504F'},
-    R8: {displayName: 'R8', value: '#D63F3F'},
-    R9: {displayName: 'R9', value: '#BF2D2D'},
-    R10: {displayName: 'R10', value: '#932222'},
-    O1: {displayName: 'O1', value: '#FFF9E8'},
-    O2: {displayName: 'O2', value: '#FFECC7'},
-    O3: {displayName: 'O3', value: '#FFDEAB'},
-    O4: {displayName: 'O4', value: '#FFCF8F'},
-    O5: {displayName: 'O5', value: '#FFC173'},
-    O6: {displayName: 'O6 (Base)', value: '#FFB257'},
-    O7: {displayName: 'O7', value: '#F4983B'},
-    O8: {displayName: 'O8', value: '#E87F1E'},
-    O9: {displayName: 'O9', value: '#DD6502'},
-    O10: {displayName: 'O10', value: '#A94006'},
-    G1: {displayName: 'G1', value: '#E4FFF7'},
-    G2: {displayName: 'G2', value: '#C1F7E6'},
-    G3: {displayName: 'G3', value: '#98EAD0'},
-    G4: {displayName: 'G4', value: '#70DDBA'},
-    G5: {displayName: 'G5', value: '#47CFA4'},
-    G6: {displayName: 'G6 (Base)', value: '#1EC28E'},
-    G7: {displayName: 'G7', value: '#14A87D'},
-    G8: {displayName: 'G8', value: '#0A8F6B'},
-    G9: {displayName: 'G9', value: '#00755A'},
-    G10: {displayName: 'G10', value: '#005340'},
-    T1: {displayName: 'T1', value: '#E6FDFE'},
-    T2: {displayName: 'T2', value: '#C6F3F6'},
-    T3: {displayName: 'T3', value: '#9AE7EC'},
-    T4: {displayName: 'T4', value: '#6EDCE3'},
-    T5: {displayName: 'T5', value: '#42D0D9'},
-    T6: {displayName: 'T6 (Base)', value: '#16C4CF'},
-    T7: {displayName: 'T7', value: '#0FA9B6'},
-    T8: {displayName: 'T8', value: '#078E9E'},
-    T9: {displayName: 'T9', value: '#007385'},
-    T10: {displayName: 'T10', value: '#004752'},
-    B1: {displayName: 'B1', value: '#F1FAFF'},
-    B2: {displayName: 'B2', value: '#D9F1FF'},
-    B3: {displayName: 'B3', value: '#A6DEF6'},
-    B4: {displayName: 'B4', value: '#7FD1F1'},
-    B5: {displayName: 'B5', value: '#59C3EB'},
-    B6: {displayName: 'B6 (Base)', value: '#32B6E5'},
-    B7: {displayName: 'B7', value: '#2496CB'},
-    B8: {displayName: 'B8', value: '#1576B0'},
-    B9: {displayName: 'B9', value: '#08426C'},
-    B10: {displayName: 'B10', value: '#052C47'},
-    P1: {displayName: 'P1', value: '##F8F7FD'},
-    P2: {displayName: 'P2', value: '#E6E3F7'},
-    P3: {displayName: 'P3', value: '#CFC9F1'},
-    P4: {displayName: 'P4', value: '#B7AFEB'},
-    P5: {displayName: 'P5', value: '#A094E4'},
-    P6: {displayName: 'P6 (Base)', value: '#887ADE'},
-    P7: {displayName: 'P7', value: '#7265C1'},
-    P8: {displayName: 'P8', value: '#5C50A4'},
-    P9: {displayName: 'P9', value: '#463B87'},
-    P10: {displayName: 'P10', value: '#271F55'},
-    M1: {displayName: 'M1', value: '#FDF7FC'},
-    M2: {displayName: 'M2', value: '#F6DFF3'},
-    M3: {displayName: 'M3', value: '#EFC0E8'},
-    M4: {displayName: 'M4', value: '#E7A2DE'},
-    M5: {displayName: 'M5', value: '#E083D3'},
-    M6: {displayName: 'M6 (Base)', value: '#D864C9'},
-    M7: {displayName: 'M7', value: '#BE54B0'},
-    M8: {displayName: 'M8', value: '#802579'},
-    M9: {displayName: 'M9', value: '#8A337E'},
-    M10: {displayName: 'M10', value: '#65295D'},
-    N1: {displayName: 'N1', value: '#FFFFFF'},
-    N2: {displayName: 'N2', value: '#F9FAFA'},
-    N3: {displayName: 'N3', value: '#F4F5F6'},
-    N4: {displayName: 'N4', value: '#E9EAED'},
-    N5: {displayName: 'N5', value: '#D4D7DD'},
-    N6: {displayName: 'N6 (Base)', value: '#AFB4BD'},
-    N7: {displayName: 'N7', value: '#8D939C'},
-    N8: {displayName: 'N8', value: '#666D74'},
-    N9: {displayName: 'N9', value: '#4C5258'},
-    N10: {displayName: 'N10', value: '#333A3E'}
-};
-
-export const red = [
-    colors.R1,
-    colors.R2,
-    colors.R3,
-    colors.R4,
-    colors.R5,
-    colors.R6,
-    colors.R7,
-    colors.R8,
-    colors.R9,
-    colors.R10
-];
-
-export const orange = [
-    colors.O1,
-    colors.O2,
-    colors.O3,
-    colors.O4,
-    colors.O5,
-    colors.O6,
-    colors.O7,
-    colors.O8,
-    colors.O9,
-    colors.O10
-];
-
-export const green = [
-    colors.G1,
-    colors.G2,
-    colors.G3,
-    colors.G4,
-    colors.G5,
-    colors.G6,
-    colors.G7,
-    colors.G8,
-    colors.G9,
-    colors.G10
-];
-
-export const teal = [
-    colors.T1,
-    colors.T2,
-    colors.T3,
-    colors.T4,
-    colors.T5,
-    colors.T6,
-    colors.T7,
-    colors.T8,
-    colors.T9,
-    colors.T10
-];
-
-export const blue = [
-    colors.B1,
-    colors.B2,
-    colors.B3,
-    colors.B4,
-    colors.B5,
-    colors.B6,
-    colors.B7,
-    colors.B8,
-    colors.B9,
-    colors.B10
-];
-
-export const purple = [
-    colors.P1,
-    colors.P2,
-    colors.P3,
-    colors.P4,
-    colors.P5,
-    colors.P6,
-    colors.P7,
-    colors.P8,
-    colors.P9,
-    colors.P10
-];
-
-export const magenta = [
-    colors.M1,
-    colors.M2,
-    colors.M3,
-    colors.M4,
-    colors.M5,
-    colors.M6,
-    colors.M7,
-    colors.M8,
-    colors.M9,
-    colors.M10
-];
-
-export const neutral = [
-    colors.N1,
-    colors.N2,
-    colors.N3,
-    colors.N4,
-    colors.N5,
-    colors.N6,
-    colors.N7,
-    colors.N8,
-    colors.N9,
-    colors.N10
-];
-
-export interface IndexableColors {
-    [key:string]: typeof red;
-    red: typeof red;
-    orange: typeof red;
-    green: typeof red;
-    teal: typeof red;
-    blue: typeof red;
-    purple: typeof red;
-    magenta: typeof red;
-    neutral: typeof red;
+export class RGB {
+    constructor(public r: number, public g: number, public b: number) {}
+    toString() {
+        return `rgb(${this.r},${this.g},${this.b})`;
+    }
 }
-export const colorGroups: IndexableColors = {
-    red,
-    orange,
-    green,
-    teal,
-    blue,
-    purple,
-    magenta,
-    neutral
+
+export class Color {
+    public rgb?: RGB;
+    constructor(public displayName: string, public hex: string) {
+        this.hex = hex.toUpperCase();
+        this.rgb = hexToRgb(hex);
+    }
+    toString() {
+        return this.hex;
+    }
+}
+
+// convert a hex color string to a RGB
+function hexToRgb(hex: string): RGB|undefined {
+    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+    ? new RGB(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16))
+    : undefined;
+}
+
+export const color = {
+    R1: new Color('R1', '#FFF2F2'),
+    R2: new Color('R2', '#FFE1E0'),
+    R3: new Color('R3', '#FDC1C0'),
+    R4: new Color('R4', '#FF9F9E'),
+    R5: new Color('R5', '#F9807F'),
+    R6: new Color('R6 (Base)', '#F7605F'),
+    R7: new Color('R7', '#E7504F'),
+    R8: new Color('R8', '#D63F3F'),
+    R9: new Color('R9', '#BF2D2D'),
+    R10: new Color('R10', '#932222'),
+    O1: new Color('O1', '#FFF9E8'),
+    O2: new Color('O2', '#FFECC7'),
+    O3: new Color('O3', '#FFDEAB'),
+    O4: new Color('O4', '#FFCF8F'),
+    O5: new Color('O5', '#FFC173'),
+    O6: new Color('O6 (Base)', '#FFB257'),
+    O7: new Color('O7', '#F4983B'),
+    O8: new Color('O8', '#E87F1E'),
+    O9: new Color('O9', '#DD6502'),
+    O10: new Color('O10', '#A94006'),
+    G1: new Color('G1', '#E4FFF7'),
+    G2: new Color('G2', '#C1F7E6'),
+    G3: new Color('G3', '#98EAD0'),
+    G4: new Color('G4', '#70DDBA'),
+    G5: new Color('G5', '#47CFA4'),
+    G6: new Color('G6 (Base)', '#1EC28E'),
+    G7: new Color('G7', '#14A87D'),
+    G8: new Color('G8', '#0A8F6B'),
+    G9: new Color('G9', '#00755A'),
+    G10: new Color('G10', '#005340'),
+    T1: new Color('T1', '#E6FDFE'),
+    T2: new Color('T2', '#C6F3F6'),
+    T3: new Color('T3', '#9AE7EC'),
+    T4: new Color('T4', '#6EDCE3'),
+    T5: new Color('T5', '#42D0D9'),
+    T6: new Color('T6 (Base)', '#16C4CF'),
+    T7: new Color('T7', '#0FA9B6'),
+    T8: new Color('T8', '#078E9E'),
+    T9: new Color('T9', '#007385'),
+    T10: new Color('T10', '#004752'),
+    B1: new Color('B1', '#F1FAFF'),
+    B2: new Color('B2', '#D9F1FF'),
+    B3: new Color('B3', '#A6DEF6'),
+    B4: new Color('B4', '#7FD1F1'),
+    B5: new Color('B5', '#59C3EB'),
+    B6: new Color('B6 (Base)', '#32B6E5'),
+    B7: new Color('B7', '#2496CB'),
+    B8: new Color('B8', '#1576B0'),
+    B9: new Color('B9', '#08426C'),
+    B10: new Color('B10', '#052C47'),
+    P1: new Color('P1', '##F8F7FD'),
+    P2: new Color('P2', '#E6E3F7'),
+    P3: new Color('P3', '#CFC9F1'),
+    P4: new Color('P4', '#B7AFEB'),
+    P5: new Color('P5', '#A094E4'),
+    P6: new Color('P6 (Base)', '#887ADE'),
+    P7: new Color('P7', '#7265C1'),
+    P8: new Color('P8', '#5C50A4'),
+    P9: new Color('P9', '#463B87'),
+    P10: new Color('P10', '#271F55'),
+    M1: new Color('M1', '#FDF7FC'),
+    M2: new Color('M2', '#F6DFF3'),
+    M3: new Color('M3', '#EFC0E8'),
+    M4: new Color('M4', '#E7A2DE'),
+    M5: new Color('M5', '#E083D3'),
+    M6: new Color('M6 (Base)', '#D864C9'),
+    M7: new Color('M7', '#BE54B0'),
+    M8: new Color('M8', '#802579'),
+    M9: new Color('M9', '#8A337E'),
+    M10: new Color('M10', '#65295D'),
+    N1: new Color('N1', '#FFFFFF'),
+    N2: new Color('N2', '#F9FAFA'),
+    N3: new Color('N3', '#F4F5F6'),
+    N4: new Color('N4', '#E9EAED'),
+    N5: new Color('N5', '#D4D7DD'),
+    N6: new Color('N6 (Base)', '#AFB4BD'),
+    N7: new Color('N7', '#8D939C'),
+    N8: new Color('N8', '#666D74'),
+    N9: new Color('N9', '#4C5258'),
+    N10: new Color('N10', '#333A3E')
 };
