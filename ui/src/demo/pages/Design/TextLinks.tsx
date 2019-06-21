@@ -47,9 +47,10 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
                 <Body>Example</Body>
                 <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a molestic
                     metus. <TextLink inverse={this.props.inverse}>Suspendisse pharetra</TextLink>
-                    lobortis varius. Cras vulputate felis et mauris tincidunt, elementum volutpat
-                    {' '}<TextLink inverse={this.props.inverse}>urna euismod</TextLink>. Phasellus
-                    lacinia fringilla sapien. Quisque ac convallis elit, eget fringilla metus.
+                    {' '}lobortis varius. Cras vulputate felis et mauris tincidunt, elementum
+                    volutpat <TextLink inverse={this.props.inverse}>urna euismod</TextLink>.
+                    Phasellus lacinia fringilla sapien. Quisque ac convallis elit, eget fringilla
+                    metus.
                 </Text>
             </React.Fragment>
         )
@@ -59,7 +60,7 @@ class TextLinkExample extends React.PureComponent<TextLinkExampleProps> {
 const SectionDivider = styled.div`
     padding-bottom: ${({theme}) => theme.spacing.xl};
     margin-bottom: ${({theme}) => theme.spacing.xl};
-    border-bottom: 1px solid ${({theme}) => theme.color.N4};
+    border-bottom: 1px solid ${({theme}) => theme.palette.border.default};
 `;
 
 const LightBody = styled(BodySmall)`
@@ -69,8 +70,8 @@ const LightBody = styled(BodySmall)`
 `;
 
 const DarkBody = styled(LightBody)`
-    background: ${({theme}) => theme.color.B9};
+    background: ${({theme}) => theme.palette.background.dark};
     padding: ${({theme}) => theme.spacing.md};
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
-    color: ${({theme}) => theme.palette.white};
+    color: ${({theme}) => theme.palette.common.white};
 `;

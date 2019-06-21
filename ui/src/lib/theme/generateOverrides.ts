@@ -8,7 +8,7 @@ import { color } from './colors';
 import { typography } from './typography';
 import { textLink } from './textLink';
 import { spacing } from './spacing';
-import { convertRemStrToPx } from '../utils/base';
+import { DefaultVarnishTheme } from './DefaultVarnishTheme';
 
 
 console.log('Generating less overrides...');
@@ -32,7 +32,7 @@ const template =`
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: ${typography.h1.fontFamily};
-        color: ${color.N9};
+        color: ${DefaultVarnishTheme.palette.text.primary};
     }
     h1 {
         font-size: ${typography.h1.fontSize};
@@ -76,8 +76,8 @@ const template =`
     // general overrides to ant design variables
     @font-family: ${typography.body.fontFamily};
     @code-family: ${typography.code.fontFamily};
-    @text-color: ${color.N9};
-    @text-color-secondary: ${color.N7};
+    @text-color: ${DefaultVarnishTheme.palette.text.primary};
+    @text-color-secondary: ${DefaultVarnishTheme.palette.text.secondary};
 
     // breakpoint overrides to ant design variables
     @screen-xs: ${breakpoints.xs}px;
@@ -97,41 +97,41 @@ const template =`
     @pink-6: ${color.P6};
     @magenta-6: ${color.M6};
     @primary-color: @blue-6; // unchanged values are left in this file for clarity
-    @info-color: @blue-6;
-    @success-color: @green-6;
+    @info-color: ${DefaultVarnishTheme.palette.text.info};
+    @success-color: ${DefaultVarnishTheme.palette.text.success};
     @processing-color: @blue-6;
-    @error-color: @red-6;
+    @error-color: ${DefaultVarnishTheme.palette.text.error};
     @highlight-color: @red-6;
-    @warning-color: @gold-6;
+    @warning-color: ${DefaultVarnishTheme.palette.text.warning};
     @primary-1: ${color.B1};
     @primary-2: ${color.B2};
     @primary-3: ${color.B3};
     @primary-4: ${color.B4};
-    @primary-5: ${color.B5}; // color used to control the text color in many active and hover states
-    @primary-6: ${color.B6}; // color used to control the text color of active buttons
+    @primary-5: ${DefaultVarnishTheme.palette.primary.light}; // color used to control the text color in many active and hover states
+    @primary-6: ${DefaultVarnishTheme.palette.primary.main}; // color used to control the text color of active buttons
     @primary-7: ${color.B7};
     @primary-8: ${color.B8};
     @primary-9: ${color.B9};
     @primary-10: ${color.B10};
 
     // alert overrides to ant design variables
-    @alert-success-border-color: ${color.G3};
-    @alert-success-bg-color: ${color.G1};
+    @alert-success-border-color: ${DefaultVarnishTheme.palette.border.success};
+    @alert-success-bg-color: ${DefaultVarnishTheme.palette.background.success};
     @alert-success-icon-color: @success-color;
-    @alert-info-border-color: ${color.B3};
-    @alert-info-bg-color: ${color.B1};
+    @alert-info-border-color: ${DefaultVarnishTheme.palette.border.info};
+    @alert-info-bg-color: ${DefaultVarnishTheme.palette.background.info};
     @alert-info-icon-color: @info-color;
-    @alert-warning-border-color: ${color.O3};
-    @alert-warning-bg-color: ${color.O1};
+    @alert-warning-border-color: ${DefaultVarnishTheme.palette.border.warning};
+    @alert-warning-bg-color: ${DefaultVarnishTheme.palette.background.warning};
     @alert-warning-icon-color: @warning-color;
-    @alert-error-border-color: ${color.R3};
-    @alert-error-bg-color: ${color.R1};
+    @alert-error-border-color: ${DefaultVarnishTheme.palette.border.error};
+    @alert-error-bg-color: ${DefaultVarnishTheme.palette.background.error};
     @alert-error-icon-color: @error-color;
 
     // link overrides to ant design variables
-    @link-color: ${textLink.color.value};
-    @link-hover-color: ${textLink.hoverColor.value};
-    @link-active-color: ${textLink.activeColor.value};
+    @link-color: ${textLink.color};
+    @link-hover-color: ${textLink.hoverColor};
+    @link-active-color: ${textLink.activeColor};
     @link-decoration: ${textLink.decoration};
     @link-hover-decoration: ${textLink.hoverDecoration};
 

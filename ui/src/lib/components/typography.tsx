@@ -83,7 +83,7 @@ export const CodeDark = styled.pre`
     font-size: ${({theme}) => theme.typography.codeDark.fontSize};
     line-height: ${({theme}) => theme.typography.codeDark.lineHeight};
     font-weight: ${({theme}) => theme.typography.codeDark.fontWeight};
-    background-color: ${({theme}) => theme.color[theme.typography.codeDark.backgroundColorKey]};
-    color: ${({theme}) => theme.color[theme.typography.codeDark.colorKey]};
+    background-color: ${({theme}) => theme.typography.codeDark.backgroundColor};
+    color: ${({theme}) => theme.typography.codeDark.color};
     padding: ${({theme}) => theme.typography.codeDark.padding};
 `;

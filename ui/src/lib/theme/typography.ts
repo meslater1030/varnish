@@ -1,5 +1,6 @@
 import { convertPixelsToRem } from '../utils/base';
 import { spacing } from './spacing';
+import { color } from './colors';
 
 // general
 const defaultFontSize = convertPixelsToRem(16);
@@ -118,8 +119,8 @@ const codeDark = {
   fontFamily: code.fontFamily,
   fontSize: code.fontSize,
   lineHeight: code.lineHeight,
-  backgroundColorKey: 'N10',
-  colorKey: 'N5',
+  backgroundColor: color.N10,
+  color: color.N5,
   padding: spacing.lg,
 };
 

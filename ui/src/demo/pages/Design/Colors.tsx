@@ -4,106 +4,106 @@ import { RouteComponentProps } from 'react-router';
 
 import { PageTitle } from '../Shared';
 import { BodyJumbo, Body, BodyMicro } from '../../../lib/components';
-import { DefaultVarnishTheme, ColorInfo } from '../../../lib/theme';
-import { hexToRgb, convertPixelsToRem } from '../../../lib/utils/base';
+import { DefaultVarnishTheme, Color } from '../../../lib/theme';
+import { convertPixelsToRem } from '../../../lib/utils/base';
 
-const { colorInfo } = DefaultVarnishTheme;
+const { color } = DefaultVarnishTheme;
 const colorGroups = {
     reds: [
-        colorInfo.R1,
-        colorInfo.R2,
-        colorInfo.R3,
-        colorInfo.R4,
-        colorInfo.R5,
-        colorInfo.R6,
-        colorInfo.R7,
-        colorInfo.R8,
-        colorInfo.R9,
-        colorInfo.R10
+        color.R1,
+        color.R2,
+        color.R3,
+        color.R4,
+        color.R5,
+        color.R6,
+        color.R7,
+        color.R8,
+        color.R9,
+        color.R10
     ],
     oranges: [
-        colorInfo.O1,
-        colorInfo.O2,
-        colorInfo.O3,
-        colorInfo.O4,
-        colorInfo.O5,
-        colorInfo.O6,
-        colorInfo.O7,
-        colorInfo.O8,
-        colorInfo.O9,
-        colorInfo.O10
+        color.O1,
+        color.O2,
+        color.O3,
+        color.O4,
+        color.O5,
+        color.O6,
+        color.O7,
+        color.O8,
+        color.O9,
+        color.O10
     ],
     greens: [
-        colorInfo.G1,
-        colorInfo.G2,
-        colorInfo.G3,
-        colorInfo.G4,
-        colorInfo.G5,
-        colorInfo.G6,
-        colorInfo.G7,
-        colorInfo.G8,
-        colorInfo.G9,
-        colorInfo.G10
+        color.G1,
+        color.G2,
+        color.G3,
+        color.G4,
+        color.G5,
+        color.G6,
+        color.G7,
+        color.G8,
+        color.G9,
+        color.G10
     ],
     teals: [
-        colorInfo.T1,
-        colorInfo.T2,
-        colorInfo.T3,
-        colorInfo.T4,
-        colorInfo.T5,
-        colorInfo.T6,
-        colorInfo.T7,
-        colorInfo.T8,
-        colorInfo.T9,
-        colorInfo.T10
+        color.T1,
+        color.T2,
+        color.T3,
+        color.T4,
+        color.T5,
+        color.T6,
+        color.T7,
+        color.T8,
+        color.T9,
+        color.T10
     ],
     blues: [
-        colorInfo.B1,
-        colorInfo.B2,
-        colorInfo.B3,
-        colorInfo.B4,
-        colorInfo.B5,
-        colorInfo.B6,
-        colorInfo.B7,
-        colorInfo.B8,
-        colorInfo.B9,
-        colorInfo.B10
+        color.B1,
+        color.B2,
+        color.B3,
+        color.B4,
+        color.B5,
+        color.B6,
+        color.B7,
+        color.B8,
+        color.B9,
+        color.B10
     ],
     purples: [
-        colorInfo.P1,
-        colorInfo.P2,
-        colorInfo.P3,
-        colorInfo.P4,
-        colorInfo.P5,
-        colorInfo.P6,
-        colorInfo.P7,
-        colorInfo.P8,
-        colorInfo.P9,
-        colorInfo.P10
+        color.P1,
+        color.P2,
+        color.P3,
+        color.P4,
+        color.P5,
+        color.P6,
+        color.P7,
+        color.P8,
+        color.P9,
+        color.P10
     ],
     magentas: [
-        colorInfo.M1,
-        colorInfo.M2,
-        colorInfo.M3,
-        colorInfo.M4,
-        colorInfo.M5,
-        colorInfo.M6,
-        colorInfo.M7,
-        colorInfo.M8,
-        colorInfo.M9,
-        colorInfo.M10
+        color.M1,
+        color.M2,
+        color.M3,
+        color.M4,
+        color.M5,
+        color.M6,
+        color.M7,
+        color.M8,
+        color.M9,
+        color.M10
     ],
     neutrals: [
-        colorInfo.N1,
-        colorInfo.N2,
-        colorInfo.N3,
-        colorInfo.N4,
-        colorInfo.N5,
-        colorInfo.N6,
-        colorInfo.N7,
-        colorInfo.N8,
-        colorInfo.N9,
-        colorInfo.N10
+        color.N1,
+        color.N2,
+        color.N3,
+        color.N4,
+        color.N5,
+        color.N6,
+        color.N7,
+        color.N8,
+        color.N9,
+        color.N10
     ]
 };
 
@@ -115,18 +115,18 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
 
                 <h3>Primary</h3>
                 <PrimaryGrid>
-                    {[DefaultVarnishTheme.palette.primary,
-                    DefaultVarnishTheme.palette.primary2,
-                    DefaultVarnishTheme.palette.primary3,
-                    DefaultVarnishTheme.palette.primary4].map((colorInfo: ColorInfo) =>
-                        <PrimaryColor key={colorInfo.displayName} colorInfo={colorInfo} />
+                    {[DefaultVarnishTheme.palette.primary.veryDark,
+                    DefaultVarnishTheme.palette.primary.dark,
+                    DefaultVarnishTheme.palette.primary.main,
+                    DefaultVarnishTheme.palette.secondary.main].map((color: Color) =>
+                        <PrimaryColor key={color.displayName} color={color} />
                     )}
                 </PrimaryGrid>
 
                 <h3>Extended</h3>
                 <ExtendedGrid>
                     {Object.keys(colorGroups).map((group: string) =>
-                        <ColorGroup key={group} colorInfos={colorGroups[group]} group={group} />
+                        <ColorGroup key={group} colors={colorGroups[group]} group={group} />
                     )}
                 </ExtendedGrid>
             </React.Fragment>
@@ -135,27 +135,28 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
 }
 
 interface PrimaryColorProps {
-    colorInfo: ColorInfo;
+    color: Color;
 }
 
 class PrimaryColor extends React.PureComponent<PrimaryColorProps> {
     render() {
-        const rgb = hexToRgb(this.props.colorInfo.value);
         return (
             <PrimaryColorGrid>
-                <PrimaryColorBox color={this.props.colorInfo.value} />
-                <PrimaryColorName>{this.props.colorInfo.displayName}</PrimaryColorName>
-                <PrimaryColorHex>{this.props.colorInfo.value}</PrimaryColorHex>
-                {rgb
-                    ? <PrimaryColorRgb>{rgb.r}, {rgb.g}, {rgb.b}</PrimaryColorRgb>
-                    : null}
+                <PrimaryColorBox color={this.props.color.hex} />
+                <PrimaryColorName>{this.props.color.displayName}</PrimaryColorName>
+                <PrimaryColorHex>{this.props.color.hex}</PrimaryColorHex>
+                {this.props.color.rgb
+                ? <PrimaryColorRgb>
+                    {this.props.color.rgb.r}, {this.props.color.rgb.g}, {this.props.color.rgb.b}
+                </PrimaryColorRgb>
+                : null}
             </PrimaryColorGrid>
         )
     }
 }
 
 interface ColorGroupProps {
-    colorInfos: ColorInfo[];
+    colors: Color[];
     group: string;
 }
 
@@ -166,8 +167,8 @@ class ColorGroup extends React.PureComponent<ColorGroupProps> {
             <ExtendedHeadRow>
                 <Label>{this.props.group}</Label>
             </ExtendedHeadRow>
-            {this.props.colorInfos.reverse().map((col: ColorInfo) => {
-                return col ? <ColorRow key={col.displayName} colorInfo={col}/>
+            {this.props.colors.reverse().map((col: Color) => {
+                return col ? <ColorRow key={col.displayName} color={col}/>
                 : null;
             })}
         </React.Fragment>
@@ -175,20 +176,21 @@ class ColorGroup extends React.PureComponent<ColorGroupProps> {
 }
 
 interface ColorRowProps {
-    colorInfo: ColorInfo;
+    color: Color;
 }
 
 class ColorRow extends React.PureComponent<ColorRowProps> {
     render() {
-        const rgb = hexToRgb(this.props.colorInfo.value);
         return (
             <React.Fragment>
-                <ColorBoxWrapper><ColorBox color={this.props.colorInfo.value} /></ColorBoxWrapper>
-                <ColorName>{this.props.colorInfo.displayName}</ColorName>
-                <ColorHex>{this.props.colorInfo.value}</ColorHex>
-                {rgb
-                    ? <ColorRgb>{rgb.r}, {rgb.g}, {rgb.b}</ColorRgb>
-                    : null}
+                <ColorBoxWrapper><ColorBox color={this.props.color.hex} /></ColorBoxWrapper>
+                <ColorName>{this.props.color.displayName}</ColorName>
+                <ColorHex>{this.props.color.hex}</ColorHex>
+                {this.props.color.rgb
+                ? <ColorRgb>
+                    {this.props.color.rgb.r}, {this.props.color.rgb.g}, {this.props.color.rgb.b}
+                </ColorRgb>
+                : null}
             </React.Fragment>
         )
     }
@@ -200,6 +202,7 @@ const PrimaryGrid = styled.div`
     grid-gap: ${({theme}) => `0 ${theme.spacing.lg}`};
     align-items: center;
     margin-top: ${({theme}) => theme.spacing.lg};
+    margin-bottom: ${({theme}) => theme.spacing.xlg};
 `;
 
 const PrimaryColorGrid = styled.div`
@@ -207,7 +210,7 @@ const PrimaryColorGrid = styled.div`
     grid-template-columns: max-content auto max-content;
     align-items: center;
     grid-template-rows: repeat(2, max-content);
-    margin-bottom: 75px;
+    margin-bottom: ${({theme}) => theme.spacing.lg};
 `;
 
 const PrimaryColorBox = styled.div`
@@ -219,7 +222,7 @@ const PrimaryColorBox = styled.div`
 `;
 
 const MicroCol = styled(BodyMicro)`
-    background: ${({theme}) => theme.color.N2};
+    background: ${({theme}) => theme.palette.background.light};
     padding: ${({theme}) => theme.spacing.md};
 `;
 
@@ -268,7 +271,7 @@ const Label = styled(BodyJumbo)`
 const Col = styled(Body)`
     padding: ${({theme}) => `${theme.spacing.lg} 0`};
     display: inline-block;
-    border-top: 1px solid ${({theme}) => theme.color.N4};
+    border-top: 1px solid ${({theme}) => theme.palette.border.default};
 `;
 
 const ColorBox = styled.div`

@@ -1,12 +1,12 @@
-import { colorInfo } from './colors';
+import { color } from './colors';
 
-const color = colorInfo.B7;
-const contrastColor = colorInfo.B4;
+const defaultColor = color.B7;
+const contrastColor = color.B4;
 
 export const textLink = {
-    color: color,
-    hoverColor: color,
-    activeColor: color,
+    color: defaultColor,
+    hoverColor: defaultColor,
+    activeColor: defaultColor,
     decoration: 'none',
     hoverDecoration: 'underline',
     contrastColor: contrastColor,
