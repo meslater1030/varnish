@@ -6,7 +6,7 @@ var process = require('process');
 import { breakpoints } from './breakpoints';
 import { color } from './colors';
 import { typography } from './typography';
-import { textLink } from './textLink';
+import { link } from './link';
 import { spacing } from './spacing';
 import { DefaultVarnishTheme } from './DefaultVarnishTheme';
 
@@ -129,11 +129,11 @@ const template =`
     @alert-error-icon-color: @error-color;
 
     // link overrides to ant design variables
-    @link-color: ${textLink.color};
-    @link-hover-color: ${textLink.hoverColor};
-    @link-active-color: ${textLink.activeColor};
-    @link-decoration: ${textLink.decoration};
-    @link-hover-decoration: ${textLink.hoverDecoration};
+    @link-color: ${link.color};
+    @link-hover-color: ${link.hoverColor};
+    @link-active-color: ${link.activeColor};
+    @link-decoration: ${link.decoration};
+    @link-hover-decoration: ${link.hoverDecoration};
 
     // vertical paddings
     @padding-lg: ${spacing.lg}; // containers

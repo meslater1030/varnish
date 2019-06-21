@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { Paragraph, TextLink, Body } from '../../../lib/components';
+import { Paragraph, ExternalLink, Body } from '../../../lib/components';
 import { FullPage } from '../Shared/FullPage'
 
 export class About extends React.PureComponent<RouteComponentProps> {
@@ -14,37 +14,37 @@ export class About extends React.PureComponent<RouteComponentProps> {
                 <Body>
                     <Paragraph>
                         This is a demonstration of
-                        {' '}<TextLink href="https://github.com/allenai/varnish">Varnish</TextLink>,
+                        {' '}<ExternalLink href="https://github.com/allenai/varnish">Varnish</ExternalLink>,
                         a custom theme provider for both
-                        {' '}<TextLink href="https://ant.design">Ant Design</TextLink>
+                        {' '}<ExternalLink href="https://ant.design">Ant Design</ExternalLink>
                         and
-                        {' '}<TextLink href="https://www.styled-components.com/">Styled-Components</TextLink>.
+                        {' '}<ExternalLink href="https://www.styled-components.com/">Styled-Components</ExternalLink>.
                     </Paragraph>
                     <Paragraph>
                         Varnish provides common AI2 Styled-Components, components, and utilities.
                     </Paragraph>
                     <Paragraph>
                         Varnish is derived from the
-                        {' '}<TextLink href="https://github.com/allenai/skiff-template">Skiff Template</TextLink>.
-                        Skiff provides a <TextLink href="https://www.python.org/">Python</TextLink>
+                        {' '}<ExternalLink href="https://github.com/allenai/skiff-template">Skiff Template</ExternalLink>.
+                        Skiff provides a <ExternalLink href="https://www.python.org/">Python</ExternalLink>
                         {' '}based API and a UI constructed with
-                        {' '}<TextLink href="https://www.typescriptlang.org/">TypeScript</TextLink>,
-                        {' '}<TextLink href="https://reactjs.org/">ReactJS</TextLink>,
-                        and <TextLink href="https://ant.design/">Ant Design</TextLink>.
+                        {' '}<ExternalLink href="https://www.typescriptlang.org/">TypeScript</ExternalLink>,
+                        {' '}<ExternalLink href="https://reactjs.org/">ReactJS</ExternalLink>,
+                        and <ExternalLink href="https://ant.design/">Ant Design</ExternalLink>.
                     </Paragraph>
                     <Paragraph>
                         It is deployed to a Google managed Kubernetes cluster and provides
                         DNS, log aggregation, TLS and other capabilties out of the box,
                         thanks to the
-                        {' '}<TextLink href="https://github.com/allenai/skiff">Skiff</TextLink>
+                        {' '}<ExternalLink href="https://github.com/allenai/skiff">Skiff</ExternalLink>
                         {' '}project.
                     </Paragraph>
                     <Paragraph>
                         If you have any questions, concerns or feedback please don't
                         hesitate to reach out. You can open a
-                        {' '}<TextLink href="https://github.com/allenai/skiff-template/issues/new">Github Issue</TextLink>
+                        {' '}<ExternalLink href="https://github.com/allenai/skiff-template/issues/new">Github Issue</ExternalLink>
                         {' '}or contact us at
-                        {' '}<TextLink href="mailto:reviz@allenai.org">reviz@allenai.org</TextLink>.
+                        {' '}<ExternalLink href="mailto:reviz@allenai.org">reviz@allenai.org</ExternalLink>.
                     </Paragraph>
                 </Body>
             </FullPage>

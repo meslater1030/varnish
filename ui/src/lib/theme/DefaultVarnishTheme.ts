@@ -3,7 +3,7 @@ import React from 'react';
 import { breakpoints } from './breakpoints';
 import { color, Color, RGB } from './colors';
 import { typography } from './typography';
-import { textLink } from './textLink';
+import { link } from './link';
 import { spacing } from './spacing';
 
 export { Color, RGB };
@@ -50,7 +50,7 @@ export const DefaultVarnishTheme = {
         }
     },
     typography,
-    textLink,
+    link,
     shape: {
         borderRadius: 4
     },

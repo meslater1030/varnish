@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { TextLink,
+import { ExternalLink,
     TransparentLayout,
     PaddedContent,
     Page,
@@ -25,7 +25,7 @@ export class FullPage extends React.PureComponent<RouteComponentProps & Props> {
                 </PaddedContent>
                 <CenteredFooter>
                     Proudly built at the
-                    {' '}<TextLink href="https://allenai.org">Allen Institute for Artificial Intelligence</TextLink>
+                    {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
                 </CenteredFooter>
             </TransparentLayout>
         )

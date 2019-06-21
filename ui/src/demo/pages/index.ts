@@ -8,6 +8,6 @@ export * from './Design/Forms';
 export * from './Design/Headers';
 export * from './Design/Notifications';
 export * from './Design/Tables';
-export * from './Design/TextLinks';
+export * from './Design/Links';
 export * from './Design/Typography';
 export * from './PatternsAndGuides/PatternsAndGuides';

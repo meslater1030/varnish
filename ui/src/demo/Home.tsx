@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
-import { Route, Link, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Menu } from 'antd';
 
 import { About, Components, Design, PatternsAndGuides } from './pages';
@@ -9,7 +9,8 @@ import { AppRoute } from './AppRoute';
 import { AI2Logo,
     TransparentLayout,
     Header,
-    TopMenu
+    TopMenu,
+    InternalLink
 } from '../lib/components';
 
 export default class Home extends React.PureComponent<RouteComponentProps> {
@@ -46,7 +47,7 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
                         defaultSelectedKeys={[this.props.location.pathname]}>
                         {this.routes.map(({ path, label }) => (
                             <Menu.Item key={path}>
-                                <Link key={path} to={path}>{label}</Link>
+                                <InternalLink key={path} to={path}>{label}</InternalLink>
                             </Menu.Item>
                         ))}
                     </TopMenu>

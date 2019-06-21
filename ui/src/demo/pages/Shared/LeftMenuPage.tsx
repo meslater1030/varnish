@@ -1,17 +1,18 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
-import { Route, Link, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import { Menu } from 'antd';
 
 import { AppRoute } from '../../AppRoute';
-import { TextLink,
+import { ExternalLink,
     TransparentLayout,
     LeftMenu,
     LeftSider,
     PaddedContent,
     Page,
-    CenteredFooter
+    CenteredFooter,
+    InternalLink
 } from '../../../lib/components';
 
 interface Props {
@@ -27,7 +28,7 @@ export class LeftMenuPage extends React.PureComponent<RouteComponentProps & Prop
                     <LeftMenu selectedKeys={[this.props.location.pathname]}>
                         {this.props.routes.map(({ path, label }) => (
                             <Menu.Item key={path}>
-                                <Link to={path}>{label}</Link>
+                                <InternalLink to={path}>{label}</InternalLink>
                             </Menu.Item>
                         ))}
                     </LeftMenu>
@@ -45,7 +46,7 @@ export class LeftMenuPage extends React.PureComponent<RouteComponentProps & Prop
                     </PaddedContent>
                     <CenteredFooter>
                         Proudly built at the
-                        {' '}<TextLink href="https://allenai.org">Allen Institute for Artificial Intelligence</TextLink>
+                        {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
                     </CenteredFooter>
                 </ContentAndFooterArea>
             </TransparentLayout>

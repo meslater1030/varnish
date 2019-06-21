@@ -7,7 +7,7 @@ import {
     Typography,
     Buttons,
     Cards,
-    TextLinks,
+    Links,
     Forms,
     Notifications,
     Tables,
@@ -36,9 +36,9 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             component: Buttons
         },
         {
-            path: `${this.parentPath}/text-links`,
-            label: 'Text Links',
-            component: TextLinks
+            path: `${this.parentPath}/links`,
+            label: 'Links',
+            component: Links
         },
         {
             path: `${this.parentPath}/cards`,
