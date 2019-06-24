@@ -5,11 +5,13 @@ const contrastColor = color.B4;
 
 export const link = {
     color: defaultColor,
-    hoverColor: defaultColor,
     activeColor: defaultColor,
     decoration: 'none',
-    hoverDecoration: 'underline',
     contrastColor: contrastColor,
-    contrastHoverColor: contrastColor,
-    contrastActiveColor: contrastColor
+    contrastActiveColor: contrastColor,
+    hover: {
+        color: defaultColor,
+        decoration: 'underline',
+        contrastColor: contrastColor
+    }
 };

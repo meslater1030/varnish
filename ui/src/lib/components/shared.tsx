@@ -10,13 +10,6 @@ export const MaxWidth = styled.div`
     max-width: ${({theme}) => theme.breakpoints.xl}px;
 `
 
-// TODO: this is a placeholder until we get spacing in style guide
-export const Paragraph = styled.div`
-    && {
-        margin: 0 0 2rem;
-    }
-`;
-
 export const TransparentLayout = styled(Layout)`
     && {
         background: none;
@@ -73,7 +66,7 @@ export const PaddedContent = styled(Layout.Content)`
 
 export const Page = styled.div`
     background: ${({theme}) => theme.palette.common.white};
-    padding: ${props => spacing.lg};
+    padding: ${({theme}) => theme.spacing.lg};
     border-bottom: 1px solid ${({theme}) => theme.palette.border.default};
 `;
 

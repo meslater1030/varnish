@@ -14,8 +14,7 @@ import {
     NotificationBold,
     Quote,
     Author,
-    Code,
-    CodeDark
+    Code
 } from '../../../lib/components';
 import { PageTitle } from '../Shared';
 
@@ -140,8 +139,8 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
 
                     <Name>Dark</Name>
                     <Example>
-                        <CodeDark>{this.codeExample}</CodeDark>
-                        <Size>{DefaultVarnishTheme.typography.codeDark.fontSize}/{DefaultVarnishTheme.typography.codeDark.lineHeight}</Size>
+                        <Code type="dark">{this.codeExample}</Code>
+                        <Size>{DefaultVarnishTheme.typography.code.fontSize}/{DefaultVarnishTheme.typography.code.lineHeight}</Size>
                     </Example>
                 </Grid>
             </React.Fragment>

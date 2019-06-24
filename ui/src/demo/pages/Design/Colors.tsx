@@ -269,7 +269,7 @@ const Label = styled(BodyJumbo)`
 `;
 
 const Col = styled(Body)`
-    padding: ${({theme}) => `${theme.spacing.lg} 0`};
+    padding: ${({theme}) => `${theme.spacing.md} 0`};
     display: inline-block;
     border-top: 1px solid ${({theme}) => theme.palette.border.default};
 `;
@@ -282,7 +282,7 @@ const ColorBox = styled.div`
 `;
 
 const ColorBoxWrapper = styled(Col)`
-    padding: ${({theme}) => convertPixelsToRem(15)};
+    padding: ${({theme}) => convertPixelsToRem(7)};
     grid-column: 1;
 `;
 

@@ -1,14 +1,15 @@
 import { convertPixelsToRem } from '../utils/base';
 import { spacing } from './spacing';
 import { color } from './colors';
+import { fontWeight } from './fontWeight';
 
 // general
 const defaultFontSize = convertPixelsToRem(16);
 const defaultFontFamily = 'Lato';
-const fontWeightLight = 300;
-const fontWeightRegular = 400;
-const fontWeightMedium = 500;
-const fontWeightBold = 700;
+const fontWeightLight = fontWeight.light;
+const fontWeightRegular = fontWeight.regular;
+const fontWeightMedium = fontWeight.medium;
+const fontWeightBold = fontWeight.bold;
 const fallbackDefaultFonts = ['Helvetica Neue', 'Helvetica', '-apple-system', 'BlinkMacSystemFont',
     'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Arial', 'sans-serif',
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'];
@@ -114,14 +115,9 @@ const code = {
   fontFamily: [ codeFontFamily, ...fallbackDefaultCodeFonts ].join(", "),
   fontSize: convertPixelsToRem(13),
   lineHeight: convertPixelsToRem(18),
-};
-const codeDark = {
-  fontFamily: code.fontFamily,
-  fontSize: code.fontSize,
-  lineHeight: code.lineHeight,
-  backgroundColor: color.N10,
-  color: color.N5,
-  padding: spacing.lg,
+  contrastBackgroundColor: color.N10,
+  contrastColor: color.N5,
+  padding: spacing.lg
 };
 
 export const typography = {
@@ -159,6 +155,5 @@ export const typography = {
 
     // code
     codeFontFamily,
-    code,
-    codeDark
+    code
 };

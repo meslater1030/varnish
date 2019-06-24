@@ -5,6 +5,7 @@ import { color, Color, RGB } from './colors';
 import { typography } from './typography';
 import { link } from './link';
 import { spacing } from './spacing';
+import { button } from './button';
 
 export { Color, RGB };
 
@@ -13,8 +14,8 @@ export const DefaultVarnishTheme = {
     color,
     palette: {
         common:{
-            black: new Color('Black', '#000'),
-            white: new Color('White', '#FFF'),
+            black: color.black,
+            white: color.white,
         },
         background: {
             light: color.N2,
@@ -46,7 +47,8 @@ export const DefaultVarnishTheme = {
             error: color.R6,
             info: color.B6,
             success: color.G6,
-            warning: color.O6
+            warning: color.O6,
+            contrast: color.N5
         }
     },
     typography,
@@ -54,7 +56,9 @@ export const DefaultVarnishTheme = {
     shape: {
         borderRadius: 4
     },
-    spacing
+    spacing,
+    button
+
     // when adding more, consider what material and ant have done:
     // https://material-ui.com/customization/default-theme/
     // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
