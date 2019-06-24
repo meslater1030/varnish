@@ -19,18 +19,18 @@ export class Links extends React.PureComponent<RouteComponentProps> {
 
                 <SectionDivider />
 
-                <LinkExample contrast={false} />
+                <LinkExample />
 
                 <SectionDivider />
 
-                <LinkExample contrast={true} />
+                <LinkExample contrast />
             </React.Fragment>
         )
     }
 }
 
 interface LinkExampleProps{
-    contrast: boolean;
+    contrast?: boolean;
 }
 class LinkExample extends React.PureComponent<LinkExampleProps> {
     render() {

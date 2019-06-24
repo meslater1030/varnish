@@ -71,7 +71,7 @@ export const Author = styled.span`
 `;
 
 // code
-export const Code = styled.pre<{type: string}>`
+export const Code = styled.pre<{type?: string}>`
     font-family: ${({theme}) => theme.typography.code.fontFamily};
     font-size: ${({theme}) => theme.typography.code.fontSize};
     line-height: ${({theme}) => theme.typography.code.lineHeight};
