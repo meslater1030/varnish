@@ -67,7 +67,7 @@ export const PaddedContent = styled(Layout.Content)`
 export const Page = styled.div`
     background: ${({theme}) => theme.palette.common.white};
     padding: ${({theme}) => theme.spacing.lg};
-    border-bottom: 1px solid ${({theme}) => theme.palette.border.default};
+    border-bottom: 1px solid ${({theme}) => theme.palette.border.main};
 `;
 
 export const CenteredFooter = styled(Layout.Footer)`

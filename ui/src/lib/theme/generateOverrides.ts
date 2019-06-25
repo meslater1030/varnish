@@ -27,6 +27,9 @@ const template =`
         font-smoothing: antialiased;
         font-family: ${typography.body.fontFamily};
     }
+    * {
+        box-sizing: border-box;
+    }
     html {
         font-size: 100%;
     }

@@ -5,7 +5,7 @@ import { RouteComponentProps } from 'react-router';
 import { BodySmall, Body, Button, ButtonTypes } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import { defaultSpacing, borderColor } from '../../../lib/theme/button';
-import { PageTitle, SectionDivider, LightPaper, DarkPaper } from '../Shared';
+import { PageTitle, SectionWithDivider, LightPaper, DarkPaper } from '../Shared';
 
 export class Buttons extends React.PureComponent<RouteComponentProps> {
     render() {
@@ -18,75 +18,75 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                     Basic buttons come in four style types: primary, default, link, and marketing.
                 </BodySmall>
 
-                <SectionDivider />
+                <SectionWithDivider>
+                    <h5>Basic Button Specs</h5>
+                    <BodySmall>
+                        <ul>
+                            <li>Height: {DefaultVarnishTheme.button.default.height}</li>
+                            <li>Border radius: {`${DefaultVarnishTheme.shape.borderRadius}px`}</li>
+                            <li>Side padding: {`${defaultSpacing.displayName} (${defaultSpacing})`}</li>
+                            <li>Border Color: {borderColor.displayName}</li>
+                            <li>Dark Text: {DefaultVarnishTheme.button.default.contrastColor.displayName}</li>
+                            <li>Light Text: {DefaultVarnishTheme.button.default.color.displayName}</li>
+                        </ul>
+                    </BodySmall>
+                </SectionWithDivider>
 
-                <h5>Basic Button Specs</h5>
-                <BodySmall>
-                    <ul>
-                        <li>Height: {DefaultVarnishTheme.button.default.height}</li>
-                        <li>Border radius: {`${DefaultVarnishTheme.shape.borderRadius}px`}</li>
-                        <li>Side padding: {`${defaultSpacing.displayName} (${defaultSpacing})`}</li>
-                        <li>Border Color: {borderColor}</li>
-                        <li>Dark Text: {DefaultVarnishTheme.button.default.contrastColor.displayName}</li>
-                        <li>Light Text: {DefaultVarnishTheme.button.default.color.displayName}</li>
-                    </ul>
-                </BodySmall>
+                <SectionWithDivider>
+                    <h4>Primary-style buttons</h4>
+                    <BodySmall>
+                        <ul>
+                            <li>Use the primary button style for the most prominent call to action on the page.</li>
+                            <li>These buttons guide users to and through the main happy path in a task flow.</li>
+                            <li>Background Color: {DefaultVarnishTheme.button.primary.background.displayName}</li>
+                        </ul>
+                    </BodySmall>
+                    <ButtonExample type={'primary'} />
+                </SectionWithDivider>
 
-                <SectionDivider />
+                <SectionWithDivider>
+                    <h4>Default-style buttons</h4>
+                    <BodySmall>
+                        <ul>
+                            <li>Use the secondary button style for buttons that offer users additional
+                                action they can take in their task flow (examples: Cancel, Back).
+                            </li>
+                            <li>You can have only one primary-styled button on a screen, but you can
+                                have more than one secondary-styled button. If you need to offer more
+                                than one alternate action, consider using text links instead of multiple
+                                secondary buttons.
+                            </li>
+                        </ul>
+                    </BodySmall>
+                    <ButtonExample type={'default'} />
+                </SectionWithDivider>
 
-                <h4>Primary-style buttons</h4>
-                <BodySmall>
-                    <ul>
-                        <li>Use the primary button style for the most prominent call to action on the page.</li>
-                        <li>These buttons guide users to and through the main happy path in a task flow.</li>
-                        <li>Background Color: {DefaultVarnishTheme.button.primary.background.displayName}</li>
-                    </ul>
-                </BodySmall>
-                <ButtonExample type={'primary'} />
+                <SectionWithDivider>
+                    <h4>Link-style buttons</h4>
+                    <BodySmall>
+                        <ul>
+                            <li>If you need to offer more than one alternate action, consider using text
+                                links instead of multiple secondary buttons.
+                            </li>
+                            <li>Bright Text: {DefaultVarnishTheme.button.link.color.displayName}</li>
+                        </ul>
+                    </BodySmall>
+                    <ButtonExample type={'link'} />
+                </SectionWithDivider>
 
-                <SectionDivider />
-
-                <h4>Default-style buttons</h4>
-                <BodySmall>
-                    <ul>
-                        <li>Use the secondary button style for buttons that offer users additional
-                            action they can take in their task flow (examples: Cancel, Back).
-                        </li>
-                        <li>You can have only one primary-styled button on a screen, but you can
-                            have more than one secondary-styled button. If you need to offer more
-                            than one alternate action, consider using text links instead of multiple
-                            secondary buttons.
-                        </li>
-                    </ul>
-                </BodySmall>
-                <ButtonExample type={'default'} />
-
-                <SectionDivider />
-
-                <h4>Link-style buttons</h4>
-                <BodySmall>
-                    <ul>
-                        <li>If you need to offer more than one alternate action, consider using text
-                            links instead of multiple secondary buttons.
-                        </li>
-                        <li>Bright Text: {DefaultVarnishTheme.button.link.color.displayName}</li>
-                    </ul>
-                </BodySmall>
-                <ButtonExample type={'link'} />
-
-                <SectionDivider />
-
-                <h4>Marketing-style buttons</h4>
-                <BodySmall>
-                    <ul>
-                        <li>Use only in marketing as an extra-large primary button for an important
-                            action.
-                        </li>
-                        <li>Only one jumbo button can exist on a page or screen.</li>
-                        <li>Bright Text: {DefaultVarnishTheme.button.marketing.color.displayName}</li>
-                    </ul>
-                </BodySmall>
-                <ButtonExample type={'marketing'} />
+                <SectionWithDivider>
+                    <h4>Marketing-style buttons</h4>
+                    <BodySmall>
+                        <ul>
+                            <li>Use only in marketing as an extra-large primary button for an important
+                                action.
+                            </li>
+                            <li>Only one jumbo button can exist on a page or screen.</li>
+                            <li>Bright Text: {DefaultVarnishTheme.button.marketing.color.displayName}</li>
+                        </ul>
+                    </BodySmall>
+                    <ButtonExample type={'marketing'} />
+                </SectionWithDivider>
             </React.Fragment>
         )
     }
@@ -114,8 +114,8 @@ interface ButtonRowProps{
 class ButtonRow extends React.PureComponent<ButtonRowProps> {
     render() {
         const color = this.props.contrast
-        ? DefaultVarnishTheme.link.contrastColor
-        : DefaultVarnishTheme.link.color;
+            ? DefaultVarnishTheme.link.contrastColor
+            : DefaultVarnishTheme.link.color;
         const Paper = styled(this.props.contrast ? DarkPaper : LightPaper)`
             margin-bottom: ${({theme}) => theme.spacing.md};`;
         const { type, contrast } = this.props;
@@ -141,6 +141,7 @@ class ButtonRow extends React.PureComponent<ButtonRowProps> {
     }
 }
 
+// TODO:  implement the <Columns count={x} /> component as seen in the Incubator project
 const ButtonGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, max-content);

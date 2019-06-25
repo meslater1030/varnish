@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router';
 
 import { BodySmall, Body, ExternalLink } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
-import { PageTitle, SectionDivider, LightPaper, DarkPaper } from '../Shared';
+import { PageTitle, SectionWithDivider, LightPaper, DarkPaper } from '../Shared';
 
 export class Links extends React.PureComponent<RouteComponentProps> {
     render() {
@@ -17,13 +17,13 @@ export class Links extends React.PureComponent<RouteComponentProps> {
                     Basic links come in two styles: light background and dark background.
                 </BodySmall>
 
-                <SectionDivider />
+                <SectionWithDivider>
+                    <LinkExample />
+                </SectionWithDivider>
 
-                <LinkExample />
-
-                <SectionDivider />
-
-                <LinkExample contrast />
+                <SectionWithDivider>
+                    <LinkExample contrast />
+                </SectionWithDivider>
             </React.Fragment>
         )
     }
