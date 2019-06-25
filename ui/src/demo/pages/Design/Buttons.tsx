@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { BodySmall, Body, Button, ButtonTypes } from '../../../lib/components';
+import { BodySmall, Body, Button, ButtonType } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import { defaultSpacing, borderColor } from '../../../lib/theme/button';
 import { PageTitle, SectionWithDivider, LightPaper, DarkPaper } from '../Shared';
@@ -22,12 +22,12 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                     <h5>Basic Button Specs</h5>
                     <BodySmall>
                         <ul>
-                            <li>Height: {DefaultVarnishTheme.button.default.height}</li>
                             <li>Border radius: {`${DefaultVarnishTheme.shape.borderRadius}px`}</li>
-                            <li>Side padding: {`${defaultSpacing.displayName} (${defaultSpacing})`}</li>
-                            <li>Border Color: {borderColor.displayName}</li>
-                            <li>Dark Text: {DefaultVarnishTheme.button.default.contrastColor.displayName}</li>
-                            <li>Light Text: {DefaultVarnishTheme.button.default.color.displayName}</li>
+                            <li>Horizontal padding: {`${defaultSpacing[0].displayName} (${defaultSpacing[0]})`}</li>
+                            <li>Vertical padding: {`${defaultSpacing[1].displayName} (${defaultSpacing[1]})`}</li>
+                            <li>Border color: {borderColor.displayName}</li>
+                            <li>Dark text: {DefaultVarnishTheme.button.default.contrastColor.displayName}</li>
+                            <li>Light text: {DefaultVarnishTheme.button.default.color.displayName}</li>
                         </ul>
                     </BodySmall>
                 </SectionWithDivider>
@@ -68,7 +68,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                             <li>If you need to offer more than one alternate action, consider using text
                                 links instead of multiple secondary buttons.
                             </li>
-                            <li>Bright Text: {DefaultVarnishTheme.button.link.color.displayName}</li>
+                            <li>Bright text: {DefaultVarnishTheme.button.link.color.displayName}</li>
                         </ul>
                     </BodySmall>
                     <ButtonExample type={'link'} />
@@ -82,7 +82,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                                 action.
                             </li>
                             <li>Only one jumbo button can exist on a page or screen.</li>
-                            <li>Bright Text: {DefaultVarnishTheme.button.marketing.color.displayName}</li>
+                            <li>Bright text: {DefaultVarnishTheme.button.marketing.color.displayName}</li>
                         </ul>
                     </BodySmall>
                     <ButtonExample type={'marketing'} />
@@ -93,7 +93,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
 }
 
 interface ButtonExampleProps{
-    type: ButtonTypes;
+    type: ButtonType;
 }
 class ButtonExample extends React.PureComponent<ButtonExampleProps> {
     render() {
@@ -108,7 +108,7 @@ class ButtonExample extends React.PureComponent<ButtonExampleProps> {
 
 
 interface ButtonRowProps{
-    type: ButtonTypes;
+    type: ButtonType;
     contrast: boolean;
 }
 class ButtonRow extends React.PureComponent<ButtonRowProps> {

@@ -4,7 +4,7 @@ import { color, Color } from './colors';
 import { fontWeight } from './fontWeight';
 import { palette } from './palette';
 
-interface ButtonStates {
+export interface ButtonStyle {
     padding?: string;
     height?: string;
     fontWeight?: number;
@@ -19,19 +19,21 @@ interface ButtonStates {
     disabled: any; // force required so we dont have to check for undefined later
 }
 interface ButtonType {
-    primary: ButtonStates;
-    default: ButtonStates;
-    link: ButtonStates;
-    marketing: ButtonStates;
+    primary: ButtonStyle;
+    default: ButtonStyle;
+    link: ButtonStyle;
+    marketing: ButtonStyle;
 }
-export const defaultSpacing = spacing.md;
+export const defaultSpacing = [spacing.md, spacing.xs];
+const marketingSpacing = [spacing.lg, spacing.sm];
 const paddingWithBorderInside = (borderWidth: number, initialPadding = defaultSpacing) => {
-    return `0 ${convertPixelsToRem(initialPadding.getPxValue() - borderWidth)}`;
+    return `${convertPixelsToRem(initialPadding[1].getPxValue() - borderWidth)} ${convertPixelsToRem(initialPadding[0].getPxValue() - borderWidth)}`;
 }
 export const borderColor = palette.border.dark;
+const marketingBorderColor = palette.secondary.main;
 const whiteColor = palette.text.contrast;
 const blackColor = palette.text.primary;
-const marketingBorderColor = palette.secondary.main;
+
 export const button: ButtonType = {
     default: {
         background: color.transparent,
@@ -39,7 +41,6 @@ export const button: ButtonType = {
         color: blackColor,
         contrastColor: whiteColor,
         fontWeight: fontWeight.bold,
-        height: convertPixelsToRem(36),
         padding: paddingWithBorderInside(1),
         textTransform: 'auto',
         hover: {
@@ -112,8 +113,7 @@ export const button: ButtonType = {
         color: marketingBorderColor,
         contrastColor: whiteColor,
         fontWeight: fontWeight.bold,
-        height: convertPixelsToRem(44),
-        padding: paddingWithBorderInside(2, spacing.lg),
+        padding: paddingWithBorderInside(2, marketingSpacing),
         textTransform: 'uppercase',
         hover: {
             background: palette.secondary.light,
@@ -122,13 +122,13 @@ export const button: ButtonType = {
             contrastBorder: `2px solid ${whiteColor}`,
             color: whiteColor,
             contrastColor: marketingBorderColor,
-            padding: paddingWithBorderInside(2, spacing.lg)
+            padding: paddingWithBorderInside(2, marketingSpacing)
         },
         focus: {
             background: color.transparent,
             border: `3px solid ${marketingBorderColor}`,
             contrastBorder: `3px solid ${whiteColor}`,
-            padding: paddingWithBorderInside(3, spacing.lg)
+            padding: paddingWithBorderInside(3, marketingSpacing)
         },
         disabled: {
             background: color.transparent,
@@ -137,7 +137,7 @@ export const button: ButtonType = {
             color: marketingBorderColor,
             contrastColor: whiteColor,
             opacity: 0.5,
-            padding: paddingWithBorderInside(2, spacing.lg)
+            padding: paddingWithBorderInside(2, marketingSpacing)
         }
     }
 };

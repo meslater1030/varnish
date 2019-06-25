@@ -2,74 +2,68 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Button as AntButton } from 'antd';
 
-export type ButtonTypes = 'primary' | 'default' | 'link' | 'marketing';
+import { DefaultVarnishTheme } from '../theme';
+import { ButtonStyle } from '../theme/button';
+import { Color } from '../theme/colors';
+
+export type ButtonType = 'primary' | 'default' | 'link' | 'marketing';
+
+type Optional<T> = T | undefined;
+
+interface ComponentProps {
+    theme: typeof DefaultVarnishTheme,
+    type: ButtonType,
+    contrast: boolean
+}
+
+const valueOrDefault = <T extends {}>(
+    props: ComponentProps,
+    styleFunc: (b: ButtonStyle) => Optional<T>,
+    contrastStyleFunc?: (b: ButtonStyle) => Optional<T>
+): Optional<T> => {
+    let ret: Optional<T>;
+    if(props.contrast && contrastStyleFunc) {
+        ret = contrastStyleFunc(props.theme.button[props.type]) || contrastStyleFunc(props.theme.button.default);
+    }
+    if(!ret) {
+        ret = styleFunc(props.theme.button[props.type]) || styleFunc(props.theme.button.default);
+    }
+    return ret;
+}
+const toHexIfDefined = (c: Optional<Color>) => {
+    return c ? c.hex : undefined;
+}
 
 // todo: consider converting to use https://www.npmjs.com/package/styled-components-modifiers
-export const Button = styled(AntButton)<{type: ButtonTypes, contrast: boolean}>`
+export const Button = styled(AntButton)<ComponentProps>`
     && {
-        background: ${({theme, type}) => theme.button[type].background || theme.button.default.background};
-        border: ${({theme, type, contrast}) => {
-            return !contrast
-                ? theme.button[type].border || theme.button.default.border
-                : theme.button[type].contrastBorder || theme.button.default.contrastBorder || theme.button[type].border || theme.button.default.border
-        }};
-        color: ${({theme, type, contrast}) => {
-            return !contrast
-                ? theme.button[type].color || theme.button.default.color
-                : theme.button[type].contrastColor || theme.button.default.contrastColor || theme.button[type].color || theme.button.default.color
-        }};
-        font-weight: ${({theme, type}) => theme.button[type].fontWeight || theme.button.default.fontWeight};
-        height: ${({theme, type}) => theme.button[type].height || theme.button.default.height};
-        padding: ${({theme, type}) => theme.button[type].padding || theme.button.default.padding};
-        text-transform: ${({theme, type}) => theme.button[type].textTransform || theme.button.default.textTransform};
+        height: auto;
+        font-weight: ${props => valueOrDefault(props, b => b.fontWeight) };
+        text-transform: ${props => valueOrDefault(props, b => b.textTransform) };
+        background: ${props => toHexIfDefined(valueOrDefault(props, b => b.background)) };
+        border: ${props => valueOrDefault(props, b => b.border, b => b.contrastBorder) };
+        color: ${props => toHexIfDefined(valueOrDefault(props, b => b.color, b => b.contrastColor)) };
+        padding: ${props => valueOrDefault(props, b => b.padding) };
 
         &:hover {
-            background: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].hover.background || theme.button.default.hover.background
-                    : theme.button[type].hover.contrastBackground || theme.button.default.hover.contrastBackground || theme.button[type].hover.background|| theme.button.default.hover.background
-            }};
-            border: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].hover.border || theme.button.default.hover.border
-                    : theme.button[type].hover.contrastBorder || theme.button.default.hover.contrastBorder || theme.button[type].hover.border || theme.button.default.hover.border
-            }};
-            color: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].hover.color || theme.button.default.hover.color
-                    : theme.button[type].hover.contrastColor || theme.button.default.hover.contrastColor || theme.button[type].hover.color || theme.button.default.hover.color
-            }};
-            padding: ${({theme, type}) => theme.button[type].hover.padding || theme.button.default.hover.padding};
+            background: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.background,  b => b.hover.contrastBackground)) };
+            border: ${props => valueOrDefault(props, b => b.hover.border, b => b.hover.contrastBorder) };
+            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.color, b => b.hover.contrastColor)) };
+            padding: ${props => valueOrDefault(props, b => b.hover.padding) };
         }
 
         &:focus {
-            border: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].focus.border || theme.button.default.focus.border
-                    : theme.button[type].focus.contrastBorder || theme.button.default.focus.contrastBorder || theme.button[type].focus.border || theme.button.default.focus.border
-            }};
-            color: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].focus.color || theme.button.default.focus.color
-                    : theme.button[type].focus.contrastColor || theme.button.default.focus.contrastColor || theme.button[type].focus.color || theme.button.default.focus.color
-            }};
-            padding: ${({theme, type}) => theme.button[type].focus.padding || theme.button.default.focus.padding};
+            border: ${props => valueOrDefault(props, b => b.focus.border, b => b.focus.contrastBorder) };
+            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.focus.color, b => b.focus.contrastColor)) };
+            padding: ${props => valueOrDefault(props, b => b.focus.padding) };
         }
 
         &:disabled {
-            background: ${({theme, type}) => theme.button[type].disabled.background || theme.button.default.disabled.background};
-            border: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].disabled.border || theme.button.default.disabled.border
-                    : theme.button[type].disabled.contrastBorder || theme.button.default.disabled.contrastBorder || theme.button[type].disabled.border || theme.button.default.disabled.border
-            }};
-            color: ${({theme, type, contrast}) => {
-                return !contrast
-                    ? theme.button[type].disabled.color || theme.button.default.disabled.color
-                    : theme.button[type].disabled.contrastColor || theme.button.default.disabled.contrastColor || theme.button[type].disabled.color || theme.button.default.disabled.color
-            }};
-            opacity: ${({theme, type}) => theme.button[type].disabled.opacity || theme.button.default.disabled.opacity};
-            padding: ${({theme, type}) => theme.button[type].disabled.padding || theme.button.default.disabled.padding};
+            opacity: ${props => valueOrDefault(props, b => b.disabled.opacity) };
+            background: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.background,  b => b.disabled.contrastBackground)) };
+            border: ${props => valueOrDefault(props, b => b.disabled.border, b => b.disabled.contrastBorder) };
+            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.color, b => b.disabled.contrastColor)) };
+            padding: ${props => valueOrDefault(props, b => b.disabled.padding) };
         }
     }
 `;
