@@ -2,19 +2,19 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const baseLinkStyles = (_:any) => css<{active: boolean, inverse?: boolean}>`
-    color: ${({ theme, active, inverse }) => (
+const baseLinkStyles = (_:any) => css<{active: boolean, contrast?: boolean}>`
+    color: ${({ theme, active, contrast }) => (
         active
-        ? (inverse ? theme.link.contrastActiveColor : theme.link.activeColor)
-        : (inverse ? theme.link.contrastColor : theme.link.color)
+        ? (contrast ? theme.link.contrastActiveColor : theme.link.activeColor)
+        : (contrast ? theme.link.contrastColor : theme.link.color)
     )};
     text-decoration: ${({theme}) => theme.link.decoration};
 
     &:hover {
-        color: ${({ theme, inverse }) => (
-            inverse ? theme.link.contrastHoverColor : theme.link.hoverColor
+        color: ${({ theme, contrast }) => (
+            contrast ? theme.link.hover.contrastColor : theme.link.hover.color
         )};
-        text-decoration: ${({theme}) => theme.link.hoverDecoration};
+        text-decoration: ${({theme}) => theme.link.hover.decoration};
     }
 `;
 

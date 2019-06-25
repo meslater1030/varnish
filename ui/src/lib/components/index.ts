@@ -1,3 +1,4 @@
+export * from './button';
 export * from './AI2Logo';
 export * from './shared';
 export * from './link';

@@ -196,6 +196,7 @@ class ColorRow extends React.PureComponent<ColorRowProps> {
     }
 }
 
+// TODO:  implement the <Columns count={x} /> component as seen in the Incubator project
 const PrimaryGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -242,6 +243,7 @@ const PrimaryColorRgb = styled(MicroCol)`
     padding-left: 0;
 `;
 
+// TODO:  implement the <Columns count={x} /> component as seen in the Incubator project
 const ExtendedGrid = styled.div`
     display: grid;
     grid-template-columns: max-content repeat(3, auto);
@@ -269,9 +271,9 @@ const Label = styled(BodyJumbo)`
 `;
 
 const Col = styled(Body)`
-    padding: ${({theme}) => `${theme.spacing.lg} 0`};
+    padding: ${({theme}) => `${theme.spacing.md} 0`};
     display: inline-block;
-    border-top: 1px solid ${({theme}) => theme.palette.border.default};
+    border-top: 1px solid ${({theme}) => theme.palette.border.main};
 `;
 
 const ColorBox = styled.div`
@@ -282,7 +284,7 @@ const ColorBox = styled.div`
 `;
 
 const ColorBoxWrapper = styled(Col)`
-    padding: ${({theme}) => convertPixelsToRem(15)};
+    padding: ${({theme}) => convertPixelsToRem(7)};
     grid-column: 1;
 `;
 

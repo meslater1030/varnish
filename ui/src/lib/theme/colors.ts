@@ -109,5 +109,8 @@ export const color = {
     N7: new Color('N7', '#8D939C'),
     N8: new Color('N8', '#666D74'),
     N9: new Color('N9', '#4C5258'),
-    N10: new Color('N10', '#333A3E')
+    N10: new Color('N10', '#333A3E'),
+    black: new Color('Black', '#000'),
+    white: new Color('White', '#FFF'),
+    transparent: new Color('Transparent', 'transparent'),
 };

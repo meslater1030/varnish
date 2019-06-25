@@ -14,8 +14,7 @@ import {
     NotificationBold,
     Quote,
     Author,
-    Code,
-    CodeDark
+    Code
 } from '../../../lib/components';
 import { PageTitle } from '../Shared';
 
@@ -140,8 +139,8 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
 
                     <Name>Dark</Name>
                     <Example>
-                        <CodeDark>{this.codeExample}</CodeDark>
-                        <Size>{DefaultVarnishTheme.typography.codeDark.fontSize}/{DefaultVarnishTheme.typography.codeDark.lineHeight}</Size>
+                        <Code type="dark">{this.codeExample}</Code>
+                        <Size>{DefaultVarnishTheme.typography.code.fontSize}/{DefaultVarnishTheme.typography.code.lineHeight}</Size>
                     </Example>
                 </Grid>
             </React.Fragment>
@@ -149,6 +148,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
     }
 }
 
+// TODO:  implement the <Columns count={x} /> component as seen in the Incubator project
 const Grid = styled.div`
     display: grid;
     grid-gap: ${({theme}) => `${theme.spacing.xl} ${theme.spacing.md}`};
@@ -163,7 +163,7 @@ const Grid = styled.div`
 const HeadRow = styled.div`
     grid-column: 1 / span 3;
     padding-bottom: ${({theme}) => theme.spacing.lg};
-    border-bottom: 1px solid ${({theme}) => theme.palette.border.default};
+    border-bottom: 1px solid ${({theme}) => theme.palette.border.main};
 `;
 
 const Name = styled.div`

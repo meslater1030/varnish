@@ -27,6 +27,9 @@ const template =`
         font-smoothing: antialiased;
         font-family: ${typography.body.fontFamily};
     }
+    * {
+        box-sizing: border-box;
+    }
     html {
         font-size: 100%;
     }
@@ -59,6 +62,10 @@ const template =`
         line-height: ${typography.h5.lineHeight};
         font-weight: ${typography.h5.fontWeight};
         text-transform: uppercase;
+    }
+
+    p {
+        margin-bottom: 2rem;
     }
 
     // default media breakpoint sizes
@@ -130,10 +137,10 @@ const template =`
 
     // link overrides to ant design variables
     @link-color: ${link.color};
-    @link-hover-color: ${link.hoverColor};
+    @link-hover-color: ${link.hover.color};
     @link-active-color: ${link.activeColor};
     @link-decoration: ${link.decoration};
-    @link-hover-decoration: ${link.hoverDecoration};
+    @link-hover-decoration: ${link.hover.decoration};
 
     // vertical paddings
     @padding-lg: ${spacing.lg}; // containers
