@@ -69,12 +69,12 @@ const template =`
     }
 
     // default media breakpoint sizes
-    @media (max-width: ${breakpoints.lg}px) {
+    @media (max-width: ${breakpoints.lg}) {
         html {
             font-size: ${100 * 14/16}%;
         }
     }
-    @media (max-width: ${breakpoints.sm}px) {
+    @media (max-width: ${breakpoints.sm}) {
         html {
             font-size: ${100 * 12/16}%;
         }
@@ -87,12 +87,12 @@ const template =`
     @text-color-secondary: ${DefaultVarnishTheme.palette.text.secondary};
 
     // breakpoint overrides to ant design variables
-    @screen-xs: ${breakpoints.xs}px;
-    @screen-sm: ${breakpoints.sm}px;
-    @screen-md: ${breakpoints.md}px;
-    @screen-lg: ${breakpoints.lg}px;
-    @screen-xl: ${breakpoints.xl}px;
-    @screen-xxl: ${breakpoints.xxl}px;
+    @screen-xs: ${breakpoints.xs};
+    @screen-sm: ${breakpoints.sm};
+    @screen-md: ${breakpoints.md};
+    @screen-lg: ${breakpoints.lg};
+    @screen-xl: ${breakpoints.xl};
+    @screen-xxl: ${breakpoints.xxl};
 
     // color overrides to ant design variables
     @gold-6: ${color.O6};

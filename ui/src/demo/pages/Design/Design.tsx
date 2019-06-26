@@ -39,7 +39,7 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/links`,
             label: 'Links',
             component: Links
-        },
+        }/*,
         {
             path: `${this.parentPath}/cards`,
             label: 'Cards',
@@ -59,10 +59,10 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/tables`,
             label: 'Tables',
             component: Tables
-        },
+        }*/,
         {
             path: `${this.parentPath}/headers`,
-            label: 'Headers',
+            label: 'Heade & Footer',
             component: Headers
         }
     ];

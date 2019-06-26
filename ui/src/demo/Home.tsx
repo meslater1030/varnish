@@ -4,13 +4,15 @@ import { RouteComponentProps } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
 import { Menu } from 'antd';
 
+import logoWithText from './varnishLogo.svg';
 import { About, Components, Design, PatternsAndGuides } from './pages';
 import { AppRoute } from './AppRoute';
-import { AI2Logo,
+import { HeaderLogo,
     TransparentLayout,
     Header,
     TopMenu,
-    InternalLink
+    InternalLink,
+    Spacer
 } from '../lib/components';
 
 export default class Home extends React.PureComponent<RouteComponentProps> {
@@ -25,7 +27,7 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
             path: '/design',
             label: 'Design',
             component: Design
-        },
+        }/*,
         {
             path: '/components',
             label: 'Components',
@@ -35,19 +37,20 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
             path: '/patterns-and-guides',
             label: 'Patterns and Guides',
             component: PatternsAndGuides
-        }
+        }*/
     ];
 
     render() {
         return (
             <TransparentLayout>
                 <Header>
-                    <AI2Logo />
+                    <HeaderLogo logo={logoWithText} wideWidth={"194px"} skinnyWidth={"72px"} height={"56px"} alt="Varnish" />
+                    <Spacer />
                     <TopMenu
                         defaultSelectedKeys={[this.props.location.pathname]}>
                         {this.routes.map(({ path, label }) => (
                             <Menu.Item key={path}>
-                                <InternalLink key={path} to={path}>{label}</InternalLink>
+                                <InternalLink to={path}>{label}</InternalLink>
                             </Menu.Item>
                         ))}
                     </TopMenu>

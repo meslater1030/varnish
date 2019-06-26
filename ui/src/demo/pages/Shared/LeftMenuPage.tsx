@@ -11,7 +11,7 @@ import { ExternalLink,
     LeftSider,
     PaddedContent,
     Page,
-    CenteredFooter,
+    Footer,
     InternalLink
 } from '../../../lib/components';
 
@@ -44,10 +44,7 @@ export class LeftMenuPage extends React.PureComponent<RouteComponentProps & Prop
                             </Switch>
                         </Page>
                     </PaddedContent>
-                    <CenteredFooter>
-                        Proudly built at the
-                        {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
-                    </CenteredFooter>
+                    <Footer />
                 </ContentAndFooterArea>
             </TransparentLayout>
         )

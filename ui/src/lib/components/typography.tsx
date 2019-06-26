@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+// TODO: add optional contrast attribute to typography elements
 // body
 export const BodyJumbo = styled.span`
     font-family: ${({theme}) => theme.typography.bodyJumbo.fontFamily};
