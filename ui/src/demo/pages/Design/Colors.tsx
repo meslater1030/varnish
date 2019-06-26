@@ -9,101 +9,101 @@ import { convertPixelsToRem } from '../../../lib/utils/base';
 
 const { color } = DefaultVarnishTheme;
 const colorGroups = {
-    reds: [
-        color.R1,
-        color.R2,
-        color.R3,
-        color.R4,
-        color.R5,
-        color.R6,
-        color.R7,
-        color.R8,
-        color.R9,
-        color.R10
-    ],
-    oranges: [
-        color.O1,
-        color.O2,
-        color.O3,
-        color.O4,
-        color.O5,
-        color.O6,
-        color.O7,
-        color.O8,
-        color.O9,
-        color.O10
-    ],
-    greens: [
-        color.G1,
-        color.G2,
-        color.G3,
-        color.G4,
-        color.G5,
-        color.G6,
-        color.G7,
-        color.G8,
-        color.G9,
-        color.G10
-    ],
-    teals: [
-        color.T1,
-        color.T2,
-        color.T3,
-        color.T4,
-        color.T5,
-        color.T6,
-        color.T7,
-        color.T8,
-        color.T9,
-        color.T10
-    ],
     blues: [
-        color.B1,
-        color.B2,
-        color.B3,
-        color.B4,
-        color.B5,
-        color.B6,
-        color.B7,
-        color.B8,
+        color.B10,
         color.B9,
-        color.B10
+        color.B8,
+        color.B7,
+        color.B6,
+        color.B5,
+        color.B4,
+        color.B3,
+        color.B2,
+        color.B1
     ],
     purples: [
-        color.P1,
-        color.P2,
-        color.P3,
-        color.P4,
-        color.P5,
-        color.P6,
-        color.P7,
-        color.P8,
+        color.P10,
         color.P9,
-        color.P10
+        color.P8,
+        color.P7,
+        color.P6,
+        color.P5,
+        color.P4,
+        color.P3,
+        color.P2,
+        color.P1
     ],
     magentas: [
-        color.M1,
-        color.M2,
-        color.M3,
-        color.M4,
-        color.M5,
-        color.M6,
-        color.M7,
-        color.M8,
+        color.M10,
         color.M9,
-        color.M10
+        color.M8,
+        color.M7,
+        color.M6,
+        color.M5,
+        color.M4,
+        color.M3,
+        color.M2,
+        color.M1
+    ],
+    reds: [
+        color.R10,
+        color.R9,
+        color.R8,
+        color.R7,
+        color.R6,
+        color.R5,
+        color.R4,
+        color.R3,
+        color.R2,
+        color.R1
+    ],
+    oranges: [
+        color.O10,
+        color.O9,
+        color.O8,
+        color.O7,
+        color.O6,
+        color.O5,
+        color.O4,
+        color.O3,
+        color.O2,
+        color.O1
+    ],
+    greens: [
+        color.G10,
+        color.G9,
+        color.G8,
+        color.G7,
+        color.G6,
+        color.G5,
+        color.G4,
+        color.G3,
+        color.G2,
+        color.G1
+    ],
+    teals: [
+        color.T10,
+        color.T9,
+        color.T8,
+        color.T7,
+        color.T6,
+        color.T5,
+        color.T4,
+        color.T3,
+        color.T2,
+        color.T1
     ],
     neutrals: [
-        color.N1,
-        color.N2,
-        color.N3,
-        color.N4,
-        color.N5,
-        color.N6,
-        color.N7,
-        color.N8,
+        color.N10,
         color.N9,
-        color.N10
+        color.N8,
+        color.N7,
+        color.N6,
+        color.N5,
+        color.N4,
+        color.N3,
+        color.N2,
+        color.N1
     ]
 };
 
@@ -167,7 +167,7 @@ class ColorGroup extends React.PureComponent<ColorGroupProps> {
             <ExtendedHeadRow>
                 <Label>{this.props.group}</Label>
             </ExtendedHeadRow>
-            {this.props.colors.reverse().map((col: Color) => {
+            {this.props.colors.map((col: Color) => {
                 return col ? <ColorRow key={col.displayName} color={col}/>
                 : null;
             })}
