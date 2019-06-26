@@ -20,6 +20,7 @@ export class Spacing {
 }
 
 export const spacing = {
+    xxs: Spacing.fromPixels('xxs', 4),
     xs: Spacing.fromPixels('xs', 8),
     sm: Spacing.fromPixels('sm', 12),
     md: Spacing.fromPixels('md', 16),
