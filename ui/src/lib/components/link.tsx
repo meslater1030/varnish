@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const baseLinkStyles = (_:any) => css<{active: boolean, contrast?: boolean}>`
+const baseLinkStyles = (_:any) => css<{active?: boolean, contrast?: boolean}>`
     color: ${({ theme, active, contrast }) => (
         active
         ? (contrast ? theme.link.contrastActiveColor : theme.link.activeColor)

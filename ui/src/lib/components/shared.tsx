@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 
 import { convertPixelsToRem } from '../utils/base';
-import { spacing } from '../theme/spacing';
 
+export const Spacer = styled.div`
+    display: flex;
+    flex-grow: 1;
+`
 
 export const MaxWidth = styled.div`
-    max-width: ${({theme}) => theme.breakpoints.xl}px;
+    max-width: ${({theme}) => theme.breakpoints.xl};
 `
 
 export const TransparentLayout = styled(Layout)`
@@ -16,25 +19,12 @@ export const TransparentLayout = styled(Layout)`
     }
 `;
 
-export const Header = styled(Layout.Header)`
-    && {
-        position: fixed;
-        background: white;
-        z-index: 1;
-        width: 100%;
-        box-shadow: 0px 4px 16px rgba(10, 41, 57, 0.08);
-        padding-top: ${props => convertPixelsToRem(10)};
-        padding-bottom: ${props => convertPixelsToRem(11)};
-        height: ${props => convertPixelsToRem(98)};
-    }
-`;
-
 export const TopMenu = styled(Menu).attrs({
     mode: "horizontal"
 })`
     && {
-        line-height: ${props => convertPixelsToRem(86)};
-        float: right;
+        display: flex;
+        line-height: 77px;
     }
 `;
 
@@ -43,24 +33,26 @@ export const LeftMenu = styled(Menu).attrs({
 })`
 `;
 
+// todo: left sider does should move up when ai2logo disappears
 export const LeftSider = styled(Layout.Sider).attrs({
     breakpoint: "sm",
     collapsedWidth: 0
 })`
     && {
-        margin-top: ${props => convertPixelsToRem(98)};
         background: none;
         overflow: auto;
         height: 100vh;
         position: fixed;
         left: 0;
+        ul {
+            height: 100%;
+        }
     }
 `;
 
 export const PaddedContent = styled(Layout.Content)`
     && {
-        padding: ${props => `0 ${spacing.xxl}`};
-        margin-top: ${props => convertPixelsToRem(98)};
+        padding: ${({theme}) => `0 ${theme.spacing.xxl}`};
     }
 `;
 
@@ -68,11 +60,4 @@ export const Page = styled.div`
     background: ${({theme}) => theme.palette.common.white};
     padding: ${({theme}) => theme.spacing.lg};
     border-bottom: 1px solid ${({theme}) => theme.palette.border.main};
-`;
-
-export const CenteredFooter = styled(Layout.Footer)`
-    && {
-        text-align: center;
-        background: none;
-    }
 `;
