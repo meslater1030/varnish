@@ -6,7 +6,7 @@ import { ExternalLink,
     TransparentLayout,
     PaddedContent,
     Page,
-    CenteredFooter
+    Footer
 } from '../../../lib/components';
 
 
@@ -23,10 +23,7 @@ export class FullPage extends React.PureComponent<RouteComponentProps & Props> {
                         {this.props.children}
                     </Page>
                 </PaddedContent>
-                <CenteredFooter>
-                    Proudly built at the
-                    {' '}<ExternalLink href="https://allenai.org">Allen Institute for Artificial Intelligence</ExternalLink>
-                </CenteredFooter>
+                <Footer />
             </TransparentLayout>
         )
     }
