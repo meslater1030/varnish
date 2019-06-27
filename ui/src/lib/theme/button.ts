@@ -18,7 +18,7 @@ export interface ButtonStyle {
     hover: any; // force required so we dont have to check for undefined later
     disabled: any; // force required so we dont have to check for undefined later
 }
-interface ButtonType {
+export interface Button {
     primary: ButtonStyle;
     default: ButtonStyle;
     link: ButtonStyle;
@@ -34,7 +34,7 @@ const marketingBorderColor = palette.secondary.main;
 const whiteColor = palette.text.contrast;
 const blackColor = palette.text.primary;
 
-export const button: ButtonType = {
+export const button: Button = {
     default: {
         background: color.transparent,
         border: `1px solid ${borderColor}`,
