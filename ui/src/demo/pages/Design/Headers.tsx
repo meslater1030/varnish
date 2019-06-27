@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 import { Menu } from 'antd';
 
-import { ExternalLink, Header, HeaderLogo, Spacer, TopMenu, Footer, Body } from '../../../lib/components';
+import { ExternalLink, Header, ResponsiveWindowImage, Spacer, TopMenu, Footer, Body } from '../../../lib/components';
 import { PageTitle, SectionWithDivider, LightPaper} from '../Shared';
 import logoWithText from '../../varnishLogo.svg';
 import { DefaultVarnishTheme } from '../../../lib/theme';
@@ -19,8 +19,8 @@ export class Headers extends React.PureComponent<RouteComponentProps> {
                 <SectionWithDivider>
                     <h3>Header</h3>
                     <Header>
-                        <HeaderLogo
-                            logo={logoWithText}
+                        <ResponsiveWindowImage
+                            src={logoWithText}
                             wideWidth={"194px"}
                             skinnyWidth={"72px"}
                             height={"56px"}

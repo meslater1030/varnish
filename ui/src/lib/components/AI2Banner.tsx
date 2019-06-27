@@ -29,7 +29,6 @@ const MaxWidthContent = styled.div`
 const Logo = styled.img`
     display: block;
     max-width: 100%;
-    height: auto;
 `;
 
 const DarkBanner = styled.div`

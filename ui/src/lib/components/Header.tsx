@@ -79,7 +79,6 @@ const Content = styled.div`
         display: flex;
         align-items: center;
         margin: auto;
-        height: 80px;
         max-width: ${({theme}) => theme.breakpoints.xl};
         padding: ${({theme}) => `0 ${theme.spacing.lg}`};
     }
@@ -93,7 +92,7 @@ const Sticky = styled(Layout.Header)`
         z-index: 1;
         width: 100%;
         box-shadow: 0px 4px 16px rgba(10, 41, 57, 0.08);
-        height: auto;
+        height: initial; /* Ant sets a height, we need to unset that. */
         padding: 0;
         transition: top 200ms ease-in-out;
     }

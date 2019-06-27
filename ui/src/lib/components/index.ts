@@ -1,4 +1,4 @@
-export * from './HeaderLogo';
+export * from './ResoponsiveWindowImage';
 export * from './button';
 export * from './Footer';
 export * from './Header';

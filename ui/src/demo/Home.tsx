@@ -7,7 +7,7 @@ import { Menu } from 'antd';
 import logoWithText from './varnishLogo.svg';
 import { About, Components, Design, PatternsAndGuides } from './pages';
 import { AppRoute } from './AppRoute';
-import { HeaderLogo,
+import { ResponsiveWindowImage,
     TransparentLayout,
     Header,
     TopMenu,
@@ -44,7 +44,12 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
         return (
             <TransparentLayout>
                 <Header>
-                    <HeaderLogo logo={logoWithText} wideWidth={"194px"} skinnyWidth={"72px"} height={"56px"} alt="Varnish" />
+                    <ResponsiveWindowImage
+                        src={logoWithText}
+                        wideWidth={"194px"}
+                        skinnyWidth={"72px"}
+                        height={"56px"}
+                        alt="Varnish" />
                     <Spacer />
                     <TopMenu
                         defaultSelectedKeys={[this.props.location.pathname]}>

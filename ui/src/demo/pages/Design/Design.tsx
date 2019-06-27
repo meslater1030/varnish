@@ -62,7 +62,7 @@ export class Design extends React.PureComponent<RouteComponentProps> {
         }*/,
         {
             path: `${this.parentPath}/headers`,
-            label: 'Heade & Footer',
+            label: 'Header & Footer',
             component: Headers
         }
     ];
