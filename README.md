@@ -80,6 +80,10 @@ Varnish has several peer dependencies which you should install for things to wor
         git push --tags
         ```
 
+        **If the above command does not push anything to the repo, that is because our project has the package.json in a different root as out .git file.
+        To solve, you need to add an empty file './ui/.git' [see here](https://github.com/npm/npm/issues/9111)
+        Then, revert the change to packages.json and re-run npm version**
+
     1. Build the lib
 
         ```bash
