@@ -12,8 +12,8 @@ type Optional<T> = T | undefined;
 
 interface ComponentProps {
     theme: typeof DefaultVarnishTheme,
-    type: ButtonType,
-    contrast: boolean
+    type?: ButtonType,
+    contrast?: boolean
 }
 
 const valueOrDefault = <T extends {}>(
@@ -23,10 +23,10 @@ const valueOrDefault = <T extends {}>(
 ): Optional<T> => {
     let ret: Optional<T>;
     if(props.contrast && contrastStyleFunc) {
-        ret = contrastStyleFunc(props.theme.button[props.type]) || contrastStyleFunc(props.theme.button.default);
+        ret = contrastStyleFunc(props.theme.button[props.type || 'default']) || contrastStyleFunc(props.theme.button.default);
     }
     if(!ret) {
-        ret = styleFunc(props.theme.button[props.type]) || styleFunc(props.theme.button.default);
+        ret = styleFunc(props.theme.button[props.type || 'default']) || styleFunc(props.theme.button.default);
     }
     return ret;
 }

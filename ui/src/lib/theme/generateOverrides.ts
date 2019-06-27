@@ -26,6 +26,7 @@ const template =`
         -moz-osx-font-smoothing: antialiased;
         font-smoothing: antialiased;
         font-family: ${typography.body.fontFamily};
+        font-size:  ${typography.body.fontSize};
     }
     * {
         box-sizing: border-box;

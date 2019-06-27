@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Layout } from 'antd';
 
-import { convertPixelsToRem } from '../utils/base';
+import { MaxWidthCenteredContent } from './MaxWidthCenteredContent';
 import { AI2Banner } from './AI2Banner';
 
 interface Props {
@@ -74,14 +74,9 @@ export class Header extends React.PureComponent<Props, State> {
     }
 }
 
-const Content = styled.div`
-    && {
-        display: flex;
-        align-items: center;
-        margin: auto;
-        max-width: ${({theme}) => theme.breakpoints.xl};
-        padding: ${({theme}) => `0 ${theme.spacing.lg}`};
-    }
+const Content = styled(MaxWidthCenteredContent)`
+    display: flex;
+    align-items: center;
 `;
 
 const Sticky = styled(Layout.Header)`

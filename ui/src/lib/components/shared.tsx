@@ -2,15 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 
-import { convertPixelsToRem } from '../utils/base';
-
 export const Spacer = styled.div`
     display: flex;
     flex-grow: 1;
-`
-
-export const MaxWidth = styled.div`
-    max-width: ${({theme}) => theme.breakpoints.xl};
 `
 
 export const TransparentLayout = styled(Layout)`
