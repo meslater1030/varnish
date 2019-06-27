@@ -77,7 +77,7 @@ Varnish has several peer dependencies which you should install for things to wor
     1. Publish the tag to github
 
         ```bash
-        git push --tags
+        git push --tags origin master
         ```
 
     1. Build the lib
