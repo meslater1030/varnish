@@ -9,7 +9,7 @@ A library of AI2 themed React components.
 
 ## Peer Dependencies
 
-Varnish has several peer dependencies which you should install for things to work correctly. You can find them [here](https://github.com/allenai/varnish/blob/master/ui/package.json#L34).
+Varnish has several peer dependencies which you should install for things to work correctly. You can find them [here](https://github.com/allenai/varnish/blob/master/ui/package.json#L27).
 
 ## Installation
 
@@ -77,7 +77,7 @@ Varnish has several peer dependencies which you should install for things to wor
     1. Publish the tag to github
 
         ```bash
-        git push --tags origin master
+        git push --tags
         ```
 
     1. Build the lib
