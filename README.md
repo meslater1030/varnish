@@ -72,8 +72,6 @@ Varnish has several peer dependencies which you should install for things to wor
 
         ```bash
         npm version major|minor|patch
-        git add ./package.json
-        git commit -m "version update"
         ```
 
     1. Publish the tag to github
