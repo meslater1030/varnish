@@ -159,7 +159,7 @@ const template =`
 
     // overrise buttons
     @btn-font-weight: ${fontWeight.regular};
-    @btn-border-radius-base: ${shape.borderRadius};
+    @btn-border-radius-base: ${shape.borderRadius}px;
 `;
 
 // All paths are relative to package.json.
