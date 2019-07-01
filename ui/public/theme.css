@@ -20442,7 +20442,7 @@ h6 {
   text-transform: uppercase;
 }
 p {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 @media (max-width: 62rem) {
   html {

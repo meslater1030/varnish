@@ -49,6 +49,7 @@ export const PaddedContent = styled(Layout.Content)`
         max-width: ${({theme}) => theme.breakpoints.xl};
         margin: 0 auto;
         padding: ${({theme}) => `0 ${theme.spacing.lg}`};
+        width: 100%;
 
         @media (max-width: ${({theme}) => theme.breakpoints.sm}) {
             padding: ${({theme}) => `0 ${theme.spacing.xs}`};
@@ -57,7 +58,5 @@ export const PaddedContent = styled(Layout.Content)`
 `;
 
 export const Page = styled.div`
-    background: ${({theme}) => theme.palette.common.white};
-    padding: ${({theme}) => theme.spacing.lg};
-    border-bottom: 1px solid ${({theme}) => theme.palette.border.main};
+    padding: ${({theme}) => `${theme.spacing.lg} 0`};
 `;
