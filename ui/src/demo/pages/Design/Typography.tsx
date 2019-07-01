@@ -139,7 +139,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
 
                     <Name>Dark</Name>
                     <Example>
-                        <Code type="dark">{this.codeExample}</Code>
+                        <Code variant="dark">{this.codeExample}</Code>
                         <Size>{DefaultVarnishTheme.typography.code.fontSize}/{DefaultVarnishTheme.typography.code.lineHeight}</Size>
                     </Example>
                 </Grid>

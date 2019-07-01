@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { BodySmall, Body, Button, ButtonType } from '../../../lib/components';
+import { BodySmall, Body, Button, ButtonVariant } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import { defaultSpacing, borderColor } from '../../../lib/theme/button';
 import { PageTitle, SectionWithDivider, LightPaper, DarkPaper } from '../Shared';
@@ -15,7 +15,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
 
                 <h3>Appearance and Behavor</h3>
                 <BodySmall>
-                    Basic buttons come in four style types: primary, default, link, and marketing.
+                    Basic buttons come in four style variants: primary, default, link, and marketing.
                 </BodySmall>
 
                 <SectionWithDivider>
@@ -41,7 +41,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                             <li>Background Color: {DefaultVarnishTheme.button.primary.background.displayName}</li>
                         </ul>
                     </BodySmall>
-                    <ButtonExample type={'primary'} />
+                    <ButtonExample variant={'primary'} />
                 </SectionWithDivider>
 
                 <SectionWithDivider>
@@ -58,7 +58,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                             </li>
                         </ul>
                     </BodySmall>
-                    <ButtonExample type={'default'} />
+                    <ButtonExample variant={'default'} />
                 </SectionWithDivider>
 
                 <SectionWithDivider>
@@ -71,7 +71,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                             <li>Bright text: {DefaultVarnishTheme.button.link.color.displayName}</li>
                         </ul>
                     </BodySmall>
-                    <ButtonExample type={'link'} />
+                    <ButtonExample variant={'link'} />
                 </SectionWithDivider>
 
                 <SectionWithDivider>
@@ -85,7 +85,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                             <li>Bright text: {DefaultVarnishTheme.button.marketing.color.displayName}</li>
                         </ul>
                     </BodySmall>
-                    <ButtonExample type={'marketing'} />
+                    <ButtonExample variant={'marketing'} />
                 </SectionWithDivider>
             </React.Fragment>
         )
@@ -93,14 +93,14 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
 }
 
 interface ButtonExampleProps{
-    type: ButtonType;
+    variant: ButtonVariant;
 }
 class ButtonExample extends React.PureComponent<ButtonExampleProps> {
     render() {
         return (
             <React.Fragment>
-                <ButtonRow type={this.props.type} />
-                <ButtonRow type={this.props.type} contrast />
+                <ButtonRow variant={this.props.variant} />
+                <ButtonRow variant={this.props.variant} contrast />
             </React.Fragment>
         )
     }
@@ -108,7 +108,7 @@ class ButtonExample extends React.PureComponent<ButtonExampleProps> {
 
 
 interface ButtonRowProps{
-    type: ButtonType;
+    variant: ButtonVariant;
     contrast: boolean;
 }
 class ButtonRow extends React.PureComponent<ButtonRowProps> {
@@ -118,19 +118,19 @@ class ButtonRow extends React.PureComponent<ButtonRowProps> {
             : DefaultVarnishTheme.link.color;
         const Paper = styled(this.props.contrast ? DarkPaper : LightPaper)`
             margin-bottom: ${({theme}) => theme.spacing.md};`;
-        const { type, contrast } = this.props;
+        const { variant, contrast } = this.props;
         return (
             <React.Fragment>
                 <Body>{this.props.contrast ? 'Dark' : 'Light'} background</Body>
                 <Paper>
                     <ButtonGrid>
                         <Disabled>
-                            <Button disabled type={type} contrast={contrast}>
+                            <Button disabled variant={variant} contrast={contrast}>
                                 Disabled
                             </Button>
                         </Disabled>
                         <Default>
-                            <Button type={type} contrast={contrast}>
+                            <Button variant={variant} contrast={contrast}>
                                 Default
                             </Button>
                         </Default>

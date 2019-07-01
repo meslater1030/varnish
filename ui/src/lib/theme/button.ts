@@ -80,6 +80,7 @@ export const button: Button = {
             opacity: 0.5,
             background: palette.primary.veryDark,
             border: `2px solid transparent`,
+            padding: paddingWithBorderInside(2),
             color: whiteColor
         }
     },

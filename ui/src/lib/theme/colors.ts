@@ -6,7 +6,7 @@ export class RGB {
 }
 
 export class Color {
-    public rgb?: RGB;
+    public rgb: RGB;
     constructor(public displayName: string, public hex: string) {
         this.hex = hex.toUpperCase();
         this.rgb = hexToRgb(hex);
@@ -17,7 +17,7 @@ export class Color {
 }
 
 // convert a hex color string to a RGB
-function hexToRgb(hex: string): RGB|undefined {
+function hexToRgb(hex: string): RGB {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
     var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
     hex = hex.replace(shorthandRegex, function(m, r, g, b) {
@@ -26,7 +26,7 @@ function hexToRgb(hex: string): RGB|undefined {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
     ? new RGB(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16))
-    : undefined;
+    : new RGB(0,0,0);
 }
 
 export const color = {

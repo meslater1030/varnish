@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { breakpoints } from './breakpoints';
 import { color, Color, RGB } from './colors';
 import { typography } from './typography';
@@ -7,6 +5,7 @@ import { link } from './link';
 import { spacing } from './spacing';
 import { button } from './button';
 import { palette } from './palette';
+import { shape } from './shape';
 
 export { Color, RGB };
 
@@ -16,9 +15,7 @@ export const DefaultVarnishTheme = {
     palette,
     typography,
     link,
-    shape: {
-        borderRadius: 4
-    },
+    shape,
     spacing,
     button
 

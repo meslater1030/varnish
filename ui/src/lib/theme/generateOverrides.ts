@@ -9,7 +9,8 @@ import { typography } from './typography';
 import { link } from './link';
 import { spacing } from './spacing';
 import { DefaultVarnishTheme } from './DefaultVarnishTheme';
-
+import { fontWeight } from './fontWeight';
+import { shape } from './shape';
 
 console.log('Generating less overrides...');
 
@@ -18,7 +19,13 @@ const template =`
     // less overrides to convert antd to ai2 styles
     // and general css for non react users
 
-    // global
+    // global font import
+    @import "https://fonts.googleapis.com/css?family=Raleway:400,600,700|Lato:400,700|Volkhov:400,700|RobotoMono:400,700";
+
+    // start with ant design less
+    @import './node_modules/antd/dist/antd.less'; // Import base Ant Design styles
+
+    // global overrides
     html, body {
         margin: 0;
         padding: 0;
@@ -27,6 +34,7 @@ const template =`
         font-smoothing: antialiased;
         font-family: ${typography.body.fontFamily};
         font-size:  ${typography.body.fontSize};
+        line-height:  ${typography.body.lineHeight};
     }
     * {
         box-sizing: border-box;
@@ -69,7 +77,7 @@ const template =`
         margin-bottom: 2rem;
     }
 
-    // default media breakpoint sizes
+    // set default media breakpoint sizes
     @media (max-width: ${breakpoints.lg}) {
         html {
             font-size: ${100 * 14/16}%;
@@ -143,15 +151,19 @@ const template =`
     @link-decoration: ${link.decoration};
     @link-hover-decoration: ${link.hover.decoration};
 
-    // vertical paddings
+    // override vertical paddings
     @padding-lg: ${spacing.lg}; // containers
     @padding-md: ${spacing.md}; // small containers and buttons
     @padding-sm: ${spacing.sm}; // Form controls and items
     @padding-xs: ${spacing.xs}; // small items
+
+    // overrise buttons
+    @btn-font-weight: ${fontWeight.regular};
+    @btn-border-radius-base: ${shape.borderRadius};
 `;
 
 // All paths are relative to package.json.
-const outputFile = './public/theme-overrides.less';
+const outputFile = './public/theme.less';
 
 // Then generate
 console.log('Generating pages...');

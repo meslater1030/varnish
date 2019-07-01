@@ -49,6 +49,10 @@ export const PaddedContent = styled(Layout.Content)`
         max-width: ${({theme}) => theme.breakpoints.xl};
         margin: 0 auto;
         padding: ${({theme}) => `0 ${theme.spacing.xl}`};
+
+        @media (max-width: ${({theme}) => theme.breakpoints.sm}) {
+            padding: ${({theme}) => `0 ${theme.spacing.xs}`};
+        }
     }
 `;
 

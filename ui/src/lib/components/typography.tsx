@@ -72,20 +72,20 @@ export const Author = styled.span`
 `;
 
 // code
-export const Code = styled.pre<{type?: string}>`
+export const Code = styled.pre<{variant?: string}>`
     font-family: ${({theme}) => theme.typography.code.fontFamily};
     font-size: ${({theme}) => theme.typography.code.fontSize};
     line-height: ${({theme}) => theme.typography.code.lineHeight};
     font-weight: ${({theme}) => theme.typography.code.fontWeight};
     padding: ${({theme}) => theme.typography.code.padding};
-    background-color: ${({theme, type}) => {
-        return (type === 'dark')
+    background-color: ${({theme, variant}) => {
+        return (variant === 'dark')
             ? theme.typography.code.contrastBackgroundColor
             : 'transparent'
         }
     };
-    color: ${({theme, type}) => {
-        return (type === 'dark')
+    color: ${({theme, variant}) => {
+        return (variant === 'dark')
             ? theme.typography.code.contrastColor
             : 'auto'
         }

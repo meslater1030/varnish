@@ -6,13 +6,13 @@ import { DefaultVarnishTheme } from '../theme';
 import { ButtonStyle } from '../theme/button';
 import { Color } from '../theme/colors';
 
-export type ButtonType = 'primary' | 'default' | 'link' | 'marketing';
+export type ButtonVariant = 'primary' | 'default' | 'link' | 'marketing';
 
 type Optional<T> = T | undefined;
 
 interface ComponentProps {
     theme: typeof DefaultVarnishTheme,
-    type?: ButtonType,
+    variant?: ButtonVariant,
     contrast?: boolean
 }
 
@@ -23,10 +23,10 @@ const valueOrDefault = <T extends {}>(
 ): Optional<T> => {
     let ret: Optional<T>;
     if(props.contrast && contrastStyleFunc) {
-        ret = contrastStyleFunc(props.theme.button[props.type || 'default']) || contrastStyleFunc(props.theme.button.default);
+        ret = contrastStyleFunc(props.theme.button[props.variant || 'default']) || contrastStyleFunc(props.theme.button.default);
     }
     if(!ret) {
-        ret = styleFunc(props.theme.button[props.type || 'default']) || styleFunc(props.theme.button.default);
+        ret = styleFunc(props.theme.button[props.variant || 'default']) || styleFunc(props.theme.button.default);
     }
     return ret;
 }
@@ -35,7 +35,16 @@ const toHexIfDefined = (c: Optional<Color>) => {
 }
 
 // todo: consider converting to use https://www.npmjs.com/package/styled-components-modifiers
-export const Button = styled(AntButton)<ComponentProps>`
+export const Button = styled(AntButton).attrs({
+    // only supporting types that we have styled
+    // if the user wants an unsupported type, they should use Ant.Button directly
+    type: (props: ComponentProps) => {
+        if(props.variant === 'primary' || props.variant === 'link'){
+            return props.variant;
+        }
+        return 'default';
+    }
+})<ComponentProps>`
     && {
         height: auto;
         font-weight: ${props => valueOrDefault(props, b => b.fontWeight) };
