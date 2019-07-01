@@ -74,7 +74,7 @@ const template =`
     }
 
     p {
-        margin-bottom: 2rem;
+        margin-bottom: ${spacing.lg};
     }
 
     // set default media breakpoint sizes

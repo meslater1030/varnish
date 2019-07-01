@@ -27,7 +27,8 @@ export interface Button {
 export const defaultSpacing = [spacing.md, spacing.xs];
 const marketingSpacing = [spacing.lg, spacing.sm];
 const paddingWithBorderInside = (borderWidth: number, initialPadding = defaultSpacing) => {
-    return `${convertPixelsToRem(initialPadding[1].getPxValue() - borderWidth)} ${convertPixelsToRem(initialPadding[0].getPxValue() - borderWidth)}`;
+    // initial pad minus the border width + a single pixel for the standard border width expected by other components
+    return `${convertPixelsToRem(initialPadding[1].getPxValue() - borderWidth + 1)} ${convertPixelsToRem(initialPadding[0].getPxValue() - borderWidth + 1)}`;
 }
 export const borderColor = palette.border.dark;
 const marketingBorderColor = palette.secondary.main;
