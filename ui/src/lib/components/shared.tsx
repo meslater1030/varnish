@@ -52,7 +52,7 @@ export const PaddedContent = styled(Layout.Content)`
         width: 100%;
 
         @media (max-width: ${({theme}) => theme.breakpoints.sm}) {
-            padding: ${({theme}) => `0 ${theme.spacing.xs}`};
+            padding: ${({theme}) => `0 ${theme.spacing.sm}`};
         }
     }
 `;

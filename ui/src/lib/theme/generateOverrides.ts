@@ -83,11 +83,6 @@ const template =`
             font-size: ${100 * 14/16}%;
         }
     }
-    @media (max-width: ${breakpoints.sm}) {
-        html {
-            font-size: ${100 * 12/16}%;
-        }
-    }
 
     // general overrides to ant design variables
     @font-family: ${typography.body.fontFamily};

@@ -20448,8 +20448,3 @@ p {
     font-size: 87.5%;
   }
 }
-@media (max-width: 36rem) {
-  html {
-    font-size: 75%;
-  }
-}
