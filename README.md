@@ -28,22 +28,33 @@ Varnish has several peer dependencies which you should install for things to wor
 ## Usage
 
 1. Basic
-    ```html
-    import React from 'react';
-    import ReactDOM from 'react-dom';
-    // Import the parts of Varnish you want. At minimum, you need to import the ThemeProvider
-    import { ThemeProvider } from '@allenai/varnish/theme';
 
-    // Wrap your App with the Varnish ThemeProvider
-    const VarnishApp =  () => (
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    )
+    1. In index.html, add a link to the varnish styles (use the latest version).
+    
+        ```html
+        <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.11/theme.css" />
+        ```
+    
+    1. In your App code, import the parts of Varnish you want. At minimum, you need to import the ThemeProvider.
+    
+        ```html
+        import React from 'react';
+        import ReactDOM from 'react-dom';
+        
+        import { ThemeProvider } from '@allenai/varnish/theme';
+        ```
+    
+    1. Then, wrap your App with the Varnish ThemeProvider.
+    
+        ```html
+        const VarnishApp =  () => (
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        )
 
-    // Render
-    ReactDOM.render(<VarnishApp />, document.getElementById('root'));
-    ```
+        ReactDOM.render(<VarnishApp />, document.getElementById('root'));
+        ```
 
 ## Contributing the Varnish
 
