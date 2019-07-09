@@ -96,10 +96,15 @@ const Sticky = styled(Layout.Header)`
 
 export const HeaderTitle = styled.h2`
     margin: 0;
-    padding: ${({theme}) => `${theme.spacing.xs} 0`};
-    line-height: 2.25rem;
+    font-size: 1.9rem;
+    padding: ${({theme}) => `${theme.spacing.lg} 0`};
+    line-height: 1.65rem;
     @media (max-width: ${({theme}) => theme.breakpoints.xs}) {
-        font-size: ${({theme}) => theme.typography.h3.fontSize};
+        font-size: 1.75rem;
         line-height: 1.5rem;
     }
+`;
+
+export const HeaderSubTitle = styled(HeaderTitle)`
+    text-transform: none;
 `;
