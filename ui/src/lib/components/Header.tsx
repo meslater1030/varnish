@@ -94,7 +94,7 @@ const Sticky = styled(Layout.Header)`
     }
 `;
 
-export const HeaderTitle = styled.h2`
+export const HeaderTitle = styled.h5`
     margin: 0;
     font-size: 1.9rem;
     padding: ${({theme}) => `${theme.spacing.lg} 0`};
