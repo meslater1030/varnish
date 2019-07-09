@@ -6,6 +6,7 @@ import { MaxWidthCenteredContent } from './MaxWidthCenteredContent';
 import { AI2Banner } from './AI2Banner';
 
 interface Props {
+    alwaysVisible?: boolean;
     children: React.ReactNode | React.ReactNodeArray;
 }
 
@@ -50,7 +51,7 @@ export class Header extends React.PureComponent<Props, State> {
     }
 
     getTopOffset() {
-        if (this.state.isCollapsed && this.banner.current !== null) {
+        if (!this.props.alwaysVisible && this.state.isCollapsed && this.banner.current !== null) {
             return (
                 -1 *
                 (this.banner.current.getBoundingClientRect().height -
@@ -90,5 +91,15 @@ const Sticky = styled(Layout.Header)`
         height: initial; /* Ant sets a height, we need to unset that. */
         padding: 0;
         transition: top 200ms ease-in-out;
+    }
+`;
+
+export const HeaderTitle = styled.h2`
+    margin: 0;
+    padding: ${({theme}) => `${theme.spacing.xs} 0`};
+    line-height: 2.25rem;
+    @media (max-width: ${({theme}) => theme.breakpoints.xs}) {
+        font-size: ${({theme}) => theme.typography.h3.fontSize};
+        line-height: 1.5rem;
     }
 `;

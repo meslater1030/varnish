@@ -1,5 +1,6 @@
 export * from './ResoponsiveWindowImage';
 export * from './button';
+export * from './form';
 export * from './Footer';
 export * from './Header';
 export * from './shared';

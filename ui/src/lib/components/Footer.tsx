@@ -17,7 +17,9 @@ export class Footer extends React.PureComponent<Props> {
                     : (
                         <Body>
                             Proudly built at the
-                            {' '}<ExternalLink href="https://allenai.org" contrast={true}>Allen Institute for Artificial Intelligence</ExternalLink>
+                            {' '}<ExternalLink contrast={true} href="https://allenai.org">Allen Institute for Artificial Intelligence (AI2)</ExternalLink>
+                            {' '}| <ExternalLink contrast={true} href="https://allenai.org/privacy-policy.html">Privacy Policy</ExternalLink>
+                            {' '}| <ExternalLink contrast={true} href="https://allenai.org/terms.html">Terms of Use</ExternalLink>
                         </Body>
                     )
                 }
