@@ -23,7 +23,7 @@ export const DatePicker = styled(Antd.DatePicker)`
     }
 `;
 
-export const SelectWithSpace = styled(Antd.Select)`
+export const Select = styled(Antd.Select)`
     font-size: ${({theme}) => theme.typography.bodySmall.fontSize};
 
     /* todo: figure out why ant is not doing this */
