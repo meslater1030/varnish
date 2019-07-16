@@ -11,7 +11,8 @@ import {
     Forms,
     Notifications,
     Tables,
-    Headers
+    Headers,
+    Spacing
 } from '..';
 import {  LeftMenuPage } from '../Shared';
 import { AppRoute } from '../../AppRoute';
@@ -44,6 +45,11 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/forms`,
             label: 'Forms',
             component: Forms
+        },
+        {
+            path: `${this.parentPath}/spacing`,
+            label: 'Spacing',
+            component: Spacing
         },/*,
         {
             path: `${this.parentPath}/cards`,
