@@ -35,11 +35,11 @@ const toHexIfDefined = (c: Optional<Color>) => {
 }
 
 // todo: consider converting to use https://www.npmjs.com/package/styled-components-modifiers
-export const Button = styled(AntButton).attrs({
+export const Button = styled(AntButton).attrs<{type?: string}>({
     // only supporting types that we have styled
     // if the user wants an unsupported type, they should use Ant.Button directly
     type: (props: ComponentProps) => {
-        if(props.variant === 'primary' || props.variant === 'link'){
+        if(!props.variant || props.variant === 'primary' || props.variant === 'link'){
             return props.variant;
         }
         return 'default';
@@ -51,28 +51,39 @@ export const Button = styled(AntButton).attrs({
         text-transform: ${props => valueOrDefault(props, b => b.textTransform) };
         background: ${props => toHexIfDefined(valueOrDefault(props, b => b.background)) };
         border: ${props => valueOrDefault(props, b => b.border, b => b.contrastBorder) };
-        color: ${props => toHexIfDefined(valueOrDefault(props, b => b.color, b => b.contrastColor)) };
         padding: ${props => valueOrDefault(props, b => b.padding) };
+
+        &, svg {
+            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.color, b => b.contrastColor)) };
+            transition: color 0ms ease-in-out;
+        }
 
         &:hover {
             background: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.background,  b => b.hover.contrastBackground)) };
             border: ${props => valueOrDefault(props, b => b.hover.border, b => b.hover.contrastBorder) };
-            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.color, b => b.hover.contrastColor)) };
             padding: ${props => valueOrDefault(props, b => b.hover.padding) };
+            &, svg {
+                color: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.color, b => b.hover.contrastColor)) };
+                transition: color 0ms ease-in-out;
+            }
         }
 
         &:focus {
             border: ${props => valueOrDefault(props, b => b.focus.border, b => b.focus.contrastBorder) };
-            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.focus.color, b => b.focus.contrastColor)) };
             padding: ${props => valueOrDefault(props, b => b.focus.padding) };
+            &, svg {
+                color: ${props => toHexIfDefined(valueOrDefault(props, b => b.focus.color, b => b.focus.contrastColor)) };
+            }
         }
 
         &:disabled {
             opacity: ${props => valueOrDefault(props, b => b.disabled.opacity) };
             background: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.background,  b => b.disabled.contrastBackground)) };
             border: ${props => valueOrDefault(props, b => b.disabled.border, b => b.disabled.contrastBorder) };
-            color: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.color, b => b.disabled.contrastColor)) };
             padding: ${props => valueOrDefault(props, b => b.disabled.padding) };
+            &, svg {
+                color: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.color, b => b.disabled.contrastColor)) };
+            }
         }
     }
 `;

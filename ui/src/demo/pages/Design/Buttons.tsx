@@ -125,12 +125,12 @@ class ButtonRow extends React.PureComponent<ButtonRowProps> {
                 <Paper>
                     <ButtonGrid>
                         <Disabled>
-                            <Button disabled variant={variant} contrast={contrast}>
+                            <Button disabled variant={variant} contrast={contrast} icon="form">
                                 Disabled
                             </Button>
                         </Disabled>
                         <Default>
-                            <Button variant={variant} contrast={contrast}>
+                            <Button variant={variant} contrast={contrast} icon="form">
                                 Default
                             </Button>
                         </Default>

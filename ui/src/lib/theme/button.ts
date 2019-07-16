@@ -31,7 +31,7 @@ const paddingWithBorderInside = (borderWidth: number, initialPadding = defaultSp
     return `${convertPixelsToRem(initialPadding[1].getPxValue() - borderWidth + 1)} ${convertPixelsToRem(initialPadding[0].getPxValue() - borderWidth + 1)}`;
 }
 export const borderColor = palette.border.dark;
-const marketingBorderColor = palette.secondary.main;
+const marketingColor = palette.secondary.main;
 const whiteColor = palette.text.contrast;
 const blackColor = palette.text.primary;
 
@@ -73,7 +73,7 @@ export const button: Button = {
             background: palette.primary.dark
         },
         focus: {
-            border: `2px solid ${borderColor}`,
+            border: `2px solid ${palette.primary.veryDark}`,
             padding: paddingWithBorderInside(2),
             color: whiteColor
         },
@@ -98,7 +98,7 @@ export const button: Button = {
             padding: paddingWithBorderInside(2)
         },
         focus: {
-            border: `2px solid ${borderColor}`,
+            border: `2px solid ${palette.primary.light}`,
             padding: paddingWithBorderInside(2)
         },
         disabled: {
@@ -110,33 +110,33 @@ export const button: Button = {
         }
     },
     marketing: {
-        border: `2px solid ${marketingBorderColor}`,
+        border: `2px solid ${marketingColor}`,
         contrastBorder: `2px solid ${whiteColor}`,
-        color: marketingBorderColor,
+        color: marketingColor,
         contrastColor: whiteColor,
         fontWeight: fontWeight.bold,
         padding: paddingWithBorderInside(2, marketingSpacing),
         textTransform: 'uppercase',
         hover: {
-            background: palette.secondary.light,
+            background: marketingColor,
             contrastBackground: whiteColor,
-            border: `2px solid ${marketingBorderColor}`,
+            border: `2px solid ${marketingColor}`,
             contrastBorder: `2px solid ${whiteColor}`,
             color: whiteColor,
-            contrastColor: marketingBorderColor,
+            contrastColor: marketingColor,
             padding: paddingWithBorderInside(2, marketingSpacing)
         },
         focus: {
             background: color.transparent,
-            border: `3px solid ${marketingBorderColor}`,
-            contrastBorder: `3px solid ${whiteColor}`,
-            padding: paddingWithBorderInside(3, marketingSpacing)
+            border: `2px solid ${palette.secondary.dark}`,
+            contrastBorder: `2px solid ${palette.secondary.light}`,
+            padding: paddingWithBorderInside(2, marketingSpacing)
         },
         disabled: {
             background: color.transparent,
-            border: `2px solid ${marketingBorderColor}`,
+            border: `2px solid ${marketingColor}`,
             contrastBorder: `2px solid ${whiteColor}`,
-            color: marketingBorderColor,
+            color: marketingColor,
             contrastColor: whiteColor,
             opacity: 0.5,
             padding: paddingWithBorderInside(2, marketingSpacing)

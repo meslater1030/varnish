@@ -15,6 +15,7 @@ export const palette = {
         warning: color.O2
     },
     border: {
+        light: color.N2,
         dark: color.N7,
         main: color.N4,
         error: color.R4,
@@ -30,7 +31,8 @@ export const palette = {
     },
     secondary: {
         light: color.O5,
-        main: color.O6
+        main: color.O6,
+        dark: color.O7
     },
     text: {
         primary: color.N9,
