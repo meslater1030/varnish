@@ -20,7 +20,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                 <PageTitle>Forms</PageTitle>
 
                 <h3> Appearance and Behavor </h3>
-                Lightly styled version of <ExternalLink target="_blank" href="https://ant.design/components/select/">Antd component</ExternalLink>
+                Styled form controls such as Select, Input, TextArea, and DatePicker.
 
                 <SectionWithDivider>
                     <h4>Select and SelectOption</h4>
@@ -32,6 +32,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                             <SelectOption key="4" value="4">test 4a</SelectOption>
                         </Select>
                     </MaxWidth>
+                    For more options see the: <ExternalLink target="_blank" href="https://ant.design/components/select/">Antd component</ExternalLink>
                 </ SectionWithDivider>
 
                 <SectionWithDivider>
@@ -52,6 +53,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                             </SelectOptGroup>
                         </Select>
                     </MaxWidth>
+                    For more options see the: <ExternalLink target="_blank" href="https://ant.design/components/select/">Antd component</ExternalLink>
                 </ SectionWithDivider>
 
                 <SectionWithDivider>
@@ -59,6 +61,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                     <MaxWidth>
                         <Input />
                     </MaxWidth>
+                    For more options see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Antd component</ExternalLink>
                 </ SectionWithDivider>
 
                 <SectionWithDivider>
@@ -66,6 +69,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                     <MaxWidth>
                         <TextArea />
                     </MaxWidth>
+                    For more options see the: <ExternalLink target="_blank" href="https://ant.design/components/input/#Input.TextArea">Antd component</ExternalLink>
                 </ SectionWithDivider>
 
                 <SectionWithDivider>
@@ -73,6 +77,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                     <MaxWidth>
                         <DatePicker />
                     </MaxWidth>
+                    For more options see the: <ExternalLink target="_blank" href="https://ant.design/components/date-picker/">Antd component</ExternalLink>
                 </ SectionWithDivider>
             </React.Fragment>
         )
