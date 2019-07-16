@@ -25,6 +25,7 @@ export const DatePicker = styled(Antd.DatePicker)`
 
 export const Select = styled(Antd.Select)`
     font-size: ${({theme}) => theme.typography.bodySmall.fontSize};
+    width: 100%;
 
     /* todo: figure out why ant is not doing this */
     .ant-select-selection__rendered, .ant-select-arrow {
@@ -35,4 +36,12 @@ export const Select = styled(Antd.Select)`
     @media (max-width: ${({theme}) => theme.breakpoints.xs}) {
         margin: ${({theme}) => `0 0 ${theme.spacing.md}`};
     }
+`;
+
+export const SelectOption = styled(Antd.Select.Option)`
+
+`;
+
+export const SelectOptGroup = styled(Antd.Select.OptGroup)`
+
 `;

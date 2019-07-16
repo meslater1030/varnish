@@ -39,7 +39,12 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/links`,
             label: 'Links',
             component: Links
-        }/*,
+        },
+        {
+            path: `${this.parentPath}/forms`,
+            label: 'Forms',
+            component: Forms
+        },/*,
         {
             path: `${this.parentPath}/cards`,
             label: 'Cards',
