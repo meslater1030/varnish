@@ -2,9 +2,26 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { BodySmall, Body, ExternalLink } from '../../../lib/components';
+import { BodySmall, Body, ExternalLink, InternalLink } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
-import { PageTitle, SectionWithDivider, LightPaper, DarkPaper } from '../Shared';
+import { PageTitle, SectionWithDivider, LightPaper, DarkPaper, DefaultLiveProvider } from '../Shared';
+
+const liveScope = {styled, ExternalLink, InternalLink};
+
+const examples = {
+basic: `
+<div>
+    <div>
+        <ExternalLink href="http://google.com" target="_blank">Go to Google (External)</ExternalLink>
+        <br /><InternalLink to="../design/buttons">Go to Buttons (Internal)</InternalLink>
+    </div>
+    <div style={{background:'dimGray',padding:'10px'}}>
+        <ExternalLink contrast href="http://google.com" target="_blank">Go to Google (External)</ExternalLink>
+        <br /><InternalLink contrast to="../design/buttons">Go to Buttons (Internal)</InternalLink>
+    </div>
+</div>
+`.trim()
+}
 
 export class Links extends React.PureComponent<RouteComponentProps> {
     render() {
@@ -23,6 +40,11 @@ export class Links extends React.PureComponent<RouteComponentProps> {
 
                 <SectionWithDivider>
                     <LinkExample contrast />
+                </SectionWithDivider>
+
+                <SectionWithDivider>
+                    <h3>Usage</h3>
+                    <DefaultLiveProvider code={examples.basic} scope={liveScope} />
                 </SectionWithDivider>
             </React.Fragment>
         )

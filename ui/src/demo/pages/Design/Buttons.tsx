@@ -2,10 +2,127 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { BodySmall, Body, Button, ButtonVariant } from '../../../lib/components';
+import { BodySmall, Body, Button, ButtonVariant, ExternalLink } from '../../../lib/components';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import { defaultSpacing, borderColor } from '../../../lib/theme/button';
-import { PageTitle, SectionWithDivider, LightPaper, DarkPaper } from '../Shared';
+import { PageTitle, SectionWithDivider, LightPaper, DarkPaper, DefaultLiveProvider } from '../Shared';
+
+const liveScope = {styled, Button};
+
+const examples = {
+basic: `
+<div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
+        <Button
+            variant="primary"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Primary
+        </Button>
+        <Button
+            variant="default"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Default
+        </Button>
+        <Button
+            variant="link"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Default
+        </Button>
+        <Button
+            variant="marketing"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Default
+        </Button>
+        <Button
+            disabled
+            variant="primary"
+            icon="form">
+            Primary
+        </Button>
+        <Button
+            disabled
+            variant="default"
+            icon="form">
+            Default
+        </Button>
+        <Button
+            disabled
+            variant="link"
+            icon="form">
+            Default
+        </Button>
+        <Button
+            disabled
+            variant="marketing"
+            icon="form">
+            Default
+        </Button>
+    </div>
+    <div style={{background:'dimGray', display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
+        <Button
+            contrast={true}
+            variant="primary"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Primary
+        </Button>
+        <Button
+            contrast={true}
+            variant="default"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Default
+        </Button>
+        <Button
+            contrast={true}
+            variant="link"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Default
+        </Button>
+        <Button
+            contrast={true}
+            variant="marketing"
+            icon="form"
+            onClick={()=>alert('click')}>
+            Default
+        </Button>
+        <Button
+            contrast={true}
+            disabled
+            variant="primary"
+            icon="form">
+            Primary
+        </Button>
+        <Button
+            contrast={true}
+            disabled
+            variant="default"
+            icon="form">
+            Default
+        </Button>
+        <Button
+            contrast={true}
+            disabled
+            variant="link"
+            icon="form">
+            Default
+        </Button>
+        <Button
+            contrast={true}
+            disabled
+            variant="marketing"
+            icon="form">
+            Default
+        </Button>
+    </div>
+</div>
+`.trim()
+}
 
 export class Buttons extends React.PureComponent<RouteComponentProps> {
     render() {
@@ -16,6 +133,8 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                 <h3>Appearance and Behavior</h3>
                 <BodySmall>
                     Basic buttons come in four style variants: primary, default, link, and marketing.
+                    <br/>We are extending the Ant Design Button component.
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Antd component</ExternalLink>
                 </BodySmall>
 
                 <SectionWithDivider>
@@ -86,6 +205,12 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                         </ul>
                     </BodySmall>
                     <ButtonExample variant={'marketing'} />
+                </SectionWithDivider>
+
+                <SectionWithDivider>
+                    <h3>Usage</h3>
+                    <DefaultLiveProvider code={examples.basic} scope={liveScope} />
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Antd component</ExternalLink>
                 </SectionWithDivider>
             </React.Fragment>
         )

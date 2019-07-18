@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { PageTitle } from '../Shared';
+import { PageTitle, DefaultLiveProvider, SectionWithDivider } from '../Shared';
 import { BodyJumbo, Body, BodyMicro } from '../../../lib/components';
 import { DefaultVarnishTheme, Color } from '../../../lib/theme';
 import { convertPixelsToRem } from '../../../lib/utils/base';
@@ -107,6 +107,44 @@ const colorGroups = {
     ]
 };
 
+const liveScope = {styled};
+
+const examples = {
+basic: `
+const ColorDiv = styled.div\`
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+    background: \${(props) => props.theme.color[props.col]};
+\`;
+
+render(
+    <div>
+        <ColorDiv col="B8">B8</ColorDiv>
+        <ColorDiv col="B7">B7</ColorDiv>
+        <ColorDiv col="B6">B6</ColorDiv>
+        <ColorDiv col="O6">O6</ColorDiv>
+        <ColorDiv col="O5">O5</ColorDiv>
+        <ColorDiv col="O4">O4</ColorDiv>
+    </div>
+)
+`.trim(),
+palette: `
+const Error = styled.div\`
+    width: 100%;
+    text-align: center;
+    color: \${(props) => props.theme.palette.text.error};
+    background: \${(props) => props.theme.palette.background.light};
+    border: \${(props) => \`1px solid \${props.theme.palette.border.error}\`};
+\`;
+
+render(
+    <Error>I cant do that Dave.</Error>
+)
+`.trim()
+}
+
 export class Colors extends React.PureComponent<RouteComponentProps> {
     render() {
         return (
@@ -129,6 +167,19 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
                         <ColorGroup key={group} colors={colorGroups[group]} group={group} />
                     )}
                 </ExtendedGrid>
+
+                <SectionWithDivider>
+                    <h3>Usage</h3>
+                    <h4>Direct</h4>
+                    You can directly use a Varnish color via the theme.
+                    <DefaultLiveProvider code={examples.basic} scope={liveScope} noInline={true}/>
+                </SectionWithDivider>
+
+                <SectionWithDivider>
+                    <h4>Indirect via palette</h4>
+                    You can also access colors via the palette.
+                    <DefaultLiveProvider code={examples.palette} scope={liveScope} noInline={true}/>
+                </SectionWithDivider>
             </React.Fragment>
         )
     }
@@ -258,6 +309,7 @@ const ExtendedGrid = styled.div`
         75px repeat(10, auto)
         75px repeat(10, auto);
     margin-top: ${({theme}) => theme.spacing.xs};
+    margin-bottom: ${({theme}) => theme.spacing.xl};
 `;
 
 const ExtendedHeadRow = styled.div`

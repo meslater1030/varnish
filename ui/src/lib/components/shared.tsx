@@ -47,7 +47,7 @@ export const LeftSider = styled(Layout.Sider).attrs({
 export const PaddedContent = styled(Layout.Content)`
     && {
         max-width: ${({theme}) => theme.breakpoints.xl};
-        margin: 0 auto;
+        margin: 0 auto 4rem auto;
         padding: ${({theme}) => `0 ${theme.spacing.lg}`};
         width: 100%;
 

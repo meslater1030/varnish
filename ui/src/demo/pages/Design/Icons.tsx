@@ -16,9 +16,9 @@ const examples = {
 basic: `
 <div>
     <Icon type="edit" />
-    <Icon type="left" />
-</div>
+    <Icon type="left" /></div>
 `.trim(),
+
 
 img: `
 // first import the svg
@@ -60,6 +60,7 @@ export class Icons extends React.PureComponent<RouteComponentProps> {
                 </BodySmall>
 
                 <SectionWithDivider>
+                    <h3>Usage</h3>
                     <h4>Basic Ant Icon</h4>
                     The Basic Icon includes support for a number of images specified via the <InlineCode>type</InlineCode> attribute.
                     <br/>For a list of icons see the: <ExternalLink target="_blank" href="https://ant.design/components/icon/">Antd component</ExternalLink>

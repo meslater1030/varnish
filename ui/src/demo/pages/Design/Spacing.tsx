@@ -2,8 +2,33 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
-import { PageTitle, SectionWithDivider } from '../Shared';
+import { PageTitle, SectionWithDivider, DefaultLiveProvider } from '../Shared';
 import { spacing, Spacing as ThemeSpacing } from '../../../lib/theme/spacing';
+
+const liveScope = {styled};
+
+const examples = {
+basic: `
+const SpacingDiv = styled.div\`
+    text-align: center;
+    width: min-content;
+    margin: \${({theme}) => \`\${theme.spacing.md} \${theme.spacing.xl}\`};
+    padding: \${({theme}) => theme.spacing.sm};
+    background: \${({theme}) => theme.palette.primary.main};
+\`;
+
+render(
+    <div style={{width:'min-content'}}>
+        <SpacingDiv>
+            Hello
+        </SpacingDiv>
+        <SpacingDiv>
+            World
+        </SpacingDiv>
+    </div>
+)
+`.trim()
+}
 
 export class Spacing extends React.PureComponent<RouteComponentProps> {
     render() {
@@ -23,6 +48,11 @@ export class Spacing extends React.PureComponent<RouteComponentProps> {
                         })}
                     </SpacingGrid>
                 </ SectionWithDivider>
+
+                <SectionWithDivider>
+                    <h3>Usage</h3>
+                    <DefaultLiveProvider code={examples.basic} scope={liveScope} noInline={true}/>
+                </SectionWithDivider>
 
             </React.Fragment>
         )
