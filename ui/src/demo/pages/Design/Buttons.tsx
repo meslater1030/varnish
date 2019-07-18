@@ -13,7 +13,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
             <React.Fragment>
                 <PageTitle>Buttons</PageTitle>
 
-                <h3>Appearance and Behavor</h3>
+                <h3>Appearance and Behavior</h3>
                 <BodySmall>
                     Basic buttons come in four style variants: primary, default, link, and marketing.
                 </BodySmall>

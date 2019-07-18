@@ -19,7 +19,7 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
             <React.Fragment>
                 <PageTitle>Forms</PageTitle>
 
-                <h3> Appearance and Behavor </h3>
+                <h3> Appearance and Behavior </h3>
                 Styled form controls such as Select, Input, TextArea, and DatePicker.
 
                 <SectionWithDivider>

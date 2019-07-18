@@ -12,7 +12,8 @@ import {
     Notifications,
     Tables,
     Headers,
-    Spacing
+    Spacing,
+    Icons
 } from '..';
 import {  LeftMenuPage } from '../Shared';
 import { AppRoute } from '../../AppRoute';
@@ -41,26 +42,29 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             label: 'Links',
             component: Links
         },
+        /*
+        {
+            path: `${this.parentPath}/cards`,
+            label: 'Cards',
+            component: Cards
+        }
+        */
         {
             path: `${this.parentPath}/forms`,
             label: 'Forms',
             component: Forms
+        },
+        {
+            path: `${this.parentPath}/icons`,
+            label: 'Icons',
+            component: Icons
         },
         {
             path: `${this.parentPath}/spacing`,
             label: 'Spacing',
             component: Spacing
-        },/*,
-        {
-            path: `${this.parentPath}/cards`,
-            label: 'Cards',
-            component: Cards
         },
-        {
-            path: `${this.parentPath}/forms`,
-            label: 'Forms',
-            component: Forms
-        },
+        /*
         {
             path: `${this.parentPath}/notifications`,
             label: 'Notifications',
@@ -70,7 +74,7 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/tables`,
             label: 'Tables',
             component: Tables
-        }*/,
+        }*/
         {
             path: `${this.parentPath}/headers`,
             label: 'Header & Footer',

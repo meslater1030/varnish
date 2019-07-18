@@ -30,6 +30,7 @@ export class Footer extends React.PureComponent<Props> {
 
 const StyledFooter = styled(Layout.Footer)`
     && {
+        margin-top: 4rem;
         background: ${({theme}) => theme.palette.background.dark};
         color: ${({theme}) => theme.palette.text.contrast};
         text-align: center;

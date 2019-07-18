@@ -52,8 +52,7 @@ export const Button = styled(AntButton).attrs<{type?: string}>({
         background: ${props => toHexIfDefined(valueOrDefault(props, b => b.background)) };
         border: ${props => valueOrDefault(props, b => b.border, b => b.contrastBorder) };
         padding: ${props => valueOrDefault(props, b => b.padding) };
-
-        &, svg {
+        &, svg, path {
             color: ${props => toHexIfDefined(valueOrDefault(props, b => b.color, b => b.contrastColor)) };
             transition: color 0ms ease-in-out;
         }
@@ -62,7 +61,7 @@ export const Button = styled(AntButton).attrs<{type?: string}>({
             background: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.background,  b => b.hover.contrastBackground)) };
             border: ${props => valueOrDefault(props, b => b.hover.border, b => b.hover.contrastBorder) };
             padding: ${props => valueOrDefault(props, b => b.hover.padding) };
-            &, svg {
+            &, svg, path {
                 color: ${props => toHexIfDefined(valueOrDefault(props, b => b.hover.color, b => b.hover.contrastColor)) };
                 transition: color 0ms ease-in-out;
             }
@@ -71,7 +70,7 @@ export const Button = styled(AntButton).attrs<{type?: string}>({
         &:focus {
             border: ${props => valueOrDefault(props, b => b.focus.border, b => b.focus.contrastBorder) };
             padding: ${props => valueOrDefault(props, b => b.focus.padding) };
-            &, svg {
+            &, svg, path {
                 color: ${props => toHexIfDefined(valueOrDefault(props, b => b.focus.color, b => b.focus.contrastColor)) };
             }
         }
@@ -81,7 +80,7 @@ export const Button = styled(AntButton).attrs<{type?: string}>({
             background: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.background,  b => b.disabled.contrastBackground)) };
             border: ${props => valueOrDefault(props, b => b.disabled.border, b => b.disabled.contrastBorder) };
             padding: ${props => valueOrDefault(props, b => b.disabled.padding) };
-            &, svg {
+            &, svg, path {
                 color: ${props => toHexIfDefined(valueOrDefault(props, b => b.disabled.color, b => b.disabled.contrastColor)) };
             }
         }

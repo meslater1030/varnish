@@ -14,7 +14,8 @@ import {
     NotificationBold,
     Quote,
     Author,
-    Code
+    Code,
+    InlineCode
 } from '../../../lib/components';
 import { PageTitle } from '../Shared';
 
@@ -24,6 +25,7 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
     allYourBase = 'All your base are belong to us';
     codeExample = `def get_metrics(self, reset: bool = False) -> Dict[str, float]:
     return {"accuracy": self.accuracy.get_metric(reset)}`;
+    inlineCodeExample = `/* a comment */`;
 
     render() {
         return (
@@ -141,6 +143,16 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                     <Example>
                         <Code variant="dark">{this.codeExample}</Code>
                         <Size>{DefaultVarnishTheme.typography.code.fontSize}/{DefaultVarnishTheme.typography.code.lineHeight}</Size>
+                    </Example>
+
+                    <Name>Inline Default</Name>
+                    <Example>
+                        Hello <InlineCode>{this.inlineCodeExample}</InlineCode> World
+                    </Example>
+
+                    <Name>Inline Dark</Name>
+                    <Example>
+                        Hello <InlineCode variant="dark">{this.inlineCodeExample}</InlineCode> World
                     </Example>
                 </Grid>
             </React.Fragment>

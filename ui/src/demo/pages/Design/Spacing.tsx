@@ -11,7 +11,7 @@ export class Spacing extends React.PureComponent<RouteComponentProps> {
             <React.Fragment>
                 <PageTitle>Spacing</PageTitle>
 
-                <h3> Appearance and Behavor </h3>
+                <h3> Appearance and Behavior </h3>
                 Standard spacing units.
 
                 <SectionWithDivider>

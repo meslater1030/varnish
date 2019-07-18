@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // TODO: add optional contrast attribute to typography elements
 // body
@@ -71,13 +71,12 @@ export const Author = styled.span`
     font-weight: ${({theme}) => theme.typography.author.fontWeight};
 `;
 
-// code
-export const Code = styled.pre<{variant?: string}>`
+
+const baseCodeStyles = (_:any) => css<{variant?: string}>`
     font-family: ${({theme}) => theme.typography.code.fontFamily};
     font-size: ${({theme}) => theme.typography.code.fontSize};
     line-height: ${({theme}) => theme.typography.code.lineHeight};
     font-weight: ${({theme}) => theme.typography.code.fontWeight};
-    padding: ${({theme}) => theme.typography.code.padding};
     background-color: ${({theme, variant}) => {
         return (variant === 'dark')
             ? theme.typography.code.contrastBackgroundColor
@@ -90,4 +89,19 @@ export const Code = styled.pre<{variant?: string}>`
             : 'auto'
         }
     };
+`;
+
+// code
+export const Code = styled.pre<{variant?: string}>`
+    ${baseCodeStyles}
+
+    padding: ${({theme}) => theme.typography.code.padding};
+`;
+
+// inline code
+export const InlineCode = styled.code<{variant?: string}>`
+    ${baseCodeStyles}
+
+    padding: 0 ${({theme}) => theme.spacing.xxs};
+    margin: 0 ${({theme}) => theme.spacing.xxs};
 `;

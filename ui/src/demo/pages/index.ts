@@ -6,6 +6,7 @@ export * from './Design/Colors';
 export * from './Design/Design';
 export * from './Design/Forms';
 export * from './Design/Spacing';
+export * from './Design/Icons';
 export * from './Design/Headers';
 export * from './Design/Notifications';
 export * from './Design/Tables';

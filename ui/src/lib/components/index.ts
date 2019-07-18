@@ -7,3 +7,4 @@ export * from './shared';
 export * from './link';
 export * from './MaxWidthCenteredContent';
 export * from './typography';
+export * from './icon';

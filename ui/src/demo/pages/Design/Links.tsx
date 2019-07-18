@@ -12,7 +12,7 @@ export class Links extends React.PureComponent<RouteComponentProps> {
             <React.Fragment>
                 <PageTitle>Links</PageTitle>
 
-                <h3>Appearance and Behavor</h3>
+                <h3>Appearance and Behavior</h3>
                 <BodySmall>
                     Basic links come in two styles: light background and dark background.
                 </BodySmall>
