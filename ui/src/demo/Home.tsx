@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
 import { Menu } from 'antd';
 
+import packageJson from '../../package.json';
 import logoWithText from './varnishLogo.svg';
 import { About, Components, Design, PatternsAndGuides } from './pages';
 import { AppRoute } from './AppRoute';
@@ -12,7 +13,8 @@ import { ResponsiveWindowImage,
     Header,
     TopMenu,
     InternalLink,
-    Spacer
+    Spacer,
+    HeaderSubTitle
 } from '../lib/components';
 
 export default class Home extends React.PureComponent<RouteComponentProps> {
@@ -50,6 +52,7 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
                         skinnyWidth={"72px"}
                         height={"56px"}
                         alt="Varnish" />
+                    <SubHeader>{packageJson.version}</SubHeader>
                     <Spacer />
                     <TopMenu
                         defaultSelectedKeys={[this.props.location.pathname]}>
@@ -69,3 +72,7 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
         );
     }
 }
+
+const SubHeader = styled(HeaderSubTitle)`
+    margin-left: ${({theme}) => theme.spacing.md};
+`;

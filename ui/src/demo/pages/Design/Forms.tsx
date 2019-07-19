@@ -55,7 +55,30 @@ datePicker: `
 render(
     <DatePicker />
 )
-`.trim()
+`.trim(),
+
+radio: `
+render(
+    <div>
+        Horizontal
+        <div>
+            <RadioGroup defaultValue="1">
+                <Radio value="1">Option 1</Radio>
+                <Radio value="2">Option 2</Radio>
+                <Radio value="3">Option 2</Radio>
+            </RadioGroup>
+        </div>
+        Vertical
+        <div>
+            <RadioGroup defaultValue="1" vertical={true}>
+                <Radio value="1">Option 1</Radio>
+                <Radio value="2">Option 2</Radio>
+                <Radio value="3">Option 2</Radio>
+            </RadioGroup>
+        </div>
+    </div>
+)
+`
 }
 
 export class Forms extends React.PureComponent<RouteComponentProps> {
@@ -97,6 +120,12 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                     <h4>DatePicker</h4>
                     <DefaultLiveProvider code={examples.datePicker} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/date-picker/">Antd component</ExternalLink>
+                </SectionWithDivider>
+
+                <SectionWithDivider>
+                    <h4>Radio</h4>
+                    <DefaultLiveProvider code={examples.radio} />
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/radio/">Antd component</ExternalLink>
                 </SectionWithDivider>
             </React.Fragment>
         )

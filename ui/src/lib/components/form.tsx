@@ -39,9 +39,17 @@ export const Select = styled(Antd.Select)`
 `;
 
 export const SelectOption = styled(Antd.Select.Option)`
-
 `;
 
 export const SelectOptGroup = styled(Antd.Select.OptGroup)`
+`;
 
+export const Radio = styled(Antd.Radio)`
+    font-size: ${({theme}) => theme.typography.bodySmall.fontSize};
+`;
+
+export const RadioGroup = styled(Antd.Radio.Group)<{vertical: boolean}>`
+    ${Radio} {
+        display: ${({vertical}) => vertical ? 'block' : 'inline-block'};
+    }
 `;
