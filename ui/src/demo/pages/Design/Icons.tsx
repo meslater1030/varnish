@@ -57,14 +57,14 @@ export class Icons extends React.PureComponent<RouteComponentProps> {
                 <h3>Appearance and Behavior</h3>
                 <BodySmall>
                     We are extending the Ant Design Icon component.
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/icon/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/icon/">Ant Design Component</ExternalLink>
                 </BodySmall>
 
                 <SectionWithDivider>
                     <h3>Usage</h3>
                     <h4>Basic Ant Icon</h4>
                     The Basic Icon includes support for a number of images specified via the <InlineCode>type</InlineCode> attribute.
-                    <br/>For a list of icons see the: <ExternalLink target="_blank" href="https://ant.design/components/icon/">Antd component</ExternalLink>
+                    <br/>For a list of icons see the: <ExternalLink target="_blank" href="https://ant.design/components/icon/">Ant Design Component</ExternalLink>
                     <DefaultLiveProvider code={examples.basic} />
                 </SectionWithDivider>
 

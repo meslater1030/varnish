@@ -57,7 +57,7 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                 <BodySmall>
                     Basic buttons come in four style variants: primary, default, link, and marketing.
                     <br/>We are extending the Ant Design Button component.
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Ant Design Component</ExternalLink>
                 </BodySmall>
 
                 <SectionWithDivider>
@@ -134,9 +134,12 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
                     <h3>Usage</h3>
                     <h4>Basic button</h4>
                     <DefaultLiveProvider code={examples.basic} />
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Ant Design Component</ExternalLink>
+                </SectionWithDivider>
+
+                <SectionWithDivider>
                     <h4>All button forms</h4>
                     <DefaultLiveProvider code={examples.all} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Antd component</ExternalLink>
                 </SectionWithDivider>
             </React.Fragment>
         )

@@ -55,6 +55,8 @@ export class Links extends React.PureComponent<RouteComponentProps> {
                     <h3>Usage</h3>
                     <h4>Basic</h4>
                     <DefaultLiveProvider code={examples.basic} />
+                </SectionWithDivider>
+                <SectionWithDivider>
                     <h4>On dark backgrounds we have slight variation in colors</h4>
                     <DefaultLiveProvider code={examples.contrast} />
                 </SectionWithDivider>

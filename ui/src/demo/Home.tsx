@@ -6,7 +6,7 @@ import { Menu } from 'antd';
 
 import packageJson from '../../package.json';
 import logoWithText from './varnishLogo.svg';
-import { About, Components, Design, PatternsAndGuides } from './pages';
+import { About, Design } from './pages';
 import { AppRoute } from './AppRoute';
 import { ResponsiveWindowImage,
     TransparentLayout,
@@ -29,17 +29,7 @@ export default class Home extends React.PureComponent<RouteComponentProps> {
             path: '/design',
             label: 'Design',
             component: Design
-        }/*,
-        {
-            path: '/components',
-            label: 'Components',
-            component: Components
-        },
-        {
-            path: '/patterns-and-guides',
-            label: 'Patterns and Guides',
-            component: PatternsAndGuides
-        }*/
+        }
     ];
 
     render() {

@@ -89,43 +89,43 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
 
                 <h3> Appearance and Behavior </h3>
                 We are extending the Ant Design Form components such as Select, Input, TextArea, and DatePicker.
-                <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/">Antd component</ExternalLink>
+                <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/">Ant Design Component</ExternalLink>
 
                 <SectionWithDivider>
                     <h3>Usage</h3>
                     <h4>Select</h4>
                     <DefaultLiveProvider code={examples.select} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/select/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/select/">Ant Design Component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Input</h4>
                     <DefaultLiveProvider code={examples.input} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Ant Design Component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>TextArea</h4>
                     <DefaultLiveProvider code={examples.textArea} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Ant Design Component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Input</h4>
                     <DefaultLiveProvider code={examples.input} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/#Input.TextArea">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/#Input.TextArea">Ant Design Component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>DatePicker</h4>
                     <DefaultLiveProvider code={examples.datePicker} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/date-picker/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/date-picker/">Ant Design Component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Radio</h4>
                     <DefaultLiveProvider code={examples.radio} />
-                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/radio/">Antd component</ExternalLink>
+                    <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/radio/">Ant Design Component</ExternalLink>
                 </SectionWithDivider>
             </React.Fragment>
         )

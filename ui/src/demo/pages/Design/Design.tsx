@@ -3,17 +3,15 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import {
-    Colors,
-    Typography,
+    Breakpoints,
     Buttons,
-    Cards,
-    Links,
+    Colors,
     Forms,
-    Notifications,
-    Tables,
     Headers,
+    Icons,
+    Links,
     Spacing,
-    Icons
+    Typography
 } from '..';
 import {  LeftMenuPage } from '../Shared';
 import { AppRoute } from '../../AppRoute';
@@ -42,13 +40,6 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             label: 'Links',
             component: Links
         },
-        /*
-        {
-            path: `${this.parentPath}/cards`,
-            label: 'Cards',
-            component: Cards
-        }
-        */
         {
             path: `${this.parentPath}/forms`,
             label: 'Forms',
@@ -64,17 +55,11 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             label: 'Spacing',
             component: Spacing
         },
-        /*
         {
-            path: `${this.parentPath}/notifications`,
-            label: 'Notifications',
-            component: Notifications
+            path: `${this.parentPath}/breakpoints`,
+            label: 'Breakpoints',
+            component: Breakpoints
         },
-        {
-            path: `${this.parentPath}/tables`,
-            label: 'Tables',
-            component: Tables
-        }*/
         {
             path: `${this.parentPath}/headers`,
             label: 'Header & Footer',
