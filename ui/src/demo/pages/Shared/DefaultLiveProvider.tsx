@@ -1,6 +1,86 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { Menu } from 'antd';
+
+import logoWithText from '../../varnishLogo.svg';
+import { DefaultVarnishTheme } from '../../../lib/theme';
+import svgSrc from './other-14px.svg';
+import {
+    Author,
+    Body,
+    BodyBold,
+    BodyJumbo,
+    BodyMicro,
+    BodySmall,
+    BodySmallBold,
+    Button,
+    Code,
+    DatePicker,
+    ExternalLink,
+    Footer,
+    Header,
+    Icon,
+    ImgIcon,
+    InlineCode,
+    Input,
+    InternalLink,
+    Notification,
+    NotificationBold,
+    PaddedContent,
+    Quote,
+    ResponsiveWindowImage,
+    Select,
+    SelectOptGroup,
+    SelectOption,
+    Spacer,
+    SvgIcon,
+    TextArea,
+    TopMenu
+ } from '../../../lib/components';
+
+const InlineSvg = () => {
+    return <svg fill="currentColor" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m0 0h6v6h-6zm2 2h2v2h-2zm-2 6h6v6h-6zm2 2h2v2h-2zm12-2h-6v6h6zm-2 2h-2v2h2zm-4-10h6v6h-6zm2 2h2v2h-2z" fill-rule="evenodd"/></svg>
+};
+
+const globalScope = {
+    styled,
+    Button,
+    Select,
+    SelectOptGroup,
+    SelectOption,
+    Input,
+    TextArea,
+    DatePicker,
+    Header,
+    Footer,
+    ResponsiveWindowImage,
+    Spacer,
+    TopMenu,
+    Menu,
+    PaddedContent,
+    logoWithText,
+    DefaultVarnishTheme,
+    ExternalLink,
+    InternalLink,
+    Icon,
+    ImgIcon,
+    SvgIcon,
+    svgSrc,
+    InlineSvg,
+    BodyJumbo,
+    Body,
+    BodyBold,
+    BodySmall,
+    BodySmallBold,
+    BodyMicro,
+    Notification,
+    NotificationBold,
+    Quote,
+    Author,
+    Code,
+    InlineCode
+};
 
 const StyledProvider = styled(LiveProvider)`
     border-radius: ${({theme}) => `${theme.shape.borderRadius}px`};
@@ -77,9 +157,15 @@ interface Props {
     maxHeight?: string;
 }
 const DefaultLiveProvider = (props: Props) => {
-    const maxHeight = props.maxHeight || "15rem"; // default
+    // setup defaults
+    const maxHeight = props.maxHeight || "15rem";
+    const noInline = props.noInline !== undefined ? props.noInline : true;
+
+    // add shared scope to all
+    const scope = {...props.scope, ...globalScope}
+
     return (
-        <StyledProvider {...props}>
+        <StyledProvider {...props} noInline={noInline} scope={scope}>
             <LiveWrapper>
             <StyledEditor maxHeight={maxHeight}>
                 <LiveEditor />

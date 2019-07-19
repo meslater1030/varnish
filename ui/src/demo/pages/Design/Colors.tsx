@@ -107,8 +107,6 @@ const colorGroups = {
     ]
 };
 
-const liveScope = {styled};
-
 const examples = {
 basic: `
 const ColorDiv = styled.div\`
@@ -119,14 +117,11 @@ const ColorDiv = styled.div\`
     background: \${(props) => props.theme.color[props.col]};
 \`;
 
+const colorsToRender = ['B8','B7','B6','O8','O7','O6'];
+
 render(
     <div>
-        <ColorDiv col="B8">B8</ColorDiv>
-        <ColorDiv col="B7">B7</ColorDiv>
-        <ColorDiv col="B6">B6</ColorDiv>
-        <ColorDiv col="O6">O6</ColorDiv>
-        <ColorDiv col="O5">O5</ColorDiv>
-        <ColorDiv col="O4">O4</ColorDiv>
+        {colorsToRender.map(color =>  <ColorDiv col={color}>{color}</ColorDiv> )}
     </div>
 )
 `.trim(),
@@ -172,13 +167,13 @@ export class Colors extends React.PureComponent<RouteComponentProps> {
                     <h3>Usage</h3>
                     <h4>Direct</h4>
                     You can directly use a Varnish color via the theme.
-                    <DefaultLiveProvider code={examples.basic} scope={liveScope} noInline={true}/>
+                    <DefaultLiveProvider code={examples.basic}/>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Indirect via palette</h4>
                     You can also access colors via the palette.
-                    <DefaultLiveProvider code={examples.palette} scope={liveScope} noInline={true}/>
+                    <DefaultLiveProvider code={examples.palette}/>
                 </SectionWithDivider>
             </React.Fragment>
         )

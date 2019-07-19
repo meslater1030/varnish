@@ -7,120 +7,43 @@ import { DefaultVarnishTheme } from '../../../lib/theme';
 import { defaultSpacing, borderColor } from '../../../lib/theme/button';
 import { PageTitle, SectionWithDivider, LightPaper, DarkPaper, DefaultLiveProvider } from '../Shared';
 
-const liveScope = {styled, Button};
-
 const examples = {
 basic: `
-<div>
-    <div style={{display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
-        <Button
-            variant="primary"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Primary
-        </Button>
-        <Button
-            variant="default"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Default
-        </Button>
-        <Button
-            variant="link"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Default
-        </Button>
-        <Button
-            variant="marketing"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Default
-        </Button>
-        <Button
-            disabled
-            variant="primary"
-            icon="form">
-            Primary
-        </Button>
-        <Button
-            disabled
-            variant="default"
-            icon="form">
-            Default
-        </Button>
-        <Button
-            disabled
-            variant="link"
-            icon="form">
-            Default
-        </Button>
-        <Button
-            disabled
-            variant="marketing"
-            icon="form">
-            Default
-        </Button>
+render(
+    <Button
+        variant='primary'
+        icon="form"
+        onClick={()=>alert('click')}>
+        Primary
+    </Button>
+)
+`.trim(),
+all: `
+const ButtonGrid = () =>
+    [false, true].map(disabled => {
+        return ['primary', 'default', 'link', 'marketing'].map(variant => {
+            return (
+                <Button
+                    variant={variant}
+                    disabled={disabled}
+                    icon="form"
+                    onClick={()=>alert('click')}>
+                    {variant}
+                </Button>
+            )
+        })
+    });
+
+render(
+    <div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
+            <ButtonGrid />
+        </div>
+        <div style={{background:'dimGray', display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
+            <ButtonGrid />
+        </div>
     </div>
-    <div style={{background:'dimGray', display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
-        <Button
-            contrast={true}
-            variant="primary"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Primary
-        </Button>
-        <Button
-            contrast={true}
-            variant="default"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Default
-        </Button>
-        <Button
-            contrast={true}
-            variant="link"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Default
-        </Button>
-        <Button
-            contrast={true}
-            variant="marketing"
-            icon="form"
-            onClick={()=>alert('click')}>
-            Default
-        </Button>
-        <Button
-            contrast={true}
-            disabled
-            variant="primary"
-            icon="form">
-            Primary
-        </Button>
-        <Button
-            contrast={true}
-            disabled
-            variant="default"
-            icon="form">
-            Default
-        </Button>
-        <Button
-            contrast={true}
-            disabled
-            variant="link"
-            icon="form">
-            Default
-        </Button>
-        <Button
-            contrast={true}
-            disabled
-            variant="marketing"
-            icon="form">
-            Default
-        </Button>
-    </div>
-</div>
+)
 `.trim()
 }
 
@@ -209,7 +132,10 @@ export class Buttons extends React.PureComponent<RouteComponentProps> {
 
                 <SectionWithDivider>
                     <h3>Usage</h3>
-                    <DefaultLiveProvider code={examples.basic} scope={liveScope} />
+                    <h4>Basic button</h4>
+                    <DefaultLiveProvider code={examples.basic} />
+                    <h4>All button forms</h4>
+                    <DefaultLiveProvider code={examples.all} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/button/">Antd component</ExternalLink>
                 </SectionWithDivider>
             </React.Fragment>

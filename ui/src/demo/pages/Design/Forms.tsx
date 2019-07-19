@@ -3,67 +3,58 @@ import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
 import { PageTitle, SectionWithDivider, DefaultLiveProvider } from '../Shared';
-import {
-    Select,
-    SelectOptGroup,
-    SelectOption,
-    ExternalLink,
-    Input,
-    TextArea,
-    DatePicker
-} from '../../../lib/components';
-
-const liveScope = {
-    styled,
-    Select,
-    SelectOptGroup,
-    SelectOption,
-    Input,
-    TextArea,
-    DatePicker};
+import { ExternalLink } from '../../../lib/components';
 
 const examples = {
 select: `
-<div>
-    Standard:
-    <Select placeholder="select item">
-        <SelectOption key="1" value="1">test 1a</SelectOption>
-        <SelectOption key="2" value="2">test 2a</SelectOption>
-        <SelectOption key="3" value="3">test 3a</SelectOption>
-        <SelectOption key="4" value="4">test 4a</SelectOption>
-    </Select>
-
-    With Groups:
-    <Select placeholder="select item">
-        <SelectOptGroup label="group 1">
+render(
+    <div>
+        Standard:
+        <Select placeholder="select item">
             <SelectOption key="1" value="1">test 1a</SelectOption>
             <SelectOption key="2" value="2">test 2a</SelectOption>
             <SelectOption key="3" value="3">test 3a</SelectOption>
             <SelectOption key="4" value="4">test 4a</SelectOption>
-        </SelectOptGroup>
-        <SelectOptGroup label="group 2">
-            <SelectOption key="5" value="5">test 1b</SelectOption>
-            <SelectOption key="6" value="6">test 2b</SelectOption>
-            <SelectOption key="7" value="7">test 3b</SelectOption>
-            <SelectOption key="8" value="8">test 4b</SelectOption>
-        </SelectOptGroup>
-    </Select>
-</div>
+        </Select>
+
+        With Groups:
+        <Select placeholder="select item">
+            <SelectOptGroup label="group 1">
+                <SelectOption key="1" value="1">test 1a</SelectOption>
+                <SelectOption key="2" value="2">test 2a</SelectOption>
+                <SelectOption key="3" value="3">test 3a</SelectOption>
+                <SelectOption key="4" value="4">test 4a</SelectOption>
+            </SelectOptGroup>
+            <SelectOptGroup label="group 2">
+                <SelectOption key="5" value="5">test 1b</SelectOption>
+                <SelectOption key="6" value="6">test 2b</SelectOption>
+                <SelectOption key="7" value="7">test 3b</SelectOption>
+                <SelectOption key="8" value="8">test 4b</SelectOption>
+            </SelectOptGroup>
+        </Select>
+    </div>
+)
 `.trim(),
 
 input: `
-<Input
-    placeholder="type here"/>
+render(
+    <Input
+        placeholder="type here"/>
+)
 `.trim(),
 
 textArea: `
-<TextArea
-    autosize={{minRows:2, maxRows:7}}
-    placeholder="type here" />
+render(
+    <TextArea
+        autosize={{minRows:2, maxRows:7}}
+        placeholder="type here" />
+)
 `.trim(),
 
 datePicker: `
-<DatePicker />
+render(
+    <DatePicker />
+)
 `.trim()
 }
 
@@ -80,31 +71,31 @@ export class Forms extends React.PureComponent<RouteComponentProps> {
                 <SectionWithDivider>
                     <h3>Usage</h3>
                     <h4>Select</h4>
-                    <DefaultLiveProvider code={examples.select} scope={liveScope} />
+                    <DefaultLiveProvider code={examples.select} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/select/">Antd component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Input</h4>
-                    <DefaultLiveProvider code={examples.input} scope={liveScope} />
+                    <DefaultLiveProvider code={examples.input} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Antd component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>TextArea</h4>
-                    <DefaultLiveProvider code={examples.textArea} scope={liveScope} />
+                    <DefaultLiveProvider code={examples.textArea} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/">Antd component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Input</h4>
-                    <DefaultLiveProvider code={examples.input} scope={liveScope} />
+                    <DefaultLiveProvider code={examples.input} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/input/#Input.TextArea">Antd component</ExternalLink>
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>DatePicker</h4>
-                    <DefaultLiveProvider code={examples.datePicker} scope={liveScope} />
+                    <DefaultLiveProvider code={examples.datePicker} />
                     <br/>For more information see the: <ExternalLink target="_blank" href="https://ant.design/components/date-picker/">Antd component</ExternalLink>
                 </SectionWithDivider>
             </React.Fragment>

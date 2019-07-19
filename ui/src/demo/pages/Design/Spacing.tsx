@@ -5,8 +5,6 @@ import { RouteComponentProps } from 'react-router';
 import { PageTitle, SectionWithDivider, DefaultLiveProvider } from '../Shared';
 import { spacing, Spacing as ThemeSpacing } from '../../../lib/theme/spacing';
 
-const liveScope = {styled};
-
 const examples = {
 basic: `
 const SpacingDiv = styled.div\`
@@ -51,7 +49,7 @@ export class Spacing extends React.PureComponent<RouteComponentProps> {
 
                 <SectionWithDivider>
                     <h3>Usage</h3>
-                    <DefaultLiveProvider code={examples.basic} scope={liveScope} noInline={true}/>
+                    <DefaultLiveProvider code={examples.basic} />
                 </SectionWithDivider>
 
             </React.Fragment>

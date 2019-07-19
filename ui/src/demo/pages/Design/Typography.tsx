@@ -2,88 +2,83 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { RouteComponentProps } from 'react-router';
 
+import { PageTitle, DefaultLiveProvider, SectionWithDivider } from '../Shared';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import {
-    BodyJumbo,
+    Author,
     Body,
     BodyBold,
+    BodyJumbo,
+    BodyMicro,
     BodySmall,
     BodySmallBold,
-    BodyMicro,
+    Code,
+    InlineCode,
     Notification,
     NotificationBold,
-    Quote,
-    Author,
-    Code,
-    InlineCode
+    Quote
 } from '../../../lib/components';
-import { PageTitle, DefaultLiveProvider, SectionWithDivider } from '../Shared';
-
-const liveScope = {
-    styled,
-    BodyJumbo,
-    BodyJumbo,
-    Body,
-    BodyBold,
-    BodySmall,
-    BodySmallBold,
-    BodyMicro,
-    Notification,
-    NotificationBold,
-    Quote,
-    Author,
-    Code,
-    InlineCode
-};
 
 const examples = {
 headlines: `
-<div>
-    <h1>AI for the Common Good</h1>
-    <h2>AI for the Common Good</h2>
-    <h3>AI for the Common Good</h3>
-    <h4>AI for the Common Good</h4>
-    <h5>AI for the Common Good</h5>
-</div>
+const text = "AI for the Common Good";
+
+render(
+    <div>
+        <h1>{text}</h1>
+        <h2>{text}</h2>
+        <h3>{text}</h3>
+        <h4>{text}</h4>
+        <h5>{text}</h5>
+    </div>
+)
 `.trim(),
 body: `
-<div>
-    <BodyJumbo>The best way to predict the future is to invent it</BodyJumbo>
-    <br/>
-    <Body>The best way to predict the future is to invent it</Body>
-    <br/>
-    <BodyBold>The best way to predict the future is to invent it</BodyBold>
-    <br/>
-    <BodySmall>The best way to predict the future is to invent it</BodySmall>
-    <br/>
-    <BodySmallBold>The best way to predict the future is to invent it</BodySmallBold>
-    <br/>
-    <BodyMicro>The best way to predict the future is to invent it</BodyMicro>
-    <br/>
-    <Notification>All your base are belong to us</Notification>
-    <br/>
-    <NotificationBold>All your base are belong to us</NotificationBold>
-</div>
+const text = "The best way to predict the future is to invent it";
+const text2 = "All your base are belong to us";
+
+render(
+    <div>
+        <BodyJumbo>{text}</BodyJumbo>
+        <br/>
+        <Body>{text}</Body>
+        <br/>
+        <BodyBold>{text}</BodyBold>
+        <br/>
+        <BodySmall>{text}</BodySmall>
+        <br/>
+        <BodySmallBold>{text}</BodySmallBold>
+        <br/>
+        <BodyMicro>{text}</BodyMicro>
+        <br/>
+        <Notification>{text2}</Notification>
+        <br/>
+        <NotificationBold>{text2}</NotificationBold>
+    </div>
+)
 `.trim(),
 quote: `
-<div>
-    <Quote>“Wit is the unexpected copulation of ideas.”</Quote>
-    <br/>
-    <Author>Patrick O'Brian</Author>
-
-</div>
+render(
+    <div>
+        <Quote>“Wit is the unexpected copulation of ideas.”</Quote>
+        <br/>
+        <Author>Patrick O'Brian</Author>
+    </div>
+)
 `.trim(),
 code: `
-<div>
-    <Code>
-        def get_metrics(self, reset: bool = False) -> Dict[str, float]
-    </Code>
-    <Code variant="dark">
-        def get_metrics(self, reset: bool = False) -> Dict[str, float]
-    </Code>
-    The command <InlineCode>get_metrics(self, reset: bool = False)</InlineCode> has a default parameter.
-    <br/>The command <InlineCode variant="dark">get_metrics(self, reset: bool = False)</InlineCode> has a default parameter.
-</div>
+render(
+    <div>
+        <Code>
+            def get_metrics(self, reset: bool = False) -> Dict[str, float]
+        </Code>
+        <Code variant="dark">
+            def get_metrics(self, reset: bool = False) -> Dict[str, float]
+        </Code>
+        The command <InlineCode>get_metrics(self, reset: bool = False)</InlineCode> has a default parameter.
+        <br/>The command <InlineCode variant="dark">get_metrics(self, reset: bool = False)</InlineCode> has a default parameter.
+    </div>
+)
 `.trim()
 }
 
@@ -230,22 +225,22 @@ export class Typography extends React.PureComponent<RouteComponentProps> {
                 <SectionWithDivider>
                     <h3>Usage</h3>
                     <h4>Headers</h4>
-                    <DefaultLiveProvider code={examples.headlines} scope={liveScope}/>
+                    <DefaultLiveProvider code={examples.headlines} />
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Body</h4>
-                    <DefaultLiveProvider code={examples.body} scope={liveScope}/>
+                    <DefaultLiveProvider code={examples.body} />
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Quote</h4>
-                    <DefaultLiveProvider code={examples.quote} scope={liveScope}/>
+                    <DefaultLiveProvider code={examples.quote} />
                 </SectionWithDivider>
 
                 <SectionWithDivider>
                     <h4>Code</h4>
-                    <DefaultLiveProvider code={examples.code} scope={liveScope}/>
+                    <DefaultLiveProvider code={examples.code} />
                 </SectionWithDivider>
             </React.Fragment>
         )
