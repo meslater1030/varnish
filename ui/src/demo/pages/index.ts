@@ -7,5 +7,6 @@ export * from './Design/Forms';
 export * from './Design/Headers';
 export * from './Design/Icons';
 export * from './Design/Links';
+export * from './Design/Palette';
 export * from './Design/Spacing';
 export * from './Design/Typography';

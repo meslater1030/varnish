@@ -130,7 +130,7 @@ const Error = styled.div\`
     width: 100%;
     text-align: center;
     color: \${(props) => props.theme.palette.text.error};
-    background: \${(props) => props.theme.palette.background.light};
+    background: \${(props) => props.theme.palette.background.error};
     border: \${(props) => \`1px solid \${props.theme.palette.border.error}\`};
 \`;
 

@@ -74,8 +74,10 @@ export class Breakpoints extends React.PureComponent<RouteComponentProps> {
                     <BreakpointGrid>
                         {Object.keys(breakpoints).map((key: string) => {
                             const breakpoint = breakpoints[key];
-                            return <><BreakpointRow breakpoint={breakpoint} key={breakpoint.displayName} />
-                            <Example width={breakpoint.rem} key={breakpoint.displayName} /></>
+                            return <React.Fragment>
+                                <BreakpointRow breakpoint={breakpoint} key={breakpoint.displayName} />
+                                <Example width={breakpoint.rem} key={breakpoint.displayName} />
+                            </React.Fragment>
                         })}
                     </BreakpointGrid>
                 </ SectionWithDivider>

@@ -10,6 +10,7 @@ import {
     Headers,
     Icons,
     Links,
+    Palette,
     Spacing,
     Typography
 } from '..';
@@ -24,6 +25,11 @@ export class Design extends React.PureComponent<RouteComponentProps> {
             path: `${this.parentPath}/colors`,
             label: 'Colors',
             component: Colors
+        },
+        {
+            path: `${this.parentPath}/palette`,
+            label: 'Palette',
+            component: Palette
         },
         {
             path: `${this.parentPath}/typography`,
