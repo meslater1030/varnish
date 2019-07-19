@@ -113,6 +113,7 @@ const column = css`
 `;
 
 const StyledEditor = styled.div<{maxHeight?: string}>`
+    color: ${({theme}) => theme.palette.common.white};
     background: ${({theme}) => theme.palette.background.dark};
     max-height: ${({maxHeight})=> maxHeight};
     overflow: auto;
