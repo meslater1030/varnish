@@ -73,22 +73,22 @@ Varnish is used in three popular scenarios:
 
     1. Include varnish in your app:
 
-    ```typescript
-    import React from 'react';
-    import ReactDOM from 'react-dom';
-    // Import the parts of Varnish you want. At minimum, you need to import the ThemeProvider
-    import { ThemeProvider } from '@allenai/varnish/theme';
+        ```typescript
+        import React from 'react';
+        import ReactDOM from 'react-dom';
+        // Import the parts of Varnish you want. At minimum, you need to import the ThemeProvider
+        import { ThemeProvider } from '@allenai/varnish/theme';
 
-    // Wrap your App with the Varnish ThemeProvider
-    const VarnishApp =  () => (
-    <ThemeProvider>
-        <App />
-    </ThemeProvider>
-    )
+        // Wrap your App with the Varnish ThemeProvider
+        const VarnishApp =  () => (
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+        )
 
-    // Render
-    ReactDOM.render(<VarnishApp />, document.getElementById('root'));
-    ```
+        // Render
+       ReactDOM.render(<VarnishApp />, document.getElementById('root'));
+        ```
 
     1. Use Varnish components:
 
