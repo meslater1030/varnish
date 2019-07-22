@@ -19,7 +19,7 @@ render(
 )
 `.trim(),
 all: `
-const ButtonGrid = () =>
+const Buttons = ({contrast}) =>
     [false, true].map(disabled => {
         return ['primary', 'default', 'link', 'marketing'].map(variant => {
             return (
@@ -27,21 +27,37 @@ const ButtonGrid = () =>
                     variant={variant}
                     disabled={disabled}
                     icon="form"
-                    onClick={()=>alert('click')}>
+                    onClick={()=>alert('click')}
+                    contrast={contrast}>
                     {variant}
                 </Button>
             )
         })
     });
 
+const gridCss = css\`
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    grid-gap: \${({theme}) => theme.spacing.sm };
+    padding: \${({theme}) => theme.spacing.sm };
+\`;
+
+const LightGrid = styled(Examples.LightPaper)\`
+   \${gridCss}
+\`;
+
+const DarkGrid = styled(Examples.DarkPaper)\`
+    \${gridCss}
+\`;
+
 render(
     <div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
-            <ButtonGrid />
-        </div>
-        <div style={{background:'dimGray', display:"grid",gridTemplateColumns:"repeat(4, min-content)",gridGap:"10px",padding:"10px"}}>
-            <ButtonGrid />
-        </div>
+        <LightGrid>
+            <Buttons contrast={false} />
+        </LightGrid>
+        <DarkGrid>
+            <Buttons contrast={true}/>
+        </DarkGrid>
     </div>
 )
 `.trim()

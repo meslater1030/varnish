@@ -16,7 +16,7 @@ const SpacingDiv = styled.div\`
 \`;
 
 render(
-    <div style={{width:'min-content'}}>
+    <div>
         <SpacingDiv>
             Hello
         </SpacingDiv>

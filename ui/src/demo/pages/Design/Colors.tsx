@@ -111,7 +111,8 @@ const examples = {
 basic: `
 const ColorDiv = styled.div\`
     width: 100%;
-    height: 50px;
+    height: \${({theme}) => theme.spacing.xl };
+    margin-bottom: \${({theme}) => theme.spacing.xxs };
     color: white;
     text-align: center;
     background: \${(props) => props.theme.color[props.col]};
@@ -129,6 +130,7 @@ palette: `
 const Error = styled.div\`
     width: 100%;
     text-align: center;
+    margin-bottom: \${({theme}) => theme.spacing.xxs };
     color: \${(props) => props.theme.palette.text.error};
     background: \${(props) => props.theme.palette.background.error};
     border: \${(props) => \`1px solid \${props.theme.palette.border.error}\`};

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { Menu } from 'antd';
 
+import { DarkPaper, LightPaper } from './Paper';
 import logoWithText from '../../varnishLogo.svg';
 import { DefaultVarnishTheme } from '../../../lib/theme';
 import svgSrc from './other-14px.svg';
@@ -47,6 +48,11 @@ const InlineSvg = () => {
 
 const globalScope = {
     styled,
+    css,
+    Examples: {
+        DarkPaper,
+        LightPaper
+    },
     Button,
     Select,
     SelectOptGroup,

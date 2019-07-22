@@ -21,14 +21,16 @@ const Links = () => (
 
 render(
     <div>
-        <div>
+        <Examples.LightPaper>
            <Links />
-        </div>
-        <div style={{background:'dimGray',padding:'10px'}}>
+        </Examples.LightPaper>
+        <Examples.DarkPaper>
             <Links />
-        </div>
+        </Examples.DarkPaper>
     </div>
 )
+
+
 `.trim()
 }
 
