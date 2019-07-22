@@ -7,7 +7,7 @@ A set of css styles and react components to make demos, websites, and applicatio
 * [Live Demo](https://varnish.staging.apps.allenai.org/)
 
 * [NPM](https://www.npmjs.com/package/@allenai/varnish)
-* [style sheet](https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.17/theme.css)
+* [style sheet](https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.18/theme.css)
 
 ## Includes
 
@@ -33,14 +33,14 @@ Varnish is used in three popular scenarios:
 
 1. ### Simple HTML / no react
 
-    Simply add `<link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.17/theme.css" />` to the head of your html file.
+    Simply add `<link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.18/theme.css" />` to the head of your html file.
 
 
     ```html
     <html lang="en">
         <head>
             <title>My Demo</title>
-            <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.17/theme.css" />
+            <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.18/theme.css" />
         </head>
         <body>
             bla...
@@ -54,7 +54,7 @@ Varnish is used in three popular scenarios:
 
 1. ### Using React, but **not** using the skiff-template.
 
-    1. Add `<link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.17/theme.css" />` to the head of your html file.
+    1. Add `<link rel=stylesheet href="https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.18/theme.css" />` to the head of your html file.
 
     1. Install varnish from npm
     ```yarn add @allenai/varnish```
