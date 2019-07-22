@@ -1,19 +1,21 @@
 # Varnish
 
-A set of css styles and react components to make demos, websites, and applications look and feel like the AI2 ecosystem.
+Css styles and react components to enable building beautiful demos, websites, and applications quickly.  Varnish will also gives sites a consistent AI2 look and feel.
+
 
 ## Links
 
-* [Live Demo](https://varnish.staging.apps.allenai.org/)
+* [Varnish Demo](https://varnish.staging.apps.allenai.org/).  See the full catalogue of what varnish has to offer.
+* [Varnish on NPM](https://www.npmjs.com/package/@allenai/varnish).  Varnish is available as a dependency on NPM.
+* [Varnish CSS](https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.18/theme.css).  If you are not using React, you can still use this style sheet for an AI2 look-and-feel.
 
-* [NPM](https://www.npmjs.com/package/@allenai/varnish)
-* [style sheet](https://cdn.jsdelivr.net/npm/@allenai/varnish@0.3.18/theme.css)
 
 ## Includes
 
 * Common AI2 CSS.
 * Custom theme provider for both [Ant Design](https://ant.design) and [Styled-Components](https://www.styled-components.com/).
 * Common AI2 Styled-Components, components, and utilities.
+
 
 ## Sites Using Varnish
 
@@ -29,7 +31,7 @@ Varnish is used in three popular scenarios:
 
 1. ### Via the [skiff-template](https://skiff-template.apps.allenai.org/) ([code](https://github.com/allenai/skiff-template/tree/master/ui))
 
-    The skiff-tamplate takes care of all the setup needed to use Varnish.  To get started with the skiff template, see the [readme](https://github.com/allenai/skiff-template/blob/master/README.md).
+    The skiff-tamplate takes care of all the setup needed to use Varnish.  To get started with the skiff template, see the [README](https://github.com/allenai/skiff-template/blob/master/README.md).
 
 1. ### Simple HTML / no react
 
@@ -102,7 +104,8 @@ Varnish is used in three popular scenarios:
 ## Components
 
 Varnish is built on top of [Ant Design](https://ant.design/components/)
-So, if Varnish does not have a component, we suggest you use an Ant Design component (and tell us so we can add it to Varnish with AI2 styles)
+So, if Varnish does not have a component, we suggest you use an Ant Design component (and tell us so we can add it to Varnish with AI2 styles).
+
 Varnish currently supports:
 
 * [Colors](https://varnish.staging.apps.allenai.org/design/colors)
