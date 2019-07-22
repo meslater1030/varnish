@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "bash scripts/buildOverrides.sh && node scripts/build.js",
-    "prepare-npm": "rm -rf dist/ && mkdir dist && tsc && cp README.md ./dist/ && cp package.json ./dist/ && cp .npmignore ./dist/ && cp ./public/theme.css ./dist/ && cp ./public/theme.less ./dist/ && NODE_ENV=production babel src/lib --out-dir ./dist/ --copy-files --ignore *.sh,generateOverrides.*",
+    "prepare-npm": "rm -rf dist/ && mkdir dist && tsc && cp ../README.md ./dist/ && cp package.json ./dist/ && cp .npmignore ./dist/ && cp ./public/theme.css ./dist/ && cp ./public/theme.less ./dist/ && NODE_ENV=production babel src/lib --out-dir ./dist/ --copy-files --ignore *.sh,generateOverrides.*",
     "clean-npm": "rm -rf dist/"
   },
   "eslintConfig": {
