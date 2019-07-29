@@ -6,10 +6,11 @@ import { spacing } from './spacing';
 import { button } from './button';
 import { palette } from './palette';
 import { shape } from './shape';
+import { DefaultTheme } from './DefaultTheme';
 
 export { Color, RGB };
 
-export const DefaultVarnishTheme = {
+export const DefaultVarnishTheme: DefaultTheme = {
     breakpoints,
     color,
     palette,
